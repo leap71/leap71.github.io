@@ -2,6 +2,8 @@
 
 The following images are made available by LEAP 71 for your use under the Creative Commons [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/) license.
 
+[TOC]
+
 ## Heat Exchangers
 
 <img src="images/cc-by-sa-leap71_heatx_001.jpeg" alt="heatx" style="zoom:25%;" />
