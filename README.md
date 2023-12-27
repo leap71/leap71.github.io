@@ -10,4 +10,7 @@ PicoGK forms the basis of a comprehensive technology stack for [Computational En
 
 [Check out the LEAP 71 Github to explore the repositories.](https://github.com/leap71)
 
-<img src="images/heatx.jpeg" alt="heatx" style="zoom:50%;" />
+<img src="images/cc-by-sa-leap71_heatx_001.jpeg" alt="heatx" style="zoom:50%;" />
+
+Images used with permission of LEAP 71, all rights reserved. Many images released to the public under Creative Commons Licenses. [See Gallery for all Creative Commons released images.](Gallery.md)
+
