@@ -2,7 +2,12 @@
 
 The following images are made available by LEAP 71 for your use under the Creative Commons [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/) license.
 
-[TOC]
+Categories:
+
+- [Heat Exchangers](#Heat-Exchangers)
+- [Impellers](#Impellers)
+- [Manifolds](#Manifolds)
+
 
 ## Heat Exchangers
 
