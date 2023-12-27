@@ -4,9 +4,9 @@ The following images are made available by LEAP 71 for your use under the Crea
 
 Categories:
 
-- [Heat Exchangers](#Heat-Exchangers)
-- [Impellers](#Impellers)
-- [Manifolds](#Manifolds)
+- [Heat Exchangers](#heat-exchangers)
+- [Impellers](#impellers)
+- [Manifolds](#manifolds)
 
 
 ## Heat Exchangers
