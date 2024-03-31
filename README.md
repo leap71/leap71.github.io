@@ -1,8 +1,8 @@
-![picogk](images/picogk.jpeg)
+![picogk](images/PicoGK_org_Logo.jpeg)
 
 # Welcome to PicoGK.org
 
-PicoGK ("peacock") is a compact open-source geometry kernel created by [LEAP 71](https://leap71.com/).. 
+PicoGK ("peacock") is a compact open-source geometry kernel created by [LEAP 71](https://leap71.com/).
 
 PicoGK forms the basis of a comprehensive technology stack for [Computational Engineering](https://leap71.com/computationalengineering/) built and open-sourced by LEAP 71.
 
