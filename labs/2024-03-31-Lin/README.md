@@ -34,23 +34,23 @@ namespace Leap71.AI
         public class PromptResponse
         {
             ...
-		}
+        }
 
-        public ChatGPT(	... )
-		{
-      		...
-		}
-
-		public PromptResponse oGetChatResponseSynchronous(	string strPrompt,
-															int nMaxHistoricTokens = 2048) 
-		{
+        public ChatGPT(    ... )
+        {
             ...
-    	}
-    	
+        }
+
+        public PromptResponse oGetChatResponseSynchronous(  string strPrompt,
+                                                            int nMaxHistoricTokens = 2048) 
+        {
+            ...
+        }
+        
         ...
 
-		List<PromptResponse> m_oHistory = new();
-	}
+        List<PromptResponse> m_oHistory = new();
+    }
 }
 ```
 
@@ -61,14 +61,14 @@ I omitted a lot of code, but you can see that this class can compile C# code, an
 ```C#
 public class CodeCompiler
 {
-	public CodeCompiler(    string strCode,
-    						string strNameSpaceAndClass,
-							string strMethodToInvoke)
-	{
-    	AddNetCoreDefaultReferences();
+    public CodeCompiler(    string strCode,
+                            string strNameSpaceAndClass,
+                            string strMethodToInvoke)
+    {
+        AddNetCoreDefaultReferences();
         ...
         SyntaxTree oTree = CSharpSyntaxTree.ParseText(strCode);
-		string strAssemblyName = Path.GetRandomFileName();
+        string strAssemblyName = Path.GetRandomFileName();
 
         CSharpCompilation oCompilation = CSharpCompilation.Create( ... )
             
@@ -76,14 +76,14 @@ public class CodeCompiler
         {
             EmitResult oEmitResult = oCompilation.Emit(oStream);
 
-        	if (!oEmitResult.Success)
+            if (!oEmitResult.Success)
             {
-            	string strError = "Code compilation failed with the following errors\n";
+                string strError = "Code compilation failed with the following errors\n";
                 foreach (Diagnostic oDiag in oEmitResult.Diagnostics)
                 {
-                	strError += $"- {oDiag}\n";
+                    strError += $"- {oDiag}\n";
                 }
-					
+                    
                 throw new ArgumentException(strError);
             }
             
@@ -98,9 +98,9 @@ public class CodeCompiler
         
     public void Task()
     {
-    	m_oMethod.Invoke(null, null);
+        m_oMethod.Invoke(null, null);
     }
-	....
+    ...
 }
 ```
 
@@ -109,11 +109,11 @@ Now, the last thing we need is a lot of glue code and the logic that actually se
 ```C#
 public class OpenAIStuff
 {
-	public static CodeCompiler oCreateCompiledCode(	string strPrompt,
-													string strReferenceCode,
-													string strDocumentationFile)
-	{
-		using StreamWriter oWriter = new StreamWriter(strDocumentationFile, false);
+    public static CodeCompiler oCreateCompiledCode( string strPrompt,
+                                                    string strReferenceCode,
+                                                    string strDocumentationFile)
+    {
+        using StreamWriter oWriter = new StreamWriter(strDocumentationFile, false);
 
           if (oWriter is null)
               throw new FileNotFoundException("Unable to create file " + strDocumentationFile);
@@ -121,10 +121,10 @@ public class OpenAIStuff
         ChatGPT oGPT = new(@"
 You are a C# developer creating computational engineering models that build complex geometry using code.
 You use PicoGK, an open source library for computational geometry.",
-							strApiKey);
+                            strApiKey);
 
         strPrompt = "**" + strPrompt + "**";
-		
+        
         strPrompt += @"
 
 Please include all the code, including the class definition and the static Task function.
@@ -138,61 +138,61 @@ Here's an example code to base your code on:
 ";
 
         strReferenceCode = CodeUtils.strAddCodeFences(strReferenceCode);
-		strPrompt += strReferenceCode;
-		
+        strPrompt += strReferenceCode;
+        
         int nTimeOut = 10;
-		int nLoop = 0;
-		...
-		while (true)
-		{
-			nLoop++;
-			if (nLoop > nTimeOut)
-			{
-				oWriter.WriteLine($"\n\n## Giving up");
-				...
+        int nLoop = 0;
+        ...
+        while (true)
+        {
+            nLoop++;
+            if (nLoop > nTimeOut)
+            {
+                oWriter.WriteLine($"\n\n## Giving up");
+                ...
             }
 
             ...
-          	var oResponse = oGPT.oGetChatResponseSynchronous(strPrompt, 10000);
-			...
+            var oResponse = oGPT.oGetChatResponseSynchronous(strPrompt, 10000);
+            ...
             var astrCode = CodeUtils.astrExtractCodeBlocks(oResponse.strResponse);
 
             if (astrCode.Count == 0)
-			{
-          		// Did not send us a code block
-				strPrompt = "Please provide me with a code block in your response, fenced off by ``` characters.";
-            	continue; // try again
+            {
+                // Did not send us a code block
+                strPrompt = "Please provide me with a code block in your response, fenced off by ``` characters.";
+                continue; // try again
             }
 
-			if (astrCode.Count > 1)
-			{
-          		// Sent us more than one code block
-				strPrompt = "Please provide me with just one code block in your response, fenced off by ``` characters.";
-				continue; // try again
+            if (astrCode.Count > 1)
+            {
+                // Sent us more than one code block
+                strPrompt = "Please provide me with just one code block in your response, fenced off by ``` characters.";
+                continue; // try again
             }
 
-        	// Compile the code block
-			try
-			{
-				CodeCompiler oCompiler = new(astrCode[0], "PicoGKExamples.AIExample", "Task");
-				oWriter.WriteLine($"\n\n## Success");
-				oWriter.WriteLine($"\n\n**Created compilable code in {nLoop} Attempts**");
-				return oCompiler;
+            // Compile the code block
+            try
+            {
+                CodeCompiler oCompiler = new(astrCode[0], "PicoGKExamples.AIExample", "Task");
+                oWriter.WriteLine($"\n\n## Success");
+                oWriter.WriteLine($"\n\n**Created compilable code in {nLoop} Attempts**");
+                return oCompiler;
             }
 
             catch (Exception e)
-			{
-          		// Problem with compiling, ask LLM to fix
-				strPrompt = "The compiler reported the following errors in your code, could you rewrite?\n";
-				strPrompt += e.Message;
+            {
+                // Problem with compiling, ask LLM to fix
+                strPrompt = "The compiler reported the following errors in your code, could you rewrite?\n";
+                strPrompt += e.Message;
 
-          		// "Remind" LLM of the original code example to steer it back on track
-				if (nLoop % 3 == 0)
-				{
-					strPrompt += "\n\nPlease reference the sample code again:\n\n";
-					strPrompt += strReferenceCode;
+                // "Remind" LLM of the original code example to steer it back on track
+                if (nLoop % 3 == 0)
+                {
+                    strPrompt += "\n\nPlease reference the sample code again:\n\n";
+                    strPrompt += strReferenceCode;
                 }
-					
+                    
                 // try again
             }
         }
@@ -256,8 +256,8 @@ Do not add placeholder code. It needs to be functional.
 
 Here's an example code to base your code on:
 
-```csharp
-....
+```c#
+...
 
 using PicoGK;
 using System.Numerics;
