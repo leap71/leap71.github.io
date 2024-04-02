@@ -29,30 +29,29 @@ using PicoGK;
 
 namespace Leap71.AI
 {
-	public partial class ChatGPT
-	{
-		public class PromptResponse
-		{
-      //...
+    public partial class ChatGPT
+    {
+        public class PromptResponse
+        {
+            ...
 		}
 
-		public ChatGPT(	... )
+        public ChatGPT(	... )
 		{
-      ...
+      		...
 		}
 
 		public PromptResponse oGetChatResponseSynchronous(	string strPrompt,
-																												int nMaxHistoricTokens = 2048) 
+															int nMaxHistoricTokens = 2048) 
 		{
-			...
-    }
-    
-    ...
+            ...
+    	}
+    	
+        ...
 
 		List<PromptResponse> m_oHistory = new();
 	}
 }
-
 ```
 
 The second component I needed was a way to compile the code that was returned from the LLM and check it for errors. I am using the Roslyn framework for this. It is suprisingly complex to get all the dependencies right, but [fortunately Rick Strahl has some excellent code online that helps a lot.](https://github.com/RickStrahl/Westwind.Scripting/tree/master)
@@ -61,77 +60,72 @@ I omitted a lot of code, but you can see that this class can compile C# code, an
 
 ```C#
 public class CodeCompiler
-    {
-        public CodeCompiler(    string strCode,
-                                string strNameSpaceAndClass,
-                                string strMethodToInvoke)
-        {
-            AddNetCoreDefaultReferences();
+{
+	public CodeCompiler(    string strCode,
+    						string strNameSpaceAndClass,
+							string strMethodToInvoke)
+	{
+    	AddNetCoreDefaultReferences();
+        ...
+        SyntaxTree oTree = CSharpSyntaxTree.ParseText(strCode);
+		string strAssemblyName = Path.GetRandomFileName();
+
+        CSharpCompilation oCompilation = CSharpCompilation.Create( ... )
             
-          	...
-           
-            SyntaxTree oTree = CSharpSyntaxTree.ParseText(strCode);
-
-            string strAssemblyName = Path.GetRandomFileName();
-
-            CSharpCompilation oCompilation = CSharpCompilation.Create( ... )
-                
-            using (MemoryStream oStream = new())
-            {
-                EmitResult oEmitResult = oCompilation.Emit(oStream);
-
-                if (!oEmitResult.Success)
-                {
-                    string strError = "Code compilation failed with the following errors\n";
-                    foreach (Diagnostic oDiag in oEmitResult.Diagnostics)
-                    {
-                        strError += $"- {oDiag}\n";
-                    }
-
-                    throw new ArgumentException(strError);
-                }
-
-                ...
-
-                MethodInfo? oMethod = oType.GetMethod(strMethodToInvoke);
-
-                ...
-
-                m_oMethod = oMethod;
-            }
-        }
-        
-        public void Task()
+        using (MemoryStream oStream = new())
         {
-            m_oMethod.Invoke(null, null);
-        }
+            EmitResult oEmitResult = oCompilation.Emit(oStream);
 
-         ....
+        	if (!oEmitResult.Success)
+            {
+            	string strError = "Code compilation failed with the following errors\n";
+                foreach (Diagnostic oDiag in oEmitResult.Diagnostics)
+                {
+                	strError += $"- {oDiag}\n";
+                }
+					
+                throw new ArgumentException(strError);
+            }
+            
+            ...
+
+            MethodInfo? oMethod = oType.GetMethod(strMethodToInvoke);
+            ...
+
+            m_oMethod = oMethod;
+        }
     }
+        
+    public void Task()
+    {
+    	m_oMethod.Invoke(null, null);
+    }
+	....
+}
 ```
 
 Now, the last thing we need is a lot of glue code and the logic that actually sends the prompt and re-prompts if things fail.
 
 ```C#
 public class OpenAIStuff
+{
+	public static CodeCompiler oCreateCompiledCode(	string strPrompt,
+													string strReferenceCode,
+													string strDocumentationFile)
 	{
-		public static CodeCompiler oCreateCompiledCode(	string strPrompt,
-																										string strReferenceCode,
-																										string strDocumentationFile)
-    {
-			using StreamWriter oWriter = new StreamWriter(strDocumentationFile, false);
-			
-      if (oWriter is null)
-      	throw new FileNotFoundException("Unable to create file " + strDocumentationFile);
+		using StreamWriter oWriter = new StreamWriter(strDocumentationFile, false);
 
-			ChatGPT oGPT = new(@"
+          if (oWriter is null)
+              throw new FileNotFoundException("Unable to create file " + strDocumentationFile);
+
+        ChatGPT oGPT = new(@"
 You are a C# developer creating computational engineering models that build complex geometry using code.
 You use PicoGK, an open source library for computational geometry.",
-								strApiKey);
+							strApiKey);
 
-			strPrompt = "**" + strPrompt + "**";
-
-			strPrompt += @"
+        strPrompt = "**" + strPrompt + "**";
+		
+        strPrompt += @"
 
 Please include all the code, including the class definition and the static Task function.
 The function needs to be called 'Task', so don't call it anything else.
@@ -142,76 +136,68 @@ Do not add placeholder code. It needs to be functional.
 Here's an example code to base your code on:
 
 ";
-			strReferenceCode = CodeUtils.strAddCodeFences(strReferenceCode);
 
-			strPrompt += strReferenceCode;
-
-			int nTimeOut = 10;
-			int nLoop = 0;
-
-			....
-
-			while (true)
+        strReferenceCode = CodeUtils.strAddCodeFences(strReferenceCode);
+		strPrompt += strReferenceCode;
+		
+        int nTimeOut = 10;
+		int nLoop = 0;
+		...
+		while (true)
+		{
+			nLoop++;
+			if (nLoop > nTimeOut)
 			{
-				nLoop++;
-
-				if (nLoop > nTimeOut)
-				{
-					oWriter.WriteLine($"\n\n## Giving up");
-					...
-				}
-
-				..
-          
-				var oResponse = oGPT.oGetChatResponseSynchronous(strPrompt, 10000);
-
+				oWriter.WriteLine($"\n\n## Giving up");
 				...
+            }
 
-				var astrCode = CodeUtils.astrExtractCodeBlocks(oResponse.strResponse);
+            ...
+          	var oResponse = oGPT.oGetChatResponseSynchronous(strPrompt, 10000);
+			...
+            var astrCode = CodeUtils.astrExtractCodeBlocks(oResponse.strResponse);
 
-				if (astrCode.Count == 0)
+            if (astrCode.Count == 0)
+			{
+          		// Did not send us a code block
+				strPrompt = "Please provide me with a code block in your response, fenced off by ``` characters.";
+            	continue; // try again
+            }
+
+			if (astrCode.Count > 1)
+			{
+          		// Sent us more than one code block
+				strPrompt = "Please provide me with just one code block in your response, fenced off by ``` characters.";
+				continue; // try again
+            }
+
+        	// Compile the code block
+			try
+			{
+				CodeCompiler oCompiler = new(astrCode[0], "PicoGKExamples.AIExample", "Task");
+				oWriter.WriteLine($"\n\n## Success");
+				oWriter.WriteLine($"\n\n**Created compilable code in {nLoop} Attempts**");
+				return oCompiler;
+            }
+
+            catch (Exception e)
+			{
+          		// Problem with compiling, ask LLM to fix
+				strPrompt = "The compiler reported the following errors in your code, could you rewrite?\n";
+				strPrompt += e.Message;
+
+          		// "Remind" LLM of the original code example to steer it back on track
+				if (nLoop % 3 == 0)
 				{
-          // Did not send us a code block
-					strPrompt = "Please provide me with a code block in your response, fenced off by ``` characters.";
-					continue; // try again
-				}
-
-				if (astrCode.Count > 1)
-				{
-          // Sent us more than one code block
-					strPrompt = "Please provide me with just one code block in your response, fenced off by ``` characters.";
-					continue; // try again
-				}
-
-        // Compile the code block
-				try
-				{
-					CodeCompiler oCompiler = new(astrCode[0], "PicoGKExamples.AIExample", "Task");
-
-					oWriter.WriteLine($"\n\n## Success");
-					oWriter.WriteLine($"\n\n**Created compilable code in {nLoop} Attempts**");
-
-					return oCompiler;
-				}
-
-				catch (Exception e)
-				{
-          // Problem with compiling, ask LLM to fix
-					strPrompt = "The compiler reported the following errors in your code, could you rewrite?\n";
-					strPrompt += e.Message;
-
-          // "Remind" LLM of the original code example to steer it back on track
-					if (nLoop % 3 == 0)
-					{
-						strPrompt += "\n\nPlease reference the sample code again:\n\n";
-						strPrompt += strReferenceCode;
-					}
+					strPrompt += "\n\nPlease reference the sample code again:\n\n";
+					strPrompt += strReferenceCode;
+                }
 					
-					// try again
-				}
-			}
-		}
-	}
+                // try again
+            }
+        }
+    }
+}
 ```
 
 Now, this will require a bit of explanation. I am taking the original prompt, and do some prompt engineering to make sure that the LLM doesn't do something too creative. I am also including some reference code to base its new code on, since OpenAI's API knows nothing about PicoGK.
@@ -226,7 +212,7 @@ Once it's compilable, I am done with this stage. Now, whether the result is corr
 
 OK, let's have some fun with our first prompts. Here is my `Program.cs`. It uses the Boolean Showcase example from PicoGK as reference source code file and asks the LLM to create some objects in a specific constellation. The catch is, I am asking it to create two spheres and a box, but there is no example for an implicit function for a box, so it needs to invent it.
 
-```
+```c#
 using PicoGKLab;
 using Leap71.AI;
 using PicoGK;
