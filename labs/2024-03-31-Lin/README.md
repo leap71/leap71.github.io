@@ -1,6 +1,6 @@
-# Experimenting with LLMs and Computational Engineering
+**[PicoGK.org](https://picogk.org)/[Labs](https://picogk.org/labs)**
 
-[PicoGK Lab Notes](https://picogk.org/labs)
+# Experimenting with LLMs and Computational Engineering
 
 **2024-03-31 By Lin Kayser**
 
@@ -295,12 +295,21 @@ Training the LLM directly on the Engineering Model will help rid it from much ha
 
 Definitely a few fun tests. Here are some examples for your perusal:
 
-- A frustrating example, where the LLM wasn't able to fix even very basic errors [ChatGPTCoding20240329_202128.md]()
-- Failure to understand the importance of exact names, but other than that, kudos for creating a new signed distance function for a cube: [ChatGPTCoding20240329_201957.md]()
-- And another example [ChatGPTCoding20240328_233907.md]()
+- A frustrating example, where the LLM wasn't able to fix even very basic errors [ChatGPTCoding20240329_202128.md](ChatGPTCoding20240329_202128.md)
+- Failure to understand the importance of exact names, but other than that, kudos for creating a new signed distance function for a cube: [ChatGPTCoding20240329_201957.md](ChatGPTCoding20240329_201957.md)
+- And another example [ChatGPTCoding20240328_233907.md](ChatGPTCoding20240328_233907.md)
 
 ## Thoughts
 
 This is a very initial example showcasing what is generally possible without much effort. The results are promising, but also show clearly that there is a fundamental "fuzziness" to the way LLMs work, which may not be problematic for language, but are definitely a problem for code that needs precise syntax and which requires clear logic to achieve the desired results.
 
 The findings support the opinion I expressed in my articles on this subject. It will be fun to explore this further.
+
+------
+
+**[PicoGK.org](https://picogk.org)/[Labs](https://picogk.org/labs)**
+
+------
+
+*© 2024 by LEAP 71 — All Rights Reserved*
+

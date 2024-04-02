@@ -1,3 +1,5 @@
+**[PicoGK.org](https://picogk.org)/Labs**
+
 ![PicoGK_Labs](PicoGK_Labs.jpg)
 
 # Welcome to PicoGK Labs
@@ -26,3 +28,10 @@ In my experiments, which were as basic as you can imagine, I used OpenAI's publi
 
 [Check out the experiments over here.](2024-03-31-Lin/README.md#setup)
 
+------
+
+**[PicoGK.org](https://picogk.org)/Labs**
+
+------
+
+*© 2024 by LEAP 71 — All Rights Reserved*
