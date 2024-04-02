@@ -58,7 +58,7 @@ The second component I needed was a way to compile the code that was returned fr
 
 I omitted a lot of code, but you can see that this class can compile C# code, and throws an exception with any compilation errors it encounters.
 
-```C#
+```c#
 public class CodeCompiler
 {
     public CodeCompiler(    string strCode,
@@ -106,7 +106,7 @@ public class CodeCompiler
 
 Now, the last thing we need is a lot of glue code and the logic that actually sends the prompt and re-prompts if things fail.
 
-```C#
+```c#
 public class OpenAIStuff
 {
     public static CodeCompiler oCreateCompiledCode( string strPrompt,
