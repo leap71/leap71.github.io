@@ -22,7 +22,7 @@ We believe Computational Engineering will dramatically change the way we design 
 | ![PicoGK_sm](images/PicoGK_sm.png)               | Besides PicoGK, our foundational geometry kernel, we have open sourced many examples and supporting code modules which showcase the power of Computational Engineering. [Check out the LEAP 71 Github to explore the repositories.](https://github.com/leap71) |
 | ![aerospike](images/aerospike.jpg)               | To get an impression of what our computational models are capable of, [visit the LEAP 71 gallery](https://leap71.com/gallery/) and [follow us on Instagram](https://www.instagram.com/leap.71/) for your daily dose of inspiration. |
 | ![jlk](images/jlk.jpg)                           | The [personal website of the founders of LEAP 71](https://jlk.ae/), Josefine Lissner and Lin Kayser, has background articles, podcasts and other material which explain the roots of this new paradigm. |
-| ![Coding](images/Coding.jpg)                     | **Coding for engineers** [is an book about learning how to code](coding-for-engineers/0-preamble.md) on PicoGK, which is released chapter by chapter by Lin Kayser. |
+| ![Coding](images/Coding.jpg)                     | **Coding for engineers** [is an book about learning how to code](coding-for-engineers/) on PicoGK, which is released chapter by chapter by Lin Kayser. |
 | ![PicoGK_Labs_Icon](images/PicoGK_Labs_Icon.jpg) | On [PicoGK Labs, we showcase ongoing work in progress](labs/README.md), and our latest public experiments with PicoGK. Anything from designing quasi-crystal-like engineering structures, to using Large Language Models to create a conversational interface to engineering. |
 
 ![examples2](images/examples2.jpg)

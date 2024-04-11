@@ -2,8 +2,10 @@
 
 ![Coding for Engineers](assets/CodingforEngineers.jpg)
 
-[0 — Preamble: My story](0-preamble.md)
+[0 — Preamble: My story](README.md)
+
 [1 — Foreword](1-foreword.md)
+
 [**2 — Fundamentals**](2-fundamentals.md)
 
 # Fundamentals
