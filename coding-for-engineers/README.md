@@ -40,7 +40,7 @@ All this results in the unfortunate situation, where more and more people think 
 
 To make it less hard, well-meaning inventors of new programming languages like Python set out to eliminate weird things like curly braces or strong typing. Unfortunately, they are all solving the wrong issues. There is just very little well-written code out there, most of it unnecessarily obfuscates what it is doing. Many "elegant" ways of solving a problem are making it extremely hard to understand for a beginner what is actually happening. 
 
-Actual elegant code is code where you understand at a glance what is happening.
+Actual elegant code is code where you understand at a glance what is going on.
 
 So, coding has gotten harder. Most people don't code — they copy and paste stuff together until it works. That's why "tolerant" programming languages like Python have become so popular. You can actually write clean and elegant code in Python. It's just rarely done.
 

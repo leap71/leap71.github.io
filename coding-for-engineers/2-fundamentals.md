@@ -38,7 +38,7 @@ Now, we could store this `string` of characters, which spell out `"Hello World"`
 
 A variable is a place in the computer's memory to store information. 
 
-A variable in C# and many other programming languages, has a *name* and a *type*. A variable's *type* defines what kind data you can store in the it. A variable of type `string` can store strings and nothing else. If you want to store a number in a variable of type `string`, you explicitly have to convert it to a string of characters first. This is important to remember, because some modern programming languages, like Python, try to blur the differences between different kinds of data, which seems helpful at first, but is actually very dangerous. 
+A variable in C# and many other programming languages, has a *name* and a *type*. A variable's *type* defines what kind data you can store in it. A variable of type `string` can store strings and nothing else. If you want to store a number in a variable of type `string`, you explicitly have to convert it to a string of characters first. This is important to remember, because some modern programming languages, like Python, try to blur the differences between different kinds of data, which seems helpful at first, but is actually very dangerous. 
 
 To come back to our example, to store data in a variable, we have to tell the computer first, that this variable exists, and what type it has.
 
@@ -79,7 +79,9 @@ So if you want to store a number in a string, you have to first convert the numb
 
 On the flip side, if you have a `string`, which you *hope* contains a number — before you actually do math with the number, wouldn't it be reasonable to first see if you can actually extract the number from it? If a string, for example, contains the characters `1.000mm`, you'd have to make sure to strip away the unit (mm). Or, maybe you'd actually have to do some math, and multiply by a thousand if the unit was meters instead. What if your string contained `Hello World` instead of a number — how should that be handled? Is this an error? Or should we just treat it as zero?
 
-C# avoids implicit conversions. Other programming languages, unfortunately, are "helpfully" converting stuff for you these days. So `"Hello World"` magically becomes `0`, and both `"100mm"` and `"5m"` are converted to `0` as well (the default)... Implicit conversions are incredibly dangerous in any large scale software project.
+C# avoids implicit conversions. Other programming languages, unfortunately, are "helpfully" converting stuff for you these days. So `"Hello World"` magically becomes `0`, and both `"100mm"` and `"5m"` are converted to `0` as well (which is the default value for "I have no clue what this value is supposed to be")... 
+
+Implicit conversions are incredibly dangerous in any large scale software project.
 
 That's why we chose C#, and easy-to-use strongly typed modern language, for the basis of [PicoGK](https://leap71.com/PicoGK/).
 
@@ -87,7 +89,7 @@ That's why we chose C#, and easy-to-use strongly typed modern language, for the 
 
 Now, in the past, instructions and data were seen as separate things. 
 
-Instructions were performed on data, but the instruction had no clue about where the data was coming from, and whether it actually made sense to perform the instruction on it. As long as the type of data was correct, say, a number, the instructions were be performed. If you sent nonsense in, nonsense came out. This kind of programming is called *functional programming* — and, unfortunately, it is still prevalent today. It's what you get when you copy and paste stuff linearly together, to hack together a "script" that performs a certain function. This spaghetti code, which is very common today, is not good software architecture.
+Instructions were performed on data, but the instruction had no clue about where the data was coming from, and whether it actually made sense to perform the instruction on it. As long as the type of data was correct, say, a number, the instructions were be performed. If you sent nonsense in, nonsense came out. This kind of programming is called *procedural programming* — and, unfortunately, it is still prevalent today. It's what you get when you copy and paste stuff linearly together, to hack together a "script" that performs a certain function. This spaghetti code, which is very common today, is not good software architecture.
 
 In our real, physical world, we don't deal with abstract data and run mindless operations on it. In our real world, we deal with objects. These objects have properties, and they have ways we can interact with them. 
 
@@ -97,7 +99,7 @@ Turning on the light, is something that makes only sense for that particular obj
 
 This insight led to a veritable revolution in computer programming in the late 80s and 90s, it led to the *object oriented programming* paradigm.
 
-In object-oriented programming there are certain classes of objects, and you interact with them, by changing their properties, and invoking their methods. A user of an instance of a class, you may invove functions and check properties without needing to know exactly how they are implemented internally (just like I don't have to understand the electrical wiring of my car in order to switch on the lights). Everything is bundled together and the creator of the class of objects is responsible for making sure, that all functionality actually makes sense, and the state of the object is always valid.
+In object-oriented programming there are certain classes of objects, and you interact with them, by changing their properties, and invoking their methods. A user of an instance of a class, you may invoke functions and check properties without needing to know exactly how they are implemented internally (just like I don't have to understand the electrical wiring of my car in order to switch on the lights). Everything is bundled together and the creator of the class of objects is responsible for making sure, that all functionality actually makes sense, and the state of the object is always valid.
 
 In C# everything is an object (or at least a structure, we'll get to that in later chapters).
 
@@ -259,7 +261,7 @@ class TeslaRoadster
 }
 ```
 
-So now, we have two ways to create an object of type `TeslaRoadster` — one which which allows us to give the car a name, and one which doesn't require it. Both result in a valid object, because the name is initialized properly.
+So now, we have two ways to create an object of type `TeslaRoadster` — one which allows us to give the car a name, and one which doesn't require it. Both result in a valid object, because the name is initialized properly.
 
 Let's add one more constructor, to show you the power.
 
