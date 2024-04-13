@@ -36,7 +36,7 @@ And while I will be general at the beginning, I will quickly use PicoGK, the ope
 
 Computational Engineering is the biggest revolution in engineering since the introduction of CAD. It is essential for every engineer to become proficient in encoding their knowledge into algorithms — it's the only way you will have the ability to solve the complex engineering challenges that the 21st century will throw at you. 
 
-It will allow you build machines that have never been built before, [which approach the complexity of natural objects](https://www.ted.com/talks/lin_kayser_let_s_build_machines_as_complex_as_nature).
+It will allow you to build machines that have never been built before, [which approach the complexity of natural objects](https://www.ted.com/talks/lin_kayser_let_s_build_machines_as_complex_as_nature).
 
 So, let's dive in.
 

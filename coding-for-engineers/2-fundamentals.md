@@ -12,7 +12,7 @@
 
 In this chapter we will go on a whirlwind tour from the general concept of a computer to the paradigm of object oriented programming.
 
-We will cover a lot of ground, but after reading this chapter carefully, you will have a solid foundation of modern software principles, that we wild built upon in the following chapters.
+We will cover a lot of ground, but after reading this chapter carefully, you will have a solid foundation of modern software principles, that we will built upon in the following chapters.
 
 So, what is a computer anyway?
 
@@ -89,17 +89,17 @@ That's why we chose C#, and easy-to-use strongly typed modern language, for the 
 
 Now, in the past, instructions and data were seen as separate things. 
 
-Instructions were performed on data, but the instruction had no clue about where the data was coming from, and whether it actually made sense to perform the instruction on it. As long as the type of data was correct, say, a number, the instructions were be performed. If you sent nonsense in, nonsense came out. This kind of programming is called *procedural programming* — and, unfortunately, it is still prevalent today. It's what you get when you copy and paste stuff linearly together, to hack together a "script" that performs a certain function. This spaghetti code, which is very common today, is not good software architecture.
+Instructions were performed on data, but the instruction had no clue about where the data was coming from, and whether it actually made sense to perform the instruction on it. As long as the type of data was correct, say, a number, the instructions were performed. If you sent nonsense in, nonsense came out. This kind of programming is called *procedural programming* — and, unfortunately, it is still prevalent today. It's what you get when you copy and paste stuff linearly together, to hack together a "script" that performs a certain function. This spaghetti code, which is very common today, is not good software architecture.
 
 In our real, physical world, we don't deal with abstract data and run mindless operations on it. In our real world, we deal with objects. These objects have properties, and they have ways we can interact with them. 
 
 Imagine you have a car. It has certain properties. Some are static and never change, like the type of fuel it uses. Some vary, such as the speed or mileage driven. You have ways to interact with your car: you can press the accelerator, you can turn on the light. It would be downright silly, if we had an abstract instruction called `TurnOnLight` and we had to pass it a variable of the type `ElectricCurrent`, hoping nobody had mixed up the cables that lead to the light bulb.
 
-Turning on the light, is something that makes only sense for that particular object (a car — it makes no sense for an elephant!). It only makese sense for that one instance, and it may be implemented differently in different types of cars — there is no universal way to do it, using universal instructions. The functionality, just like the properties, belong to the car I am driving right now, they are implemented for this particular make (or class) of car, and they may be different between various manufacturers (but the interface exposed to me as a driver, say, the brake pedal, is the same).
+Turning on the light, is something that makes only sense for that particular object (a car — it makes no sense for an elephant!). It only applies to that one instance, and it may be implemented differently in different types of cars — there is no universal way to do it, using universal instructions. The functionality, just like the properties, belong to the car I am driving right now, they are implemented for this particular make (or class) of car, and they may be different between various manufacturers (but the interface exposed to me as a driver, say, the brake pedal, is the same).
 
 This insight led to a veritable revolution in computer programming in the late 80s and 90s, it led to the *object oriented programming* paradigm.
 
-In object-oriented programming there are certain classes of objects, and you interact with them, by changing their properties, and invoking their methods. A user of an instance of a class, you may invoke functions and check properties without needing to know exactly how they are implemented internally (just like I don't have to understand the electrical wiring of my car in order to switch on the lights). Everything is bundled together and the creator of the class of objects is responsible for making sure, that all functionality actually makes sense, and the state of the object is always valid.
+In object-oriented programming there are certain classes of objects, and you interact with them, by changing their properties, and invoking their methods. As a user of an instance of a class, you may invoke functions and check properties without needing to know exactly how they are implemented internally (just like I don't have to understand the electrical wiring of my car in order to switch on the lights). Everything is bundled together and the creator of the class of objects is responsible for making sure, that all functionality actually makes sense, and the state of the object is always valid.
 
 In C# everything is an object (or at least a structure, we'll get to that in later chapters).
 
@@ -116,13 +116,13 @@ class TeslaRoadster
 }
 ```
 
-This essentially tells the world, that there is now a new type in our software code, it's a certain class of cars, called `TeslaRoadster`. The curly braces `{ }` are always used in C# to show that the code block between them belongs together. Again, remember, that whitespace and paragraphs are (mostly) ignored in C#, so it's the same as if we had written.
+This essentially tells the world, that there is now a new type in our software code, it's a certain class of cars, called `TeslaRoadster`. The curly braces `{ }` are always used in C# to show that the code block between them belongs together. Again, remember, that whitespace and paragraphs are (mostly) ignored in C#, so it's the same as if we had written
 
 ```c#
 class TeslaRoadster {}
 ```
 
-But, it wouldn't be very readable, because we need to add more to this code block.
+but, it wouldn't be very readable, because we need to add more to this code block.
 
 So, let's imagine, we have certain data we want to store inside of our car object. We want this data to be associated with any car we create, and it should always travel with the car. So, let's try this.
 
@@ -142,7 +142,7 @@ Now, let's look at this briefly. Why is there all this weird stuff, like `m_f` e
 
 This is just convention, and maybe I am a bit old-fashioned about this. In my personal programming style, which I have used for 40 years and which has resulted in some very solid code, I have always prefixed the variable and function names with a type. In this case `f` tells me at a glance, that I am dealing with a `float` value here, and `str` tells me this is a string. The prefix `m_` tells me (just me, the computer doesn't care), that this is a member variable that belongs to my class. 
 
-You will see a lot of code out that doesn't follow this style (you can name variables however you want). In my experience I found it extremly hard to read someone else's code, unless they followed these kinds of conventions. Is the variable I am seeing a number, is it a list of things, is it a complex object? I (and all my teams) have been doing this forever, and it has always made things much easier. So there you go.
+You will see a lot of code out there that doesn't follow this style (you can name variables however you want). In my experience I found it extremly hard to read someone else's code, unless they followed these kinds of conventions. Is the variable I am seeing a number, is it a list of things, is it a complex object? I (and all my teams) have been doing this forever, and it has always made things much easier. So there you go.
 
 OK, now let's go back to our example. We have a class now, which describes a certain type of car. It has associated data, but it doesn't do anything. We may have to add functionality. Let's give our car a way to charge itself.
 
@@ -323,13 +323,13 @@ class TeslaRoadster
 
 So, this allows us to optionally specify the charge level and the name of the car. It only works in sequence, though, so if you want to supply the charge level, you first have to give the car a name.
 
-Now, we covered a lot of ground in this chapter, from the first Turing Machines to creating or first `class` definition. Let's introduce one more concept, that's essential in order for us to actually use the class we created, and then we go compiling.
+Now, we covered a lot of ground in this chapter, from the first Turing Machines to creating our first `class` definition. Let's introduce one more concept, that's essential in order for us to actually use the class we created, and then we go compiling.
 
 ### Visibility
 
 By default, everything you create in C# has the visibility `private`. In other words, nobody outside the class can see what we created. 
 
-This is called *Information Hiding* and is an important concept of object oriented programming. Before this paradigm, every aspect about everything a programmer created was always public. Information was stored in global variables, which anyone could read and manipulate. Everybody could invoke functions on any kind of data . This sounds very powerful — but it is incredibly dangerous! You might not know how the code was designed. If you modified a variable, maybe the app continued to work OK, but something was "off" somewhere, and you would not know about this, until it is too late. And if someone changed the implementation, a lot of things outside would also need to be adjusted. 
+This is called *Information Hiding* and is an important concept of object oriented programming. Before this paradigm, every aspect about everything a programmer created was always public. Information was stored in global variables, which anyone could read and manipulate. Everybody could invoke functions on any kind of data. This sounds very powerful — but it is incredibly dangerous! You might not know how the code was designed. If you modified a variable, maybe the app continued to work OK, but something was "off" somewhere, and you would not know about this, until it was too late. And if someone changed the implementation, a lot of things outside would also need to be adjusted. 
 
 This interdependency of internal structures and the side effects they are causing is a software developer's definition of hell. 
 
@@ -442,7 +442,7 @@ The last function calculates a battery health value, based on some internal know
 
 Keep your data `private` in almost all cases. There are very few instances where you want to expose the data directly, but these are rare.
 
-If you don't expose your internal data, you can change every aspect of your class, without having the change the interface to it (imagine deciding to use an `uint` to store the charge level. We could make that change without changing anything about how the object is used from the "outside" — the interface would stay the same).
+If you don't expose your internal data, you can change every aspect of your class, without having to change the interface (imagine deciding to use an `uint` to store the charge level. We could make that change without modifying anything about how the object is used from the "outside" — the interface would stay the same).
 
 ## Summary
 
