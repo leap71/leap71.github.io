@@ -21,17 +21,17 @@ Here's our final class definition from before.
 ```c#
 public class TeslaRoadster
 {
-    public TeslaRoadster(	string	strName 		= "Poor anonymous car",
-                            uint	nPercentFull	= 0)
+    public TeslaRoadster(   string  strName         = "Poor anonymous car",
+                            uint    nPercentFull    = 0)
     {
-        m_fBatteryLevel	= nPercentFull / 100.0f;
-        m_strName		= strName;
+        m_fBatteryLevel  = nPercentFull / 100.0f;
+        m_strName        = strName;
     }
 
     public void Charge()
     {
-        m_fBatteryLevel 	= 1;
-        m_nChargingCycles	= m_nChargingCycles + 1;
+        m_fBatteryLevel     = 1;
+        m_nChargingCycles   = m_nChargingCycles + 1;
     }
 
     public string strName()
@@ -51,9 +51,9 @@ public class TeslaRoadster
         return Convert.ToUInt32(fHealth * 100.0f);
     }
 
-    float	m_fBatteryLevel;
-    uint	m_nChargingCycles = 0;
-    string 	m_strName;
+    float   m_fBatteryLevel;
+    uint    m_nChargingCycles = 0;
+    string  m_strName;
 }
 ```
 
@@ -133,19 +133,19 @@ Let's pick a Namespace to use for our project, let's call it `CSForEngineers` an
 ```c#
 namespace CSForEngineers
 {
-	public class TeslaRoadster
+    public class TeslaRoadster
     {
-        public TeslaRoadster(	string	strName 		= "Poor anonymous car",
-                      	        uint	nPercentFull	= 0)
+        public TeslaRoadster(    string  strName      = "Poor anonymous car",
+                                 uint    nPercentFull = 0)
         {
-            m_fBatteryLevel	= nPercentFull / 100.0f;
-    	    m_strName		= strName;
+            m_fBatteryLevel  = nPercentFull / 100.0f;
+            m_strName        = strName;
         }
     
         public void Charge()
         {
-            m_fBatteryLevel 	= 1;
-            m_nChargingCycles	= m_nChargingCycles + 1;
+            m_fBatteryLevel     = 1;
+            m_nChargingCycles   = m_nChargingCycles + 1;
         }
     
         public string strName()
@@ -165,9 +165,9 @@ namespace CSForEngineers
             return Convert.ToUInt32(fHealth * 100.0f);
         }
     
-	    float	m_fBatteryLevel;
-        uint	m_nChargingCycles = 0;
-        string 	m_strName;
+        float   m_fBatteryLevel;
+        uint    m_nChargingCycles = 0;
+        string  m_strName;
     }
 }
 ```

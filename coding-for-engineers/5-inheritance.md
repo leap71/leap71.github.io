@@ -51,14 +51,14 @@ Here is how our generalized `Car` class could look like:
 ```c#
 public class Car
 {   
-	public Car(string strName = "Unnamed Car")
+    public Car(string strName = "Unnamed Car")
     {
-    	m_strName = strName;
+        m_strName = strName;
     }
 
     public string strName()
     {
-    	return m_strName;
+        return m_strName;
     }
     
     string m_strName;
@@ -80,17 +80,17 @@ In our constructor we have to make sure we call the constructor of the base clas
 ```c#
 public class TeslaRoadster : Car
 {
-    public TeslaRoadster( 	string	strName 		= "Unnamed Tesla Roadster",
-                        	uint	nPercentFull	= 0) 
+    public TeslaRoadster(   string  strName         = "Unnamed Tesla Roadster",
+                            uint    nPercentFull    = 0) 
         : base(strName)
     {
-        m_fBatteryLevel	= nPercentFull / 100.0f;
+        m_fBatteryLevel    = nPercentFull / 100.0f;
     }
 
     public void Charge()
     {
-        m_fBatteryLevel 	= 1;
-        m_nChargingCycles	= m_nChargingCycles + 1;
+        m_fBatteryLevel     = 1;
+        m_nChargingCycles   = m_nChargingCycles + 1;
     }
 
     public uint nBatteryLevelPercent()
@@ -105,8 +105,8 @@ public class TeslaRoadster : Car
         return (uint) (fHealth * 100.0f);
     }
 
-    float	m_fBatteryLevel;
-    uint	m_nChargingCycles = 0;
+    float   m_fBatteryLevel;
+    uint    m_nChargingCycles = 0;
 }
 ```
 
@@ -159,7 +159,7 @@ Let's do this in the derived class. So in our `TeslaModel3` class, let's add
 ```c#
 public override void PrepareForDriving()
 {
-	Charge();
+    Charge();
 }
 ```
 
