@@ -134,7 +134,7 @@ Let's also give the car a name, just so we can differentiate different ones.
 class TeslaRoadster
 {
 	float	m_fBatteryLevel;
-    string 	m_strName;
+	string 	m_strName;
 }
 ```
 
@@ -155,7 +155,7 @@ class TeslaRoadster
     }
     
 	float	m_fBatteryLevel;
-    string 	m_strName;
+	string 	m_strName;
 }
 ```
 
@@ -187,7 +187,7 @@ Let's do the straighforward one first (leaving out the `Charge` function for bre
 class TeslaRoadster
 {
     float	m_fBatteryLevel	= 0;
-    string 	m_strName		= "";
+	string 	m_strName		= "";
 }
 ```
 
@@ -209,7 +209,7 @@ class TeslaRoadster
     }
     
     float	m_fBatteryLevel;
-    string 	m_strName;
+	string 	m_strName;
 }
 ```
 
@@ -231,7 +231,7 @@ class TeslaRoadster
     }
     
     float	m_fBatteryLevel;
-    string 	m_strName;
+	string 	m_strName;
 }
 ```
 
@@ -246,18 +246,18 @@ class TeslaRoadster
 {
     TeslaRoadster()
     {
-        m_fBatteryLevel	= 0;
-        m_strName		= "Poor anonymous car";
+		m_fBatteryLevel	= 0;
+		m_strName		= "Poor anonymous car";
     }
     
     TeslaRoadster(string strName)
     {
-        m_fBatteryLevel	= 0;
-        m_strName		= strName;
+		m_fBatteryLevel	= 0;
+		m_strName		= strName;
     }
     
-    float	m_fBatteryLevel;
-    string	m_strName;
+	float	m_fBatteryLevel;
+	string	m_strName;
 }
 ```
 
@@ -270,24 +270,24 @@ class TeslaRoadster
 {
     TeslaRoadster()
     {
-        m_fBatteryLevel	= 0;
-        m_strName		= "Poor anonymous car";
+		m_fBatteryLevel	= 0;
+		m_strName		= "Poor anonymous car";
     }
     
     TeslaRoadster(string strName)
     {
-        m_fBatteryLevel	= 0;
-        m_strName		= strName; 
+		m_fBatteryLevel	= 0;
+		m_strName		= strName; 
     }
     
     TeslaRoadster(uint nPercentFull)
     {
-        m_fBatteryLevel	= nPercentFull / 100.0f;
-        m_strName		= "Poor anonymous car"; 
+		m_fBatteryLevel	= nPercentFull / 100.0f;
+		m_strName		= "Poor anonymous car"; 
     }
     
 	float	m_fBatteryLevel;
-    string	m_strName;
+	string	m_strName;
 }
 ```
 
@@ -316,8 +316,8 @@ class TeslaRoadster
         m_fBatteryLevel = 1;
     }
     
-    float	m_fBatteryLevel;
-    string	m_strName;
+	float	m_fBatteryLevel;
+	string	m_strName;
 }
 ```
 
@@ -354,8 +354,8 @@ class TeslaRoadster
     }
     
 	float	m_fBatteryLevel;
-    uint	m_nChargingCycles = 0;
-    string	m_strName;
+	uint	m_nChargingCycles = 0;
+	string	m_strName;
 }
 ```
 
@@ -380,8 +380,8 @@ public class TeslaRoadster
     }
     
 	float	m_fBatteryLevel;
-    uint	m_nChargingCycles = 0;
-    string	m_strName;
+	uint	m_nChargingCycles = 0;
+	string	m_strName;
 }
 ```
 
@@ -428,9 +428,9 @@ public class TeslaRoadster
         return Convert.ToUInt32(fHealth * 100.0f);
     }
 
-    float	m_fBatteryLevel;
-    uint	m_nChargingCycles = 0;
-    string	m_strName;
+	float	m_fBatteryLevel;
+	uint	m_nChargingCycles = 0;
+	string	m_strName;
 }
 ```
 
