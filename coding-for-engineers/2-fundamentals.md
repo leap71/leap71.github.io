@@ -186,7 +186,7 @@ Let's do the straighforward one first (leaving out the `Charge` function for bre
 ```c#
 class TeslaRoadster
 {
-  	float	m_fBatteryLevel	= 0;
+    float	m_fBatteryLevel	= 0;
     string 	m_strName		= "";
 }
 ```
@@ -205,10 +205,10 @@ class TeslaRoadster
     TeslaRoadster()
     {
         m_fBatteryLevel	= 0;
-    	m_strName		= ""; 
+        m_strName		= "";
     }
     
-	float	m_fBatteryLevel;
+    float	m_fBatteryLevel;
     string 	m_strName;
 }
 ```
@@ -227,10 +227,10 @@ class TeslaRoadster
     TeslaRoadster(string strName)
     {
         m_fBatteryLevel	= 0;
-    	m_strName		= strName; 
+        m_strName		= strName;
     }
     
-	float	m_fBatteryLevel;
+    float	m_fBatteryLevel;
     string 	m_strName;
 }
 ```
@@ -247,17 +247,17 @@ class TeslaRoadster
     TeslaRoadster()
     {
         m_fBatteryLevel	= 0;
-    	m_strName		= "Poor anonymous car"; 
+        m_strName		= "Poor anonymous car";
     }
     
     TeslaRoadster(string strName)
     {
         m_fBatteryLevel	= 0;
-    	m_strName		= strName; 
+        m_strName		= strName;
     }
     
-	float	m_fBatteryLevel;
-    string 	m_strName;
+    float	m_fBatteryLevel;
+    string	m_strName;
 }
 ```
 
@@ -271,23 +271,23 @@ class TeslaRoadster
     TeslaRoadster()
     {
         m_fBatteryLevel	= 0;
-    	m_strName		= "Poor anonymous car"; 
+        m_strName		= "Poor anonymous car";
     }
     
     TeslaRoadster(string strName)
     {
         m_fBatteryLevel	= 0;
-    	m_strName		= strName; 
+        m_strName		= strName; 
     }
     
     TeslaRoadster(uint nPercentFull)
     {
         m_fBatteryLevel	= nPercentFull / 100.0f;
-    	m_strName		= "Poor anonymous car"; 
+        m_strName		= "Poor anonymous car"; 
     }
     
 	float	m_fBatteryLevel;
-    string 	m_strName;
+    string	m_strName;
 }
 ```
 
@@ -305,10 +305,10 @@ So, let's simplify our constructors using default parameters:
 class TeslaRoadster
 {
     TeslaRoadster(	string	strName 		= "Poor anonymous car",
-               		uint	nPercentFull	= 0)
+                  	uint	nPercentFull	= 0)
     {
         m_fBatteryLevel	= nPercentFull / 100.0f;
-    	m_strName		= strName;
+        m_strName		= strName;
     }
     
     void Charge()
@@ -316,8 +316,8 @@ class TeslaRoadster
         m_fBatteryLevel = 1;
     }
     
-	float	m_fBatteryLevel;
-    string 	m_strName;
+    float	m_fBatteryLevel;
+    string	m_strName;
 }
 ```
 
@@ -340,22 +340,22 @@ Let's add one more property to our electric car, to illustrate why this is a bad
 ```c#
 class TeslaRoadster
 {
-    TeslaRoadster(	string	strName 		= "Poor anonymous car",
-               		uint	nPercentFull	= 0)
+    TeslaRoadster(	string	strName			= "Poor anonymous car",
+                    uint	nPercentFull	= 0)
     {
         m_fBatteryLevel	= nPercentFull / 100.0f;
-    	m_strName		= strName;
+        m_strName		= strName;
     }
     
     void Charge()
     {
-        m_fBatteryLevel 	= 1;
+        m_fBatteryLevel		= 1;
         m_nChargingCycles	= m_nChargingCycles + 1;
     }
     
 	float	m_fBatteryLevel;
     uint	m_nChargingCycles = 0;
-    string 	m_strName;
+    string	m_strName;
 }
 ```
 
@@ -366,22 +366,22 @@ So, let's have a look at how we deliberately expose our class to the outside wor
 ```c#
 public class TeslaRoadster
 {
-    public TeslaRoadster(	string	strName 		= "Poor anonymous car",
-                      		uint	nPercentFull	= 0)
+    public TeslaRoadster(	string	strName			= "Poor anonymous car",
+                            uint	nPercentFull	= 0)
     {
         m_fBatteryLevel	= nPercentFull / 100.0f;
-    	m_strName		= strName;
+        m_strName		= strName;
     }
     
     public void Charge()
     {
-        m_fBatteryLevel 	= 1;
+        m_fBatteryLevel		= 1;
         m_nChargingCycles	= m_nChargingCycles + 1;
     }
     
 	float	m_fBatteryLevel;
     uint	m_nChargingCycles = 0;
-    string 	m_strName;
+    string	m_strName;
 }
 ```
 
@@ -398,8 +398,8 @@ Please note, that none of our properties are publicly available, so there is no 
 ```c#
 public class TeslaRoadster
 {
-    public TeslaRoadster(	string	strName 		= "Poor anonymous car",
-                        	uint	nPercentFull	= 0)
+    public TeslaRoadster(	string	strName			= "Poor anonymous car",
+                         	uint	nPercentFull	= 0)
     {
         m_fBatteryLevel	= nPercentFull / 100.0f;
         m_strName		= strName;
@@ -407,7 +407,7 @@ public class TeslaRoadster
 
     public void Charge()
     {
-        m_fBatteryLevel 	= 1;
+        m_fBatteryLevel		= 1;
         m_nChargingCycles	= m_nChargingCycles + 1;
     }
 
@@ -430,7 +430,7 @@ public class TeslaRoadster
 
     float	m_fBatteryLevel;
     uint	m_nChargingCycles = 0;
-    string 	m_strName;
+    string	m_strName;
 }
 ```
 
