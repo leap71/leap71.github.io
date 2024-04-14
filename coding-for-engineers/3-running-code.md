@@ -92,11 +92,11 @@ Let's quickly summarize what we just did.
 
 We created a new Console app project. This project has a single main function, implemented in `Program.cs`. For simplicity, C# treats everything in `Program.cs` as a single function. When your app launches, the function is run, when your function completes, the app terminates.
 
-We copied the code from our first examples. We compiled it successfully, and then where able to display some text. 
+We copied the code from our first examples. We compiled it successfully, and then were able to display some text. 
 
 Now, this sounds all very simple, but this is the foundation of every app on every platform — whether on your computer or on your mobile phone. 
 
-Even complex applications like a web browser or image editor, rely on this simple structure. 
+Even complex applications, like a web browser or image editor, rely on this simple structure. 
 
 Their main function is just much more complex, and creates windows for graphics and many other things. To keep the program running for an extended period of time, the main function then stays in a long loop, processing user input, until the user asks to terminate the application. When this happens, the app exits the loop, then it exits the main function — and the program terminates.
 
