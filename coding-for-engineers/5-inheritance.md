@@ -18,7 +18,7 @@
 
 By now, we should be comfortable with the fundamental building blocks we use to create functionality in C#.
 
-We have to identify the logical elements that make up our App. This is actually often simpler for engineering applications, as we are dealing with actual physical objects. In an abstract logical problem, you can easily get lost trying to figure out what constitutes an class,
+We have to identify the logical elements that make up our App. This is actually often simpler for engineering applications, as we are dealing with actual physical objects. In an abstract logical problem, you can easily get lost trying to figure out what constitutes a `class`,
 
 I want to emphasize one important way to thinking that is essential for proper object-oriented programming:
 
@@ -28,21 +28,23 @@ The car in this way of thinking, is just a passive thing, and all the work is do
 
 In object-oriented programming, you keep the functionality close to the object. So the above function would change to "Car, move yourself to this position." Sometimes this may seem a bit counter-intuitive. Isn't the driver the one, who drives the car? Shouldn't there be a `Driver` object that interacts with the car in some standardized way? 
 
-Absolutely, these are valid questions! And making the right choices is key to elegant software architecture. A good software architect will always try to minimize the information that needs to be exchanged in order to arrive at a goal. Information hiding, and limiting exposed functionality to the essentials is key to robust code.
+Absolutely, these are valid questions! 
+
+And making the right choices is key to elegant software architecture. A good software architect will always try to minimize the information that needs to be exchanged in order to arrive at a goal. Information hiding, and limiting exposed functionality to the essentials is key to robust code.
 
 Let's look at a powerful concept in our toolbox, which can help us on our quest to simplify our interactions with objects.
 
 ## Common ancestors
 
-If you think about the world, the things that surround us have a lot in common. Almost everything is an object of some sort. And these objects have many aspects they share. We expect, for example, all physical things to occupy a position in space, have a weight, etc.
+If you think about the world, the things that surround us have a lot in common. Almost everything is an object of some sort. And these objects have aspects they share. We expect, for example, all physical things to occupy a position in space, have a weight, etc.
 
-So, in a way, it makes sense to group objects almost like in a family tree — similar to what we find in biology. There are plants, there are animals, some animals are mammals, whereas others are fish, etc.
+So, in a way, it makes sense to group objects in a family tree — similar to what we find in biology. There are plants, there are animals, some animals are mammals, whereas others are fish, etc.
 
-In object-oriented programming, we use *Inheritance* to build up a hiearchical tree of related objects. We can implement certain common functionality and properties in a *Base Class*. That functionality is then available in all classes that derive from it. 
+In object-oriented programming, we use *Inheritance* to build up a hierarchy of related objects. We can implement certain common functionality and properties in a *Base Class*. That functionality is then available in all classes that derive from it. 
 
 To illustrate, let's go back to our car example.
 
-Some of the things, like the name of our car, are not unique to the `TeslaRoadster` class. They could be moved to a general `Car` class. And basically everyhing in our current class, maybe with the exception of the implementation of a specific battery degradation formula, could be moved to an `ElectricCar` class that is derived from the more general `Car`. If we wanted to implement different types of cars, this would avoid a lot of repetition of code, and make it incredibly easy to create new classes, as all we would have to do is implement the things that special.
+Some of the things, like the name of our car, are not unique to the `TeslaRoadster` class. They could be moved to a general `Car` class. And basically everyhing in our current class, maybe with the exception of the implementation of a specific battery degradation formula, could be moved to an `ElectricCar` class that is derived from the more general `Car`. If we wanted to implement different types of cars, this would avoid a lot of repetition of code, and make it incredibly easy to create new classes. All we would have to do is implement the functionality that is special to the new descendant of the base class.
 
 Let's try this.
 
@@ -75,7 +77,7 @@ We *derive* a class from another class, by adding the ancestral base class with 
 
 This means that all functionality and all data that was created by the base class is now automatically available in the derived class.
 
-In our constructor we have to make sure we call the constructor of the base class. We do this by adding `: base(...)` at the end of the constructor, as below. This passes the name of the car to the base class constructor. If we omit this, the base class constructor will just use its default value, which is not what we want.
+In our constructor we have to make sure we call the constructor of the base class. We do this by adding `: base(...)` at the end of the constructor, as below. This passes the name of the car to the base class constructor. If we omit this, the base class constructor will still be called, but it will use its default value, which is not what we want.
 
 ```c#
 public class TeslaRoadster : Car
@@ -95,14 +97,14 @@ public class TeslaRoadster : Car
 
     public uint nBatteryLevelPercent()
     {
-        return (uint) (m_fBatteryLevel * 100.0f);
+        return Convert.ToUInt32(m_fBatteryLevel * 100.0f);
     }
 
     public uint nBatteryHealthPercent()
     {
         // Calculate an abstract "health percentage"
         float fHealth = 1.0f - (float) m_nChargingCycles / 10000.0f;
-        return (uint) (fHealth * 100.0f);
+        return Convert.ToUInt32(fHealth * 100.0f);
     }
 
     float   m_fBatteryLevel;

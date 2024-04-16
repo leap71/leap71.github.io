@@ -20,11 +20,11 @@ But fortunately, we are many decades from of the beginnings of software, and tod
 
 To get from a high level language to machine-readable instructions, we use a *compiler*. It translates your code into an application, which can then be executed.
 
-There are also other mechanisms. Instead of compiling, you could "interpret" the code as you go, translating it into machine commands, as the code is executed. Interpreted languages, like Python, are quite popular, but they are orders of magnitude slower than compiled languages. It's pretty intuitive to grasp why: If you compile your code, the compiler can globally optimize your program, because it sees the entirety of the code. It can also spend longer amounts of time, looking for the optimum translation, because it doesn't matter whether the compilation takes a little while. 
+There are also other mechanisms. Instead of compiling, you could "interpret" the code as you go, translating it into machine commands, as it is executed. Interpreted languages, like Python, are popular, but they are orders of magnitude slower than compiled languages. It's pretty intuitive to grasp why: If you compile your code, the compiler can globally optimize your program, because it sees the entirety of your application. It can also spend longer amounts of time, looking for the optimum translation, because it doesn't matter whether it takes a little while. 
 
-You do it once, and then your program runs at the native speed of the computer.
+You compile once, and then your program runs at the native speed of the computer.
 
-The disadvantage of compiling is, that your translated code is now specific to the processor and operating system you compiled it for. If you compiled for an Intel-based Windows system, the program doesn't run on a Mac, let alone an ARM-based Mac.
+The disadvantage is, that your translated code is now specific to a processor and operating system. If you compiled for an Intel-based Windows system, the program doesn't run on a Mac, let alone an ARM-based Mac.
 
 In order to get around the problem, people have introduced hybrid architectures. Microsoft's C# compiler translates your application into a [simple code that looks like machine-language](https://en.wikipedia.org/wiki/Bytecode), but is actually cross-platform. Because it is so similar to the instructions that will eventually run on your machine, and because the C# runtime just-in-time compiles it to your target machine, when you launch the app, the speed is close to native code.
 
@@ -40,7 +40,9 @@ We will be using [Visual Studio Code](https://code.visualstudio.com/), but every
 
 You can just install Visual Studio Code on your own, or [follow the instructions to install PicoGK](https://github.com/leap71/PicoGK/blob/main/Documentation), our open-source environment for Computational Engineering. While you don't need [PicoGK](https://picogk.org) for the initial code examples, everything you will learn later will be based on it.
 
-Installing Visual Studio is probably the hardest thing you will do today. I am sorry.
+Installing Visual Studio is probably the hardest thing you will do today. 
+
+I am sorry.
 
 Boy, I miss the days, when you switched on your computer, and you could just code...
 
@@ -50,9 +52,9 @@ But once you have it up and running, we can start with the creative part.
 
 From the previous chapters we know that all code is encapsulated in functions. 
 
-Now, there is one special function that is called when your application is launched. This function *is* your application. As long as you are inside it, your app is alive. When the function exits, your application terminates.
+Now, there is one special function that is called when your application is launched. This function *is* your application. As long as you are inside that function, your app is alive. When it exits, your application terminates.
 
-For the last couple of years this function was simply called `main(..)`, but recently, C# has simplified this a bit — so now the actual function is hidden.
+For the last couple of years this function was simply called `main()`, but recently, C# has simplified this a bit — so now the actual function is hidden.
 
 [When you create a new "Console application" in C#](https://learn.microsoft.com/en-us/dotnet/core/tutorials/with-visual-studio-code), you will see a file called `Program.cs` — everything you put in this file is executed when the application launches, and once all the instructions are completed, your app terminates.
 
@@ -90,15 +92,17 @@ Congratulations, you have run your first app!
 
 Let's quickly summarize what we just did.
 
-We created a new Console app project. This project has a single main function, implemented in `Program.cs`. For simplicity, C# treats everything in `Program.cs` as a single function. When your app launches, the function is run, when your function completes, the app terminates.
+We created a new Console App project. This project has a single main function, implemented in `Program.cs`. For simplicity, C# treats everything in `Program.cs` as a single function. When your app launches, the function is run, when your function completes, the app terminates.
 
 We copied the code from our first examples. We compiled it successfully, and then were able to display some text. 
 
-Now, this sounds all very simple, but this is the foundation of every app on every platform — whether on your computer or on your mobile phone. 
+Now, this sounds all a bit simple, but this is the foundation of every app on every platform — whether on your computer or on your mobile phone. 
 
 Even complex applications, like a web browser or image editor, rely on this simple structure. 
 
-Their main function is just much more complex, and creates windows for graphics and many other things. To keep the program running for an extended period of time, the main function then stays in a long loop, processing user input, until the user asks to terminate the application. When this happens, the app exits the loop, then it exits the main function — and the program terminates.
+Their main function is obviously much more complex, and creates windows for graphics and does many other things. 
+
+To keep the program running for an extended period of time, the main function stays in a long loop, processing user input, until the user asks to terminate the application. When this happens, the app exits the loop, then it exits the main function — and the program terminates.
 
 So now we have this out of our way, we can move on to the fun part.
 

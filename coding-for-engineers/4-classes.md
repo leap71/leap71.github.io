@@ -61,17 +61,17 @@ Now, it's time to put it somewhere.
 
 Let's create a new text file, and save it under the name `Cars.cs`.
 
-Now, before we copy and paste our code there, we need to understand one more concept, the concept of *Namespaces*.
+Now, before we copy and paste our code there, we need to understand one more concept, the concept of *namespaces*.
 
 ## Namespaces
 
-In the old day of programming, every symbol you defined was global. If I called a variable `fResult`and someone else called it the same, it would lead to all kinds of interesting problems. Organizing things into Classes helped a lot, but still, you and I may both create a Class called `Car` and the names would collide. So, people started adding project-specific prefixes and performed kinds of tricks, in order to prevent this — and soon functions started to look like your cat accidentally walked over your keyboard during coding. 
+In the old day of programming, every symbol you defined was global. If I called a variable `fResult`and someone else called it the same, it would lead to all kinds of interesting problems. Organizing things into dlasses helped a lot, but still, you and I may both create a class called `Car` and the names would collide. So, people started adding project-specific prefixes and performed kinds of tricks, in order to prevent this — and soon functions started to look like your cat accidentally walked over your keyboard during coding. 
 
 If you see some of these names, you know they come from a bygone era. Take a name like this one from the Apple API: `NSAttributedStringEnumerationOptions` — the NS prefix tells us, it has its origins in the [NeXTSTEP](https://en.wikipedia.org/wiki/NeXTSTEP) programming environment, which was introduced when Steve Jobs, freshly kicked out of Apple, started his a new company, called NeXT (which later provided the foundation for MacOS X, after Apple realized they made a mistake).
 
-This is a long-winded way of saying, we needed a way to organize things without endless function and variable names. The solution are *Namespaces*.
+This is a long-winded way of saying, we needed a way to organize things without endless function and variable names. The solution are *namespaces*.
 
-Namespaces are that exactly: a space, isolated from the rest of the world, where you can call things, however you want.
+Namespaces are that exactly: a space, isolated from the rest of the world, where you can call things, whatever you want.
 
 ```c#
 namespace PicoGK
@@ -83,9 +83,9 @@ namespace PicoGK
 }
 ```
 
-Now, whenever we want to create a variable of type `Voxel`, we can 100% identify it as `PicoGK.Voxels`.
+Now, whenever we want to create a variable of type `Voxels`, we can 100% identify it as `PicoGK.Voxels`.
 
-Now, how is this better than just calling it `PicoGK_Voxel` or `PKVoxel` or whatever in the first place?
+Now, how is this better than just calling it `PicoGK_Voxels` or `PKVoxels` or whatever in the first place?
 
 Because of the `using` statement.
 
@@ -95,7 +95,7 @@ Since, very often, our code will use stuff from the same namespaces. We can writ
 using PicoGK;
 ```
 
-At the top of our code, and now we can simply write `Voxel` instead of `PicoGK.Voxels`. Whenever things get ambiguous, the compiler will complain, and force you to uniquely identify your symbol with the right prefix.
+At the top of our code, and now we can simply write `Voxels` instead of `PicoGK.Voxels`. Whenever things get ambiguous, the compiler will complain, and force you to uniquely identify your symbol with the right prefix.
 
 Namespaces can be nested, so, there is nothing that prevents you from doing something like that:
 
@@ -122,13 +122,13 @@ using Leap71.PicoGK;
 
 and you are back to just writing `Voxels`.
 
-All classes in C# are organized using Namespaces, even the built-in ones. Most of them use the `System` Namespace. And because this Namespace is so prevalent, the compiler assumes that you are always `using System`.
+All classes in C# are organized using namespaces, even the built-in ones. Most of them use the `System` namespace. And because the `System` namespace is so omnipresent, the compiler assumes that you are always `using System`.
 
 So, with that knowledge, let's complete our class definition and start using it.
 
 ## Class definition
 
-Let's pick a Namespace to use for our project, let's call it `CSForEngineers` and paste in our previous class definition.
+Let's pick a namespace to use for our project, let's call it `CSForEngineers` and paste in our previous class definition.
 
 ```c#
 namespace CSForEngineers
@@ -194,7 +194,7 @@ OK, what have we done here? We have declared a new variable of type `CSForEngine
 
 Then we created a new object of the type `TeslaRoadster` and assigned it to the `oLinsCar` variable.
 
-Now, before we continue, let's first simplify things a little. Let's add `using CSForEngineers` to the top of `Program.cs` as we will be spending all of our time in this Namespace.
+Now, before we continue, let's first simplify things a little. Let's add `using CSForEngineers` to the top of `Program.cs` as we will be spending all of our time in this namespace.
 
 We can simplify our code now to:
 
@@ -236,7 +236,7 @@ TeslaRoadster oLinsCar = new();
 Console.WriteLine(oLinsCar.strName());
 ```
 
-The output will be `Poor anonymous car` Because, that's the default value for the name. We should change that.
+The output will be `Poor anonymous car`, because, that's the default value for the name. We should change that.
 
 Remember that constructors are just functions, and functions can have parameters. And we actually did add parameters to our constructor (but they had default values, so we did not need to provide them). 
 
@@ -265,7 +265,7 @@ Console.WriteLine(oLinsCar.nBatteryLevelPercent().ToString());
 
 Remember everything is an object in C#? `nBatteryLevelPercent` is an unsigned integer value. But this value object conveniently exposes a function to convert it to a `string`.
 
-The charge level is `0` — that's not good. We should charge it before we drive.
+The charge level is `0` — that's not good. We should charge it before we drive!
 
 ```c#
 using CSForEngineers;
@@ -277,9 +277,9 @@ oLinsCar.Charge();
 Console.WriteLine(oLinsCar.nBatteryLevelPercent().ToString());
 ```
 
-Now our charge level has reached `100`%, so we are ready to go.
+Now our charge level is `100`%, so we are ready to go driving.
 
-Now, we can create more cars for more people, and have a bit of fun with variables. This illustrates how these objects are all of the same class, but they each have a life of their own, just like my car may be the same make and model of your car, but clearly we each have our own object.
+We can create more cars for more people, and have a bit of fun with variables. This illustrates how these objects are all of the same class, but they each have a life of their own, just like my car may be the same make and model of your car, but clearly we each have our own separate object.
 
 ```c#
 using CSForEngineers;
@@ -300,7 +300,7 @@ Console.WriteLine(oEmmasCar.nBatteryLevelPercent().ToString());
 
 While this may seem like a simple example, we have successfully demonstrated a number of important concepts.
 
-First of all, everything in C# is an object. To avoid naming collisions, C# has the concept of (nested) *Namespaces*. We have put our class definition in a Namespace that makes sense for us, and by employing the `using` statement, we can avoid verbosity.
+First of all, everything in C# is an object. To avoid naming collisions, C# has the concept of (nested) *namespaces*. We have put our class definition in a namespace that makes sense for us, and by employing the `using` statement, we can avoid verbosity.
 
 But actually, the most important thing we have demonstrated though, is the power of object oriented programming to encapsulate both functions and data in one object. By hiding the actual implementation, we have decoupled the interface of the object from the internals. The percentage of our battery level is stored as a floating point value internally, but we interact with it through an integer percentage value. The interface to our car is deceptively simple, but the actual implementation behind this interface, can be quite elaborate.
 
