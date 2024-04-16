@@ -26,7 +26,7 @@ You compile once, and then your program runs at the native speed of the computer
 
 The disadvantage is, that your translated code is now specific to a processor and operating system. If you compiled for an Intel-based Windows system, the program doesn't run on a Mac, let alone an ARM-based Mac.
 
-In order to get around the problem, people have introduced hybrid architectures. Microsoft's C# compiler translates your application into a [simple code that looks like machine-language](https://en.wikipedia.org/wiki/Bytecode), but is actually cross-platform. Because it is so similar to the instructions that will eventually run on your machine, and because the C# runtime just-in-time compiles it to your target machine, when you launch the app, the speed is close to native code.
+In order to get around the problem, people have introduced hybrid architectures. Microsoft's C# compiler translates your application into a [simple code that looks like machine-language](https://en.wikipedia.org/wiki/Bytecode), but is actually cross-platform. Because it is so similar to the instructions that will eventually run on your machine, and because the C# runtime [just-in-time compiles](https://en.wikipedia.org/wiki/Just-in-time_compilation) it to your target machine, when you launch the app, the speed is close to native code.
 
 Native code is still faster, and that's why the [PicoGK Runtime](https://github.com/leap71/PicoGKRuntime), which is written in C++, is compiled for different archictures, and you need to [run the right installer to get PicoGK working on your system](https://github.com/leap71/PicoGK/releases).
 
