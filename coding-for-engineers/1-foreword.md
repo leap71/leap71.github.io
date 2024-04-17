@@ -8,6 +8,8 @@
 
 [2 — Fundamentals](2-fundamentals.md)
 
+[3 — Running Code](3-running-code.md)
+
 # Foreword
 
 There are many programming courses out there, including for C#.

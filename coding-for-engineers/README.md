@@ -8,6 +8,8 @@
 
 [2 — Fundamentals](2-fundamentals.md)
 
+[3 — Running Code](3-running-code.md)
+
 ## Preamble: My Story
 
 I learnt coding in 1980, when I was 8 years old. Coding, programming, back then was simple. You just turned on the computer, and before the CRT screen of your TV set had warmed up to actually show anything, you could already type your first command. 

@@ -108,7 +108,7 @@ So now we have this out of our way, we can move on to the fun part.
 
 -----
 
-Next Week: Classes
+Next Week: **Classes**
 
 ------
 
