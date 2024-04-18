@@ -320,6 +320,8 @@ We will explore this concept in the next chapter on inheritance, and later with 
 
 Next week: Interitance
 
+[Jump into the discussion here](https://github.com/leap71/PicoGK/discussions/categories/coding-for-computational-engineers)
+
 ---
 
 **[PicoGK.org](https://picogk.org)/coding for engineers**

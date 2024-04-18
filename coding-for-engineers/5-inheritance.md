@@ -234,6 +234,8 @@ One important thing to always remember is, regardless of what variable you store
 
 Next week: Polymorphism in action
 
+[Jump into the discussion here](https://github.com/leap71/PicoGK/discussions/categories/coding-for-computational-engineers)
+
 ---
 
 **[PicoGK.org](https://picogk.org)/coding for engineers**

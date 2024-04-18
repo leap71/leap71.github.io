@@ -46,6 +46,8 @@ So, let's dive in.
 
 Next: **[Fundamentals](2-fundamentals.md)**
 
+[Jump into the discussion here](https://github.com/leap71/PicoGK/discussions/categories/coding-for-computational-engineers)
+
 ------
 
 **[PicoGK.org](https://picogk.org)/coding for engineers**

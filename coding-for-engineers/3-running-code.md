@@ -110,6 +110,8 @@ So now we have this out of our way, we can move on to the fun part.
 
 Next Week: **Classes**
 
+[Jump into the discussion here](https://github.com/leap71/PicoGK/discussions/categories/coding-for-computational-engineers)
+
 ------
 
 **[PicoGK.org](https://picogk.org)/coding for engineers**
