@@ -12,19 +12,19 @@
 
 ## Preamble: My Story
 
-I learnt coding in 1980, when I was 8 years old. Coding, programming, back then was simple. You just turned on the computer, and before the CRT screen of your TV set had warmed up to actually show anything, you could already type your first command. 
+I learned coding in 1980, when I was 8 years old. Coding, programming, back then was simple. You just turned on the computer, and before the CRT screen of your TV set had warmed up enough to actually show anything, you could already type your first command. 
 
 In fact, it was the only thing you could do with the thing.
 
-Unfortunately, I did neither have a TV nor a computer. 
+Unfortunately, I had neither a TV nor a computer. 
 
-So I taught myself coding from a German computer magazine I bought at a newspaper stand. And I coded on a notebook — a paper notebook. It was so cool. When I was 10, I finally [got a programmable calculator, a TI-66](https://ja.wikipedia.org/wiki/TI-66#/media/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB:TI-66.jpg). With it, I could start coding for real (really just steps of math, plus some control statements). [Inspired by my uncle's spacecraft ambitions](https://jlk.ae/2018/09/01/fly-rocket-fly-telling-the-story-of-uncle-lutz-attempt-to-conquer-space/), one of the first "apps" I wrote calculated the trajectory of a multi-stage rocket, using Tsiolkowsky's foundational equations (the math is actually not hard).
+So I taught myself coding from a German computer magazine I bought at a newspaper stand. And I coded on a notebook — a paper notebook. It was so cool. When I was 10, I finally [got a programmable calculator, a TI-66](https://ja.wikipedia.org/wiki/TI-66#/media/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB:TI-66.jpg). With it, I could start coding for real (really just steps of math, plus some control statements). [Inspired by my uncle's spacecraft ambitions](https://jlk.ae/2018/09/01/fly-rocket-fly-telling-the-story-of-uncle-lutz-attempt-to-conquer-space/), one of the first "apps" I wrote calculated the trajectory of a multi-stage rocket, using Tsiolkovsky’s foundational equations (the math is actually not hard).
 
 Finally, in 1985, I convinced my dad to buy a computer instead of a new typewriter. He spent what was then an enormous amount of money, especially for a struggling artist like he was, on a [state-of-the-art Amstrad CPC 664](https://en.wikipedia.org/wiki/Amstrad_CPC) personal computer (with whopping 64KB of memory).  
 
 Then he got really angry with me: The computer couldn't do anything out-of-the-box. He spent all that money and now had less than a typewriter!
 
-So in the first 20 minutes after unpacking the thing, I wrote a simple text editor. You could type one line, and after you hit Enter, it printed that line on the noisy 9-needle matrix printer, which quite falsely claimed to have "near letter quality". 
+So in the first 20 minutes after unpacking the thing, I wrote a simple text editor. You could type one line, and after you hit Enter, it printed that line on the noisy 9-needle matrix printer, which falsely claimed to have "near letter quality". 
 
 Now my dad had a typewriter on steroids (he could edit the line before it printed!). — And I could finally write computer programs for real.
 
@@ -34,9 +34,9 @@ I wrote C++ code most of my life. If you avoid a few traps and some of the uglin
 
 Today, modern programming languages, like C# or Java, keep the elegant aspects of C++ and eliminate the hard and ugly ones.
 
-While you would think that the world of coding would have gotten easier over the past 40 years, unfortunately it hasn't. New programming languages are sprouting like weeds, and the simplicity of the early coding environments has been replaced by awkward, sometimes unnecessarily nerdy systems, that can be hard to navigate. Some of this stems from the rise of LINUX in the early 2000s, which swamped the world with hard-to-use command line tools, which, while flexible, appear like a nightmare flash from the past, for someone like me.
+While you would think that the world of coding would have gotten easier over the past 40 years, unfortunately it hasn't. New programming languages are sprouting like weeds, and the simplicity of the early coding environments has been replaced by awkward, sometimes unnecessarily nerdy systems, that can be hard to navigate. Some of these challenges stem from the rise of Linux in the early 2000s, which swamped the world with hard-to-use command line tools, which, while flexible, appear like a nightmare flash from the past, for someone like me.
 
-The hardest thing in the 1990s when installing Visual C++, was to insert the diskettes in the right order. Today, setting up Visual Studio requires a PhD in cryptography to decypher the error messages.
+The hardest thing in the 1990s when installing Visual C++, was to insert the diskettes in the right order. Today, setting up Visual Studio requires a PhD in cryptography to decipher the error messages.
 
 All this results in the unfortunate situation, where more and more people think coding is hard.
 
@@ -56,13 +56,13 @@ Do we still need to write code in an age of ChatGPT?
 
 Boy, yes we do.
 
-It is exactly because of the fuzzyness of natural language that we need a way to rigorously encode logic. Just like you wouldn't try to describe physical formulas with Shakespearean language, you should not attempt to encode logic into an LLM. I spend a lot of time on this, because at LEAP 71 we want to eventually build a natural language interface to Computational Engineering. But natural language only works on a very fuzzy level, you need verifiable scientific code as the basis.
+It is exactly because of the fuzziness of natural language that we need a way to rigorously encode logic. Just like you wouldn't try to describe physical formulas with Shakespearean language, you should not attempt to encode logic into an LLM. I spend a lot of time on this, because at LEAP 71 we want to eventually build a natural language interface to Computational Engineering. But natural language only works on a very fuzzy level, you need verifiable scientific code as the basis.
 
-So, yes, you should learn how to code. 
+So yes, you should learn how to code. 
 
 Not only is it an important skill to have, it teaches you a way of thinking, computational reasoning, that will help you navigate our world in a structured way. I stopped coding in 2005, after IRIDAS, one of my startups, took off, and I had to focus on running the company. But being a coder made me a better CEO.
 
-These days I am back to spending most of my days coding — and I enjoy it massively. It's one of the most engaging tasks I have ever done. In my 20s I coded for dozens of hours at a time, because I was [in a flow state](https://en.wikipedia.org/wiki/Mihaly_Csikszentmihalyi). In a world that is full of distractions, it's an amazing experience.
+These days I am back to spending most of my days coding — and I enjoy it massively. It is one of the most engaging tasks I have ever done. In my 20s I coded for dozens of hours at a time, because I was [in a flow state](https://en.wikipedia.org/wiki/Mihaly_Csikszentmihalyi). In a world that is full of distractions, it's an amazing experience.
 
 Writers will know this too. Writing and coding are some of the things you can do, that let you forget time and just create.
 
