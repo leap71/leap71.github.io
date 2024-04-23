@@ -10,7 +10,7 @@ PicoGK stands for **Pico** (tiny) **G**eometry **K**ernel and provides [an inten
 
 The name PicoGK is also a nod to the peacocks roaming the streets in the city of Dubai, where we are based.
 
-PicoGK may look simple on the surface, but we use it for some of the most advanced physical parts imaginable. From advanced electric motors to, heat exchangers, [to 3D-printed rocket engines](https://leap71.com/2023/09/12/the-exploration-company-and-leap-71-announce-cooperation-in-the-field-of-space-engine-engineering/), and even biologic structures.
+PicoGK may look simple on the surface, but we use it for some of the most advanced physical parts imaginable. From electric motors to heat exchangers, [to 3D-printed rocket engines](https://leap71.com/2023/09/12/the-exploration-company-and-leap-71-announce-cooperation-in-the-field-of-space-engine-engineering/), and even biol structures.
 
 We believe Computational Engineering will dramatically change the way we design the physical world around us. Our goal with PicoGK is to jumpstart the transition to this new paradigm so that engineers can help create a future that is both inspiring and sustainable.
 
