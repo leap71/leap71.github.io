@@ -48,7 +48,7 @@ In my experiments, which were as basic as you can imagine, I used OpenAI's publi
 
 ------
 
-### Experimenting with LLMs and Computational Engineering
+### A few new features in the ShapeKernel
 
 **2024-03-21 / by Josefine Lissner**
 
