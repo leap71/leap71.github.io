@@ -67,9 +67,9 @@ Now, before we copy and paste our code there, we need to understand one more con
 
 In the old days of programming, every symbol you defined was global. 
 
-If I called a variable `fResult`and someone else called another variable the same, this would lead to all sorts of interesting problems. Organizing data in classes, and hiding information helped a lot, but still  you and I may both create a class called `Car` and the names would clash. So, people started adding project-specific prefixes and performed kinds of tricks, in order to prevent this — and soon functions started to look like your cat accidentally walked over your keyboard during coding. 
+If I called a variable `fResult`and someone else called another variable the same, this would lead to all sorts of interesting problems. Organizing data in classes, and hiding information helped a lot, but still  you and I may both create a class called `Car` and the names would clash. So, people started adding project-specific prefixes and performed all kinds of tricks, in order to prevent this. Soon function names started to look like your cat accidentally walked over your keyboard during coding. 
 
-If you see some of these names, you know they come from a bygone era. Take a name like this one from the Apple API: `NSAttributedStringEnumerationOptions` — the NS prefix tells us, it has its origins in the [NeXTSTEP](https://en.wikipedia.org/wiki/NeXTSTEP) programming environment, which was introduced when Steve Jobs, freshly kicked out of Apple, started his a new company, called NeXT (which later provided the foundation for MacOS X, after Apple realized they made a mistake). The rest of the function name is very wordy, mostly because it needs to be unique in a programming framework with tens of thousands of symbols.
+If you see some of these names, you know they come from a bygone era. Take a name like this one from the Apple API: `NSAttributedStringEnumerationOptions` — the NS prefix tells us, it has its origins in the [NeXTSTEP](https://en.wikipedia.org/wiki/NeXTSTEP) programming environment, which was introduced when Steve Jobs, freshly kicked out of Apple, started his a new company, called NeXT (which later provided the foundation for MacOS X, [after Apple realized their catastrophic blunder](https://www.inc.com/justin-bariso/steve-jobs-made-a-brilliant-change-when-he-returned-to-apple-it-changed-company-forever.html)). The rest of the function name is very wordy, mostly because it needs to be unique in a programming framework with tens of thousands of symbols.
 
 This is a long-winded way of saying, we needed a way to organize things without endless function and variable names. The solution are *namespaces*.
 
@@ -124,7 +124,7 @@ using Leap71.PicoGK;
 
 and you are back to just writing `Voxels`.
 
-All classes in C# are organized using namespaces, even the built-in ones. Most of them use the `System` namespace. And because the `System` namespace is so omnipresent, the compiler assumes that you are always `using System`.
+All classes in C# are organized using namespaces, even the built-in ones. Most of those use the `System` namespace. And because the `System` namespace is so omnipresent, the compiler assumes that you are always `using System`.
 
 So, with that knowledge, let's complete our class definition and start using it.
 
@@ -181,7 +181,7 @@ Now, it's time to instatiate our first object!
 Things sometimes get a bit confusing between the terms object and class, as they are sometimes used interchangeably. 
 
 - An object is an instance of a class (something you created with `new` and assigned to a variable). 
-- A class is a certain type of object. It's the type of your variable.
+- A class is a certain kind of object. It's the type of your variable.
 
 Let's do this:
 
@@ -192,7 +192,7 @@ CSForEngineers.TeslaRoadster oLinsCar;
 oLinsCar = new CSForEngineers.TeslaRoadster();
 ```
 
-OK, what have we done here? We have declared a new variable of type `CSForEngineers.TeslaRoadster` and called the variable `oLinsCar`. So now we have a variable, a placeholder for a certain type of data.
+OK, what have we done here? We have declared a new variable of type `CSForEngineers.TeslaRoadster` and called the variable `oLinsCar`. So now we have a variable: a placeholder for a certain type of data.
 
 Then we created a new object of the type `TeslaRoadster` and assigned it to the `oLinsCar` variable.
 
@@ -238,11 +238,18 @@ TeslaRoadster oLinsCar = new();
 Console.WriteLine(oLinsCar.strName());
 ```
 
-The output will be `Poor anonymous car`, because, that's the default value for the name. We should change that.
+The output will be `Poor anonymous car`, because, that's the default value for the name. We should change that!
 
-Remember that constructors are just functions, and functions can have parameters. And we actually did add parameters to our constructor (but they had default values, so we did not need to provide them). 
+Remember that constructors are just functions, and functions can have parameters. And we actually added parameters to our constructor definition (but they had default values, so we did not need to provide them). 
 
-So let's test this out:
+Remember the definition of our constructor, which included two optional parameters:
+
+```c#
+public TeslaRoadster( string  strName      = "Poor anonymous car",
+                      uint    nPercentFull = 0)
+```
+
+So let's test this out, by passing the first parameter to the constructor:
 
 ```c#
 using CSForEngineers;
@@ -251,9 +258,9 @@ TeslaRoadster oLinsCar = new("Lins's red Tesla");
 Console.WriteLine(oLinsCar.strName());
 ```
 
-In this example, we pass the first of the two optional parameters, the name of the car. 
+So now the constructor uses the string we pass instead of the default value. The second parameter still uses the default (`0`), as we do not specify it.
 
-And in fact, the name variable of our object is assigned accordingly.
+And in fact, the `m_strName` variable of our object is assigned accordingly.
 
 Now, let's check the charge level and see if we can drive:
 
@@ -279,9 +286,11 @@ oLinsCar.Charge();
 Console.WriteLine(oLinsCar.nBatteryLevelPercent().ToString());
 ```
 
-Now our charge level is `100`%, so we are ready to go driving.
+Now our charge level is `100`%, so we are ready to go driving!
 
-We can create more cars for more people, and have a bit of fun with variables. This simple example illustrates how these objects are all of the same class, but they each have a life of their own, just like my car may be the same make and model of your car, but clearly we each have our own separate object.
+We can create more cars for more people, and have a bit of fun with variables. 
+
+This simple example illustrates how these objects are all of the same `class`, but they each have a life of their own, just like my car may be the same make and model of your car, but clearly we each have our own separate physical object in our garages.
 
 ```c#
 using CSForEngineers;
@@ -300,9 +309,9 @@ Console.WriteLine(oEmmasCar.nBatteryLevelPercent().ToString());
 
 ## Summary
 
-While this may seem like a simple example, we have successfully demonstrated a number of important concepts.
+While this may seem like a basic example, we have successfully demonstrated a number of important concepts.
 
-First of all, everything in C# is an object. To avoid naming collisions, C# has the concept of (nested) *namespaces*. We have put our class definition in a namespace that makes sense for us, and by employing the `using` statement, we can avoid verbosity.
+First of all, everything in C# is an object. To avoid naming collisions, C# has the concept of (nested) *namespaces*. We have put our class definition in a namespace that made sense for us, and by employing the `using` statement, we can avoid verbosity.
 
 But actually, the most important thing we have demonstrated, is the power of object oriented programming to encapsulate both functions and data in one object. By hiding the actual implementation, we have decoupled the interface of the object from the internals. The percentage of our battery level is stored as a floating point value internally, but we interact with it through an integer percentage value. The interface to our car is deceptively simple, but the actual implementation behind this interface, can be quite elaborate.
 
