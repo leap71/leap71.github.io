@@ -10,6 +10,8 @@
 
 [3 — Running Code](3-running-code.md)
 
+[4 — Classes](4-classes.md)
+
 ## Preamble: My Story
 
 I learned coding in 1980, when I was 8 years old. Coding, programming, back then was simple. You just turned on the computer, and before the CRT screen of your TV set had warmed up enough to actually show anything, you could already type your first command. 

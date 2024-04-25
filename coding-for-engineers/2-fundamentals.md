@@ -10,6 +10,8 @@
 
 [3 — Running Code](3-running-code.md)
 
+[4 — Classes](4-classes.md)
+
 # Fundamentals
 
 In this chapter we will go on a whirlwind tour from the general concept of a computer to the paradigm of object oriented programming.
