@@ -44,7 +44,7 @@ To make it less hard, well-meaning inventors of new programming languages like P
 
 Actual elegant code is code where you understand at a glance what is going on.
 
-So, coding has gotten harder. Most people don't code — they copy and paste stuff together until it works. That's why "tolerant" programming languages like Python have become so popular. You can actually write clean and elegant code in Python. It's just rarely done.
+So, coding has gotten harder. Most people don't code — they copy and paste stuff together until it works. That's why "tolerant" programming languages like Python have become so popular. You could actually write clean and elegant code in Python. It's just rarely done.
 
 When my co-founder Michael and I had to decide on a programming language for Hyperganic, a company we started in 2015, we first looked into [Lua](https://www.lua.org/), a Pascal-like language that is very fast and robust. But it was lacking programming constructs like objects. [After Microsoft committed to open-sourcing C#](https://medium.com/microsoft-open-source-stories/how-microsoft-rewrote-its-c-compiler-in-c-and-made-it-open-source-4ebed5646f98#:~:text=In%20April%20of%202014%20at,under%20an%20Apache%202.0%20license.), it became a much better choice.
 
@@ -60,11 +60,11 @@ It is exactly because of the fuzziness of natural language that we need a way to
 
 So yes, you should learn how to code. 
 
-Not only is it an important skill to have, it teaches you a way of thinking, computational reasoning, that will help you navigate our world in a structured way. I stopped coding in 2005, after IRIDAS, one of my startups, took off, and I had to focus on running the company. But being a coder made me a better CEO.
+Not only is it an important skill to have, it teaches you a way of thinking, computational reasoning, that will help you navigate our world in a structured way. I stopped coding in 2005, after [IRIDAS](https://news.adobe.com/news/news-details/2011/Adobe-Acquires-IRIDAS-Technology/default.aspx), one of my startups, took off, and I had to focus on running the company. But being a coder made me a better CEO.
 
 These days I am back to spending most of my days coding — and I enjoy it massively. It is one of the most engaging tasks I have ever done. In my 20s I coded for dozens of hours at a time, because I was [in a flow state](https://en.wikipedia.org/wiki/Mihaly_Csikszentmihalyi). In a world that is full of distractions, it's an amazing experience.
 
-Writers will know this too. Writing and coding are some of the things you can do, that let you forget time and just create.
+Writers will know this too. Writing and coding are some of the things you can do, that let you forget time — and just create.
 
 So, in the next couple of months, I will write, to teach you how to code.
 
