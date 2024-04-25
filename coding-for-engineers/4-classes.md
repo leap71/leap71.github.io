@@ -2,7 +2,7 @@
 
 ![Coding for Engineers](assets/CodingforEngineers.jpg)
 
-[0 — Preamble: My story](0-preamble.md)
+[0 — Preamble: My story](README.md)
 
 [1 — Foreword](1-foreword.md)
 
@@ -65,9 +65,11 @@ Now, before we copy and paste our code there, we need to understand one more con
 
 ## Namespaces
 
-In the old day of programming, every symbol you defined was global. If I called a variable `fResult`and someone else called it the same, it would lead to all kinds of interesting problems. Organizing things into dlasses helped a lot, but still, you and I may both create a class called `Car` and the names would collide. So, people started adding project-specific prefixes and performed kinds of tricks, in order to prevent this — and soon functions started to look like your cat accidentally walked over your keyboard during coding. 
+In the old days of programming, every symbol you defined was global. 
 
-If you see some of these names, you know they come from a bygone era. Take a name like this one from the Apple API: `NSAttributedStringEnumerationOptions` — the NS prefix tells us, it has its origins in the [NeXTSTEP](https://en.wikipedia.org/wiki/NeXTSTEP) programming environment, which was introduced when Steve Jobs, freshly kicked out of Apple, started his a new company, called NeXT (which later provided the foundation for MacOS X, after Apple realized they made a mistake).
+If I called a variable `fResult`and someone else called another variable the same, this would lead to all sorts of interesting problems. Organizing data in classes, and hiding information helped a lot, but still  you and I may both create a class called `Car` and the names would clash. So, people started adding project-specific prefixes and performed kinds of tricks, in order to prevent this — and soon functions started to look like your cat accidentally walked over your keyboard during coding. 
+
+If you see some of these names, you know they come from a bygone era. Take a name like this one from the Apple API: `NSAttributedStringEnumerationOptions` — the NS prefix tells us, it has its origins in the [NeXTSTEP](https://en.wikipedia.org/wiki/NeXTSTEP) programming environment, which was introduced when Steve Jobs, freshly kicked out of Apple, started his a new company, called NeXT (which later provided the foundation for MacOS X, after Apple realized they made a mistake). The rest of the function name is very wordy, mostly because it needs to be unique in a programming framework with tens of thousands of symbols.
 
 This is a long-winded way of saying, we needed a way to organize things without endless function and variable names. The solution are *namespaces*.
 
@@ -89,13 +91,13 @@ Now, how is this better than just calling it `PicoGK_Voxels` or `PKVoxels` or wh
 
 Because of the `using` statement.
 
-Since, very often, our code will use stuff from the same namespaces. We can write
+Since, very often, our code will use symbols from the same namespaces. We can write
 
 ```c#
 using PicoGK;
 ```
 
-At the top of our code, and now we can simply write `Voxels` instead of `PicoGK.Voxels`. Whenever things get ambiguous, the compiler will complain, and force you to uniquely identify your symbol with the right prefix.
+At the top of our code, and now we can simply write `Voxels` instead of `PicoGK.Voxels`. Whenever things get ambiguous, the compiler will complain, and force you to uniquely identify your symbol with the right namespace prefix.
 
 Namespaces can be nested, so, there is nothing that prevents you from doing something like that:
 
@@ -160,7 +162,7 @@ namespace CSForEngineers
     
         public uint nBatteryHealthPercent()
         {
-            // Calculate an abstract "healh percentage"
+            // Calculate an abstract "health percentage"
             float fHealth = 1.0f - (float) m_nChargingCycles / 10000.0f;
             return Convert.ToUInt32(fHealth * 100.0f);
         }
@@ -178,7 +180,7 @@ Now, it's time to instatiate our first object!
 
 Things sometimes get a bit confusing between the terms object and class, as they are sometimes used interchangeably. 
 
-- An object is one instance of a class (something you created with `new` and assigned to a variable). 
+- An object is an instance of a class (something you created with `new` and assigned to a variable). 
 - A class is a certain type of object. It's the type of your variable.
 
 Let's do this:
@@ -263,7 +265,7 @@ Console.WriteLine(oLinsCar.strName());
 Console.WriteLine(oLinsCar.nBatteryLevelPercent().ToString());
 ```
 
-Remember everything is an object in C#? `nBatteryLevelPercent` is an unsigned integer value. But this value object conveniently exposes a function to convert it to a `string`.
+Remember everything is an object in C#? `nBatteryLevelPercent` is an unsigned integer value. But this value object conveniently exposes a function to convert it to a `string`, called `ToString()`.
 
 The charge level is `0` — that's not good. We should charge it before we drive!
 
@@ -279,7 +281,7 @@ Console.WriteLine(oLinsCar.nBatteryLevelPercent().ToString());
 
 Now our charge level is `100`%, so we are ready to go driving.
 
-We can create more cars for more people, and have a bit of fun with variables. This illustrates how these objects are all of the same class, but they each have a life of their own, just like my car may be the same make and model of your car, but clearly we each have our own separate object.
+We can create more cars for more people, and have a bit of fun with variables. This simple example illustrates how these objects are all of the same class, but they each have a life of their own, just like my car may be the same make and model of your car, but clearly we each have our own separate object.
 
 ```c#
 using CSForEngineers;
@@ -302,7 +304,7 @@ While this may seem like a simple example, we have successfully demonstrated a n
 
 First of all, everything in C# is an object. To avoid naming collisions, C# has the concept of (nested) *namespaces*. We have put our class definition in a namespace that makes sense for us, and by employing the `using` statement, we can avoid verbosity.
 
-But actually, the most important thing we have demonstrated though, is the power of object oriented programming to encapsulate both functions and data in one object. By hiding the actual implementation, we have decoupled the interface of the object from the internals. The percentage of our battery level is stored as a floating point value internally, but we interact with it through an integer percentage value. The interface to our car is deceptively simple, but the actual implementation behind this interface, can be quite elaborate.
+But actually, the most important thing we have demonstrated, is the power of object oriented programming to encapsulate both functions and data in one object. By hiding the actual implementation, we have decoupled the interface of the object from the internals. The percentage of our battery level is stored as a floating point value internally, but we interact with it through an integer percentage value. The interface to our car is deceptively simple, but the actual implementation behind this interface, can be quite elaborate.
 
 Whenever we `Charge()` our car, not only is the battery value set to 100%, our battery also degrades a tiny little bit. You could imagine replacing the currently very simple formula for degradation with real-life data, and take complex interactions in cell chemistry into account. But the interface to the outside world would not change at all.
 
@@ -318,7 +320,7 @@ We will explore this concept in the next chapter on inheritance, and later with 
 
 ----
 
-Next week: Interitance
+Next week: **Inheritance**
 
 [Jump into the discussion here](https://github.com/leap71/PicoGK/discussions/categories/coding-for-computational-engineers)
 

@@ -10,6 +10,8 @@
 
 [3 — Running Code](3-running-code.md)
 
+[4 — Classes](4-classes.md)
+
 # Foreword
 
 There are many programming courses out there, including for C#.

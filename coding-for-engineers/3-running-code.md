@@ -2,13 +2,15 @@
 
 ![Coding for Engineers](assets/CodingforEngineers.jpg)
 
-[0 — Preamble: My story](0-preamble.md)
+[0 — Preamble: My story](README.md)
 
 [1 — Foreword](1-foreword.md)
 
 [2 — Fundamentals](2-fundamentals.md)
 
 [**3 — Running Code**](3-running-code.md)
+
+[4 — Classes](4-classes.md)
 
 # Running code
 
@@ -108,7 +110,7 @@ So now we have this out of our way, we can move on to the fun part.
 
 -----
 
-Next Week: **Classes**
+Next: [**Classes**](4-classes.md)
 
 [Jump into the discussion here](https://github.com/leap71/PicoGK/discussions/categories/coding-for-computational-engineers)
 
