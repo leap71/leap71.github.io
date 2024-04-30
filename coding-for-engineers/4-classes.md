@@ -295,10 +295,10 @@ This simple example illustrates how these objects are all of the same `class`, b
 ```c#
 using CSForEngineers;
 
-TeslaRoadster oFredsCar = new(0, "Fred's Tesla");
+TeslaRoadster oFredsCar = new("Fred's Tesla");
 Console.WriteLine(oFredsCar.strName());
 
-TeslaRoadster oEmmasCar = new(0, "Emma's fun scooter");
+TeslaRoadster oEmmasCar = new("Emma's fun scooter");
 Console.WriteLine(oEmmasCar.strName());
 
 oFredsCar.Charge();
