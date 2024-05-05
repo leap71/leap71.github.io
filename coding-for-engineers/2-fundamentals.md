@@ -12,6 +12,8 @@
 
 [4 — Classes](4-classes.md)
 
+[5 — Inheritance](5-inheritance.md)
+
 # Fundamentals
 
 In this chapter we will go on a whirlwind tour from the general concept of a computer to the paradigm of object oriented programming.

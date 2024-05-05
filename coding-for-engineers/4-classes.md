@@ -12,6 +12,8 @@
 
 [**4 — Classes**](4-classes.md)
 
+[5 — Inheritance](5-inheritance.md)
+
 # Classes
 
 Let's revisit the concept of classes we introduced in the first part of our series.
@@ -69,7 +71,7 @@ In the old days of programming, every symbol you defined was global.
 
 If I called a variable `fResult`and someone else called another variable the same, this would lead to all sorts of interesting problems. Organizing data in classes, and hiding information helped a lot, but still  you and I may both create a class called `Car` and the names would clash. So, people started adding project-specific prefixes and performed all kinds of tricks, in order to prevent this. Soon function names started to look like your cat accidentally walked over your keyboard during coding. 
 
-If you see some of these names, you know they come from a bygone era. Take a name like this one from the Apple API: `NSAttributedStringEnumerationOptions` — the NS prefix tells us, it has its origins in the [NeXTSTEP](https://en.wikipedia.org/wiki/NeXTSTEP) programming environment, which was introduced when Steve Jobs, freshly kicked out of Apple, started his a new company, called NeXT (which later provided the foundation for MacOS X, [after Apple realized their catastrophic blunder](https://www.inc.com/justin-bariso/steve-jobs-made-a-brilliant-change-when-he-returned-to-apple-it-changed-company-forever.html)). The rest of the function name is very wordy, mostly because it needs to be unique in a programming framework with tens of thousands of symbols.
+If you see some of these names, you know they come from a bygone era. Take a name like this one from the Apple API: `NSAttributedStringEnumerationOptions` — the NS prefix tells us, it has its origins in the [NeXTSTEP](https://en.wikipedia.org/wiki/NeXTSTEP) programming environment, which was introduced when Steve Jobs, freshly kicked out of Apple, started his new company, called NeXT (which later provided the foundation for MacOS X, [after Apple realized their catastrophic blunder](https://www.inc.com/justin-bariso/steve-jobs-made-a-brilliant-change-when-he-returned-to-apple-it-changed-company-forever.html)). The rest of the function name is very wordy, mostly because it needs to be unique in a programming framework with tens of thousands of symbols.
 
 This is a long-winded way of saying, we needed a way to organize things without endless function and variable names. The solution are *namespaces*.
 
@@ -329,7 +331,7 @@ We will explore this concept in the next chapter on inheritance, and later with 
 
 ----
 
-Next week: **Inheritance**
+Next: [**Inheritance**](5-inheritance.md)
 
 [Jump into the discussion here](https://github.com/leap71/PicoGK/discussions/categories/coding-for-computational-engineers)
 

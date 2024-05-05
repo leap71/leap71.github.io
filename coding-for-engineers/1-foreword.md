@@ -12,6 +12,8 @@
 
 [4 — Classes](4-classes.md)
 
+[5 — Inheritance](5-inheritance.md)
+
 # Foreword
 
 There are many programming courses out there, including for C#.

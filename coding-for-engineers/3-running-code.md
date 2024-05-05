@@ -12,6 +12,8 @@
 
 [4 — Classes](4-classes.md)
 
+[5 — Inheritance](5-inheritance.md)
+
 # Running code
 
 The first computers were very bare bones — but they worked on the same principles as they do today. Computers run instructions (implemented in the hardware of the [Central Processing Unit](https://en.wikipedia.org/wiki/Central_processing_unit), CPU) on binary input data, (loaded from [Random Access Memory](https://en.wikipedia.org/wiki/Random-access_memory), RAM), to generate output data.
@@ -100,7 +102,7 @@ We copied the code from our first examples. We compiled it successfully, and the
 
 Now, this sounds all a bit simple, but this is the foundation of every app on every platform — whether on your computer or on your mobile phone. 
 
-Even complex applications, like a web browser or image editor, rely on this simple structure. 
+All applications, including large ones, like a web browser or image editor, rely on this simple structure. 
 
 Their main function is obviously much more complex, and creates windows for graphics and does many other things. 
 
