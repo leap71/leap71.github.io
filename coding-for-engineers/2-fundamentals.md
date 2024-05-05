@@ -301,11 +301,11 @@ You can see, that we can now give the car an initial battery level. Internally, 
 
 Now, you see a lot of repeated code in the constructors, and there are different ways to deal with it. For now, I will just introduce one more concept, which is useful for functions, including constructors, and then we move on.
 
-### Default Parameters
+### Parameter default values
 
 In C#, you can (with a few restrictions), provide default values for parameters. If a default value is specified, you do not have to provide the parameter, when calling the function.
 
-So, let's simplify our constructors using default parameters:
+So, let's simplify our constructors using default values:
 
 ```c#
 class TeslaRoadster
