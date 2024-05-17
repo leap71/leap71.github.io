@@ -46,7 +46,7 @@ Now, we could store this `string` of characters, which spell out `"Hello World"`
 
 A variable is a place in the computer's memory to store information. 
 
-A variable in C# and many other programming languages, has a *name* and a *type*. A variable's *type* defines what kind data you can store in it. A variable of type `string` can store strings and nothing else. If you want to store a number in a variable of type `string`, you explicitly have to convert it to a string of characters first. This is important to remember, because some modern programming languages, like Python, try to blur the differences between different kinds of data, which seems helpful at first, but is actually very dangerous. 
+A variable in C# and many other programming languages, has a *name* and a *type*. A variable's *type* defines what kind data you can store in it. A variable of type `string` can store strings and nothing else. If you want to store a number in a variable of type `string`, you explicitly have to convert it to a string of characters first. This is important to remember, because some modern programming languages, like Python, try to blur the boundaries between different kinds of data, which seems helpful at first, but is actually very dangerous. 
 
 To come back to our example, to store data in a variable, we have to tell the computer first, that this variable exists, and what type it has.
 
@@ -83,15 +83,15 @@ So let's recap this:
 
 Generally speaking, *C# doesn't automatically convert between different types*. 
 
-So if you want to store a number in a string, you have to first convert the number to a string of characters. And if you think about it, this makes sense. A number is not a string of characters, and a string of characters is not a number. To convert a number to a `string`, you may want to choose how many decimal places you want to display. Or whether the number 1 is represented as `1.0`, `1.000`, `1`, `00001`or even `1,0` when you are in a European country (where, inexplicably, they use the comma as a decimal point).
+So if you want to store a number in a `string`, you have to first convert the number to a string of characters. And if you think about it, this makes sense. A number is not a string of characters, and a string of characters is not a number. To convert a number to a `string`, you may want to choose how many decimal places you want to display. Or whether the number 1 is represented as `1.0`, `1.000`, `1`, `00001`or even `1,0` when you are in a European country (where, inexplicably, they use the comma as a decimal point).
 
-On the flip side, if you have a `string`, which you *hope* contains a number — before you actually do math with the number, wouldn't it be reasonable to first see if you can actually extract the number from it? If a string, for example, contains the characters `1.000mm`, you'd have to make sure to strip away the unit (mm). Or, maybe you'd actually have to do some math, and multiply by a thousand if the unit was meters instead. What if your string contained `Hello World` instead of a number — how should that be handled? Is this an error? Or should we just treat it as zero?
+On the flip side, if you have a `string`, which you *hope* contains a number — before you actually do math with the number, wouldn't it be reasonable to first see if you can actually extract the number from it? If a string, for example, contained the characters `1.000mm`, you'd have to make sure to strip away the unit (mm). Or, maybe you'd actually have to do some math, and multiply by a thousand if the unit was meters instead. What if your string contained `Hello World` instead of a number — how should that be handled? Is this an error? Or should we just treat it as zero?
 
 C# avoids implicit conversions. Other programming languages, unfortunately, are "helpfully" converting stuff for you these days. So `"Hello World"` magically becomes `0`, and both `"100mm"` and `"5m"` are converted to `0` as well (which is the default value for "I have no clue what this value is supposed to be")... 
 
 Implicit conversions are incredibly dangerous in any large scale software project.
 
-That's why we chose C#, and easy-to-use strongly typed modern language, for the basis of [PicoGK](https://leap71.com/PicoGK/).
+That's why we chose C#, an easy-to-use strongly typed modern language, for the basis of [PicoGK](https://leap71.com/PicoGK/).
 
 ## Classes and Objects
 
@@ -103,7 +103,7 @@ In our real, physical world, we don't deal with abstract data and run mindless o
 
 Imagine you have a car. It has certain properties. Some are static and never change, like the type of fuel it uses. Some vary, such as the speed or mileage driven. You have ways to interact with your car: you can press the accelerator, you can turn on the light. It would be downright silly, if we had an abstract instruction called `TurnOnLight` and we had to pass it a variable of the type `ElectricCurrent`, hoping nobody had mixed up the cables that lead to the light bulb.
 
-Turning on the light, is something that makes only sense for that particular object (a car — it makes no sense for an elephant!). It only applies to that one instance, and it may be implemented differently in different types of cars — there is no universal way to do it, using universal instructions. The functionality, just like the properties, belong to the car I am driving right now, they are implemented for this particular make (or class) of car, and they may be different between various manufacturers (but the interface exposed to me as a driver, say, the brake pedal, is the same).
+Turning on the light, is something that makes only sense for that particular object (a car — it makes no sense for an elephant!). It only applies to that one instance, and it may be implemented differently in different types of cars — there is no universal way to do it, using general instructions. The functionality, just like the properties, belong to the car I am driving right now, they are implemented for this particular make (or class) of car, and they may be different between various manufacturers (but the interface exposed to me as a driver, say, the brake pedal, is the same).
 
 This insight led to a veritable revolution in computer programming in the late 80s and 90s, it led to the *object oriented programming* paradigm.
 

@@ -22,7 +22,7 @@ We have covered a lot of ground by now. Time for a recap.
 
 We started with the general concepts of computing, instructions and data. The introductions of object oriented programming married both together.
 
-Classes encapsulate the data and operations we want to perform. When we create an instance of a class, using `new()`, we have an object. We think of an object of a certain type as an opaque black box and use information hiding to expose only the *minimum* properties and operations necessary to get the job done. If we exposed all the internals, chances are we would introduce unwanted interdependencies and side effects. That's why we hide as much as possible.
+Classes encapsulate the data and operations we want to perform. When we create an instance of a class, using `new()`, we have an object. We think of an object of a certain type as an opaque black box and use *information hiding* to expose only the *minimum* properties and operations necessary to get the job done. If we exposed all the internals, chances are we would introduce unwanted interdependencies and side effects. That's why we hide as much as possible.
 
 As a consequence, our objects, defined as C# classes, expose a well-defined, minimum footprint to the world.
 
@@ -32,11 +32,11 @@ In the world of object oriented programming, we can store an `Airplane` and a `C
 
 This concept of always moving to the simplest object and variable type necessary for functionality guides our thinking and, in practice, drastically simplifies our code.
 
-The concept of *polymorphism* allows us to override the behavior of certain functions, when they are not appropriate for the derived class. So the function `PhysicalObject.PerformMaintenance()` can do entirely different things for a `Car` or an `Airplane`. But the outside interface, the name of the function and it's signature (which parameters I can pass), stays the same, and can be called when just dealing with a variable of type `PhysicalObject` generally.
+The concept of *polymorphism* allows us to override the behavior of certain functions, when they are not appropriate for the derived class. So the function `PhysicalObject.PerformMaintenance()` can do entirely different things for a `Car` or an `Airplane`. But the outside interface, the name of the function and it's signature, stays the same, and can be called when just dealing with a variable of type `PhysicalObject` generally.
 
 If not for the concept of polymorphism, our code would have to constantly check what type of object we are dealing with, and call special functions for cars, airplanes and ships. Polymorphism does away with that and allows us to specify functions in the base class, that are *overridden* in the derived class.
 
-And lastly, abstract functions and classes allow us to force the author of a derived class to implement certain functions. This gives us a way to define a certain way of working in a base class, without having to provide an actual implementation. The function `Move` in a `PhysicalObject` class, would certainly be abstract, as it has to be implemented very specifically for a `Car` and for an `Airplane`. A non-abstract function `PhysicalObject.Move()` would not know what to do, as it has no idea what "thing" it is actually dealing with.
+And lastly, abstract functions and classes allow us to force the author of a child class to implement certain functions. This gives us a way to define a certain way of working in a parent class, without having to provide an actual implementation. The function `Move` in a `PhysicalObject` class, would certainly be abstract, as it has to be implemented very specifically for a `Car` and for an `Airplane`. A non-abstract function `PhysicalObject.Move()` would not know what to do, as it has no idea what "thing" it is actually dealing with, and how to move it.
 
 ## Has a..., is a..., behaves like a...
 
@@ -61,7 +61,7 @@ public class Car
 
 Now your car *has a* steering wheel (stored in the member variable `m_oSteeringWheel`), and you can do something with it. 
 
-The steering wheel *is a part* of the car. But, of course, you don't think of your car *being* a steering wheel. So, you should not consider deriving your car from the class `SteeringWheel` just to gain the functionality of steering. This may sound trivial, but it's actually a common mistake. People sometimes derive from a class that should not be an ancestor, when it should actually be *contained* in the overarching class. 
+The steering wheel *is a part* of the car. But, of course, you don't think of your car *being* a steering wheel. So, you should not consider deriving your car from the class `SteeringWheel` just to gain the functionality of steering. This may sound trivial, but it's actually a common mistake. People sometimes derive from a class that is not supposed to be an ancestor, when it should actually be a variable *contained* in the overarching class. 
 
 The question to ask here, *does it have a ..*. , *or is it a ...*
 
@@ -73,7 +73,7 @@ Often you want to group objects by a certain type of behavior, by the common fun
 
 ## Interfaces
 
-Interfaces define a group of abstract functions without implementation. By deriving your class from an interface, you are forced by the compiler to implement all the functions defined in the interface. Let's do this:
+Interfaces define a group of abstract functions without implementation. By deriving your class from an interface, you are forced by the compiler to implement all of them in the interface. Let's do this:
 
 ``` c#
 public interface IPoweredObject
@@ -86,7 +86,7 @@ public interface IPoweredObject
 
 So, we just defined an interface called `IPoweredObject`, which we can use whenever we have something that requires turning on and off. By convention, we use a capital `I` as prefix for the name of interfaces.
 
-The interface defines two functions which anyone needs to implement who derives a class from the interface. You will note that this is very similar to an abstract class with abstract functions. In fact, if this where all there is to it, there'd be no advantage in using interfaces over abstract base classes.
+The interface defines two functions which anyone needs to implement who derives a class from the interface. You will note that this is very similar to an abstract class with abstract functions. In fact, if this were all there is to it, there'd be no advantage in using interfaces over abstract base classes.
 
 But there is one important difference:
 
@@ -94,9 +94,9 @@ In C# classes *can only be derived from exactly one base class*. You have a clea
 
 But a class can derive from *multiple interfaces*. So, an object can behave like a *flying thing*, a *movable object*, a *solid part*, a *refuelable machine*, a *mechanical device*, or whatever interface you choose for it — without forcing these functionalities into a class hierarchy.
 
-Interfaces define a *protocol* to interact with your object. Interfaces don't try to prescribe the family tree. Also, interfaces never contain variables, so they purely deal with functionality, without adding any weight to the class in terms of data members or internal functionality, constructors, etc.
+Interfaces define a public *protocol* to interact with your object. Interfaces don't try to prescribe the family tree. Also, interfaces never contain variables, so they purely deal with functionality, without adding any weight to the class in terms of data members or internal functionality, constructors, etc.
 
-In practice, you use interfaces more often these days than building complex class hierarchies. You can add a lightweight interface to any object, without affecting they way you implemented your family tree, so they are a good default choice.
+In practice, you use interfaces more often these days rather than building complex class hierarchies. You can add a lightweight interface to any object, without affecting they way you implemented your family tree, so they are a good default choice.
 
 To give you a concrete example. My partner, Josefine, was working on an igniter for a small rocket thruster. The igniter required a spark plug with an M8 thread. Now, we have a library for screws, including an M8 one. But, do you actually derive the spark plug from the M8 screw? A spark plug *is not* a screw, even though it behaves like one for some purposes. So the solution was not to derive the spark plug from the M8 screw, but actually have it implement an M8 interface. Now a spark plug can still be derived from, say, an `ElectricalDevice`, but also behave like an M8 screw when we need it to tell us the geometry of its thread, because it implements the interface.
 
@@ -183,8 +183,8 @@ So, now we are done with most of the dry stuff. If you made it this far, you are
 
 Let's summarize:
 
-- We can use inheritance and polymorphism to build up a family tree of classes. When we do this, we think of our class as *being a class of the interited type*, in other words, an `Aircraft` *is a* `MovingObject`, and a `Car` is also a `MovingObject`.
-- When we add member variables to an class, we think of them as our object *having a* certain property. So, our `Aircraft` might *have* two jet engines. It's important to remind ourselves not to confuse this with inheritance. We do not inherit our class from a `JetEngine`, just to gain access to propulsion, instead the `JetEngine` is contained in the class as member variable. It's easier to not get confused, when there is more than one, like in the case of having two engines. So when in doubt, just think of whether your object could, for example, have *two* steering wheels. While this may not make sense technically, it immediately clears up that a steering wheel *is a part of your object*, and not a base class.
+- We can use *inheritance* and *polymorphism* to build up a family tree of classes. When we do this, we think of our class as *being a class of the interited type*, in other words, an `Aircraft` *is a* `MovingObject`, and a `Car` is also a `MovingObject`.
+- When we add member variables to an class, we think of them as our object *having a* certain property. So, our `Aircraft` might *have* two `JetEngine` objects. It's important to remind ourselves not to confuse this with inheritance. We do not inherit our class from a `JetEngine`, just to gain access to propulsion, instead the `JetEngine` is contained in the class as member variable. It's easier to not get confused, when there is more than one, like in the case of having two engines. So when in doubt, just think of whether your object could, for example, have *two* steering wheels. While this may not make sense technically, it immediately clears up that a steering wheel *is a part of your object*, and not a base class.
 - To bundle certain common functionality, without building complex interdependent abstract base classes, we can use *interfaces*. Interfaces conveniently package a certain set of functions, which have to be present in the class implementation. Afterwards, we can access our class through the interface. This is similar to abstract functions, but more flexible. 
 
 And with this, we are done with the basics. Next we will build an aircraft.
