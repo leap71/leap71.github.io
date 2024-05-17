@@ -14,6 +14,8 @@
 
 [5 — Inheritance](5-inheritance.md)
 
+[6 — Interfaces](6-interfaces.md)
+
 # Classes
 
 Let's revisit the concept of classes we introduced in the first part of our series.

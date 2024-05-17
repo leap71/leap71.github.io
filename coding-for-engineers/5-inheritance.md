@@ -14,6 +14,8 @@
 
 [**5 — Inheritance**](5-inheritance.md)
 
+[6 — Interfaces](6-interfaces.md)
+
 # Inheritance
 
 By now, we should be comfortable with the fundamental building blocks we use to create functionality in C#.
@@ -249,7 +251,7 @@ One important thing to always remember is, regardless of what variable you store
 
 ---
 
-Next week: **Interfaces**
+Next: [**Interfaces**](6-interfaces.md)
 
 [Jump into the discussion here](https://github.com/leap71/PicoGK/discussions/categories/coding-for-computational-engineers)
 

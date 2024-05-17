@@ -14,6 +14,8 @@
 
 [5 — Inheritance](5-inheritance.md)
 
+[6 — Interfaces](6-interfaces.md)
+
 # Running code
 
 The first computers were very bare bones — but they worked on the same principles as they do today. Computers run instructions (implemented in the hardware of the [Central Processing Unit](https://en.wikipedia.org/wiki/Central_processing_unit), CPU) on binary input data, (loaded from [Random Access Memory](https://en.wikipedia.org/wiki/Random-access_memory), RAM), to generate output data.

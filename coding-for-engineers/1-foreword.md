@@ -14,6 +14,8 @@
 
 [5 — Inheritance](5-inheritance.md)
 
+[6 — Interfaces](6-interfaces.md)
+
 # Foreword
 
 There are many programming courses out there, including for C#.
