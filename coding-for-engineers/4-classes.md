@@ -294,7 +294,7 @@ Now our charge level is `100`%, so we are ready to go driving!
 
 We can create more cars for more people, and have a bit of fun with variables. 
 
-This simple example illustrates how these objects are all of the same `class`, but they each have a life of their own, just like my car may be the same make and model of your car, but clearly we each have our own separate physical object in our garages.
+This simple example illustrates how these objects are all of the same `class`, but they each have a life of their own, just like my car may be the same make and model as your car, but clearly we each have our own separate physical object in our garages.
 
 ```c#
 using CSForEngineers;
