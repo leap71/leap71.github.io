@@ -56,9 +56,9 @@ That's why, in engineering, things take forever — and please never change a ru
 
 If you have a complex system, a good approach is usually *divide et impera*, Divide and Conquer. 
 
-What worked for the Romans, works for engineers. You split a machine into subcomponents, and define the *physical* connecting interfaces. Now everyone can work on their part, and, as long as it fits the agreed-upon interface, you are fine. 
+What worked for the Romans, works for engineers. You split a machine into subcomponents, and define the *mechanical* connecting interfaces. Now everyone can work on their part, and, as long as it fits the agreed-upon connectors, you are fine. 
 
-But do this too early, and now your plane looks like a cobbled-together LEGO toy. And it certainly is not globally optimized. So, Divide and Conquer using CAD and physical interfaces is really not that great. To define good physical interfaces, you already have to have a very detailed design specification of the plane. So, you can't really iterate. But still, this is how we do it in CAD. We divide the plane into many subcomponents with well-defined physical interfaces. And we accept that the rigidity of this approach means that we will not get to an optimal design.
+But do this too early, and now your plane looks like a cobbled-together LEGO toy. And it certainly is not globally optimized. So, Divide and Conquer using CAD and physical flanges and screws is really not that great. To define good mechanical interfaces, you already have to have a very detailed design specification of the plane. So, you can't really iterate. But still, this is how we do it in CAD. We divide the plane into many subcomponents with well-defined physical connection points. And we accept that the rigidity of this approach means that we will not get to an optimal design.
 
 And that's it.
 
@@ -68,11 +68,11 @@ The same rigid way all engineers work today.
 
 ## Designing an airplane using interfaces, placeholders, and stubs
 
-But let's go ahead and design a jet plane using Computational Engineering this afternoon, using the modern software concepts of information hiding and abstract interfaces.
+But let's go ahead and design a jet plane using Computational Engineering this afternoon, using the modern software concepts of information hiding and software interfaces.
 
 "Guys", I said, "Let's forget about how an airplane looks. What principal components do you think it has?"
 
-Very simple questions. And, in software, if you don't capture all answers in the right way, you can always go back later. Information Hiding to the rescue. 
+Very simple questions. And, in software, if you don't capture all answers right away, you can always go back later. Information Hiding to the rescue. 
 
 So, we came up with a very simple structure for an airplane.
 
@@ -178,30 +178,30 @@ But, at some point, you will create a member function that may look like this:
 ```c#
 public class Airplane
 {
-    public Shapes oCreateResultingGeometry()
+    public Shape oCreateResultingGeometry()
     {
         ....
     }
 }
 ```
 
-This function will interact with all of the components of the aircraft to design the physical shape. How will it look like? Well, that depends on the interaction of all the parts. These "parts", are not physical parts: they are logical components. They can communicate. The `Fuselage` and the `Wing` can collaborate to find the perfect aerodynamic shape, while still making sure the right number of passengers fit into the specified number of seats. The `Engine` can communicate its structural needs to the `Wing`, making sure it finds an optimum attachment point and and mechanical interface to support all the loads. Once it's done that, it outputs the right geometry.
+This function will interact with all of the components of the aircraft to design the physical shape. How will it look like? Well, that depends on the interaction of all the parts. These "parts", are not physical parts: they are logical components. They can communicate. The `Fuselage` and the `Wing` can collaborate to find the perfect aerodynamic shape (and maybe for one coherent whole, ignoring the fact that right now we treat them as separate logical parts), while still making sure the right number of passengers fit into the specified number of seats. The `Engine` can communicate its structural needs to the `Wing`, making sure it finds an optimum attachment point and and mechanical interface to support all the loads. Once it's done that, it outputs the right geometry.
 
-Now, there is *a lot* of information that needs to go back and forth. Building a complete Computational Model for an entire aircraft is a massive undertaking. But it's not fundamentally more massive than building a new aircraft through conventional means. If you create a computational model, however, every decision you made, every reason why a shape looks like the one it does, every aspect of your design, is captured in source code. You can run parameter sweeps, you can "debug", you can verify, you can falsify the hypotheses you postulated during the design. And you can reuse it, dramatically cutting down the development time of the next iteration of your plane.
+Now, there is *a lot* of information that needs to go back and forth. Building a complete Computational Model for an entire aircraft is a massive undertaking. But it's not fundamentally more massive than designing a new aircraft through conventional means. If you create a computational model, however, every decision you made, every reason why a shape looks like the one it does, every aspect of your design, is captured in source code. You can run parameter sweeps, you can "debug", you can verify, you can falsify the hypotheses you postulated during the design. And you can reuse it, dramatically cutting down the development time of the next iteration of your plane.
 
-A Computational Engineering Model is a scientific approach to engineering. Science requires facts to be clearly and publicly stated. The source code of a Computational Engineering Model is such statement. It describes the decision process, the assumptions, the used physical models, and the design logic it its entire detail.
+A Computational Engineering Model is a scientific approach to engineering. Science requires facts to be clearly and publicly stated. The source code of a Computational Engineering Model is such a statement. It describes the decision process, the assumptions, the used physical models, and the design logic it its entire detail. There is no room for obscurity.
 
 ## Building an airplane
 
-So, how do we progress from here? Here's what I did with my team back then: We asked groups of two people each to take one component of the plane. One team took on the fuselage, one pair worked on the wings, others the engine, etc. I asked them to discuss what they would need to know, at minimum (information hiding) from the other team. And then I asked them to encapsulate all of that in C# interfaces.
+So, how do we progress from here? Here's what I did with my team back then: We asked groups of two people each to take one component of the plane. One team took on the fuselage, one pair worked on the wings, others the engine, etc. I asked them to discuss what they would need to know, at minimum (information hiding) from the other teams. And then I asked them to encapsulate all of that in C# interfaces.
 
-We used placeholder geometry as stand-ins for the components. The wings were just flat recangles, the fuselage a tube, the engines smaller tubes. Using the information passed through the interfaces, we could start generating these placeholders in the general sizes and places. We discovered information which was missing, and added it to the relevant interfaces. The team working on the wings implemented the NACAR profiles, and tried to figure out optimum shapes from the specifications, etc.
+We used placeholder geometry as stand-ins for the components. The wings were just flat recangles, the fuselage a tube, the engines smaller tubes. Using the information passed through the interfaces, we could start generating these placeholders in the general sizes and places. We discovered information which was missing, and added it to the relevant interfaces. The team working on the wings implemented the [NACA](https://en.wikipedia.org/wiki/NACA_airfoil#:~:text=The%20NACA%20four%2Ddigit%20wing,as%20percent%20of%20the%20chord.) profiles, and tried to figure out optimum shapes from the specifications, etc.
 
-Increasingly, we started to see funny looking aircraft coming out of different parameter sets. Very simple children's toys versions of aircraft, but all generated by the same, increasingly sophisticated algorithm.
+Increasingly, we started to see funny looking aircraft coming out of different parameter sets. Very simple children's toy versions of aircraft, but all generated by the same, increasingly sophisticated algorithm.
 
 It was a fun exercise and taught many lessons. We decided to move it one step further.
 
-From a previous project, we had a computational model of a high-bypass-ration turboprop engine available. Couldn't we use that to replace the engine placeholders?
+From a previous project, we had a computational model of a high-bypass-ratio turboprop engine available. Couldn't we use that to replace the engine placeholders?
 
 And of course we could. And there we had it, a children's toy airplane, with actual modern jet engines attached.
 
@@ -215,15 +215,17 @@ So, there is very little code in this chapter, and maybe you are disappointed, t
 
 But I hope I made clear why we learned the things in the previous chapters, and how this approach differs fundamentally from traditional engineering.
 
-In conventional engineering workflows, the reasoning, the thought process, the physical formulas, all these *are external to* the daily of the engineer. The engineer visually creates the object in CAD.
+In conventional engineering workflows, the reasoning, the thought process, the physical formulas, all these *are external to* the daily work of the engineer. The engineer's main labor is to visually create the object in CAD.
 
-A computational engineers don't draw, they write down the logic, the physics, heuristic models, etc. in code. They try to make the computation model consistent, something that is often suprisingly difficult to do. The flow of information, the abstract components, are more important than the shape of a part. Because the computational model is built on the entirety off the information, the resulting geometry can follow much more flexibly, than in machines that are built piecemeal from individual parts. A computational model has a general overview of the entire object.
+Computational engineers don't draw, they write down the logic, the physics, the heuristic models, etc. in code. They try to make the computational model consistent, something that is often suprisingly difficult to do. The flow of information, the abstract components, are more important than the shape of a part. Because the computational model is built on the entirety of the information, the resulting geometry can follow much more flexibly, than in objects that are built piecemeal from individual parts. A computational model has a general overview of the entire object.
 
 - In Computational Engineering Models, we think logical and scientific first, and geometric second
 - It's fine to put placeholder objects, functional "stubs", empty interfaces in place and fill in the details later
 - It's fine to say: "I don't know yet, I'll figure this one out later"
 - It's relatively easy to change things, so don't follow a waterfall model, where the initial spec needs to be perfect
 - Class inheritance and polymorphism allow us to make substantial changes as we progress, by replacing a component with a derived class. So you don't have to worry about creating, for example, a `Wing` object that handles all kinds of wings. You can deal with a simple case first, and later derive a `SupersonicWing` later. You can go from a placeholder for an aircraft engine to a turboprop in a derived class. The interface stays the same.
+
+Done with theory, let's see some visual output next week.
 
 ------
 
