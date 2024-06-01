@@ -225,7 +225,15 @@ A computational engineers don't draw, they write down the logic, the physics, he
 - It's relatively easy to change things, so don't follow a waterfall model, where the initial spec needs to be perfect
 - Class inheritance and polymorphism allow us to make substantial changes as we progress, by replacing a component with a derived class. So you don't have to worry about creating, for example, a `Wing` object that handles all kinds of wings. You can deal with a simple case first, and later derive a `SupersonicWing` later. You can go from a placeholder for an aircraft engine to a turboprop in a derived class. The interface stays the same.
 
+------
 
+Next Week: **First steps with PicoGK**
+
+[Jump into the discussion here](https://github.com/leap71/PicoGK/discussions/categories/coding-for-computational-engineers)
+
+------
+
+**[PicoGK.org](https://picogk.org)/coding for engineers**
 
 
 

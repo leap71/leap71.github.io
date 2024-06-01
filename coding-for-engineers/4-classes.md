@@ -16,6 +16,8 @@
 
 [6 — Interfaces](6-interfaces.md)
 
+[7 — Design an aircraft in an afternoon](7-design-an-aircraft-in-an-afternoon.md)
+
 # Classes
 
 Let's revisit the concept of classes we introduced in the first part of our series.

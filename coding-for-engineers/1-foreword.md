@@ -16,6 +16,8 @@
 
 [6 — Interfaces](6-interfaces.md)
 
+[7 — Design an aircraft in an afternoon](7-design-an-aircraft-in-an-afternoon.md)
+
 # Foreword
 
 There are many programming courses out there, including for C#.

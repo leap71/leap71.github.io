@@ -16,6 +16,8 @@
 
 [**6 — Interfaces**](6-interfaces.md)
 
+[7 — Design an aircraft in an afternoon](7-design-an-aircraft-in-an-afternoon.md)
+
 # Interfaces
 
 We have covered a lot of ground by now. Time for a recap.
@@ -191,7 +193,7 @@ And with this, we are done with the basics. Next we will build an aircraft.
 
 ---
 
-Next week: **Design an aircraft in an afternoon**
+Next: [**Design an aircraft in an afternoon**](7-design-an-aircraft-in-an-afternoon.md)
 
 [Jump into the discussion here](https://github.com/leap71/PicoGK/discussions/categories/coding-for-computational-engineers)
 

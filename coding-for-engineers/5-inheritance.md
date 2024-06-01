@@ -16,6 +16,8 @@
 
 [6 — Interfaces](6-interfaces.md)
 
+[7 — Design an aircraft in an afternoon](7-design-an-aircraft-in-an-afternoon.md)
+
 # Inheritance
 
 By now, we should be comfortable with the fundamental building blocks we use to create functionality in C#.
