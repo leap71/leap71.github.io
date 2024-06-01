@@ -36,7 +36,7 @@ You cannot go ahead and defer fundamental design decisions. Everything needs to 
 
 Working on the actual geometry of the plane before this process has completed, would be a complete waste of time.
 
-In software it used to be similar. In the *waterfall* paradigm, nothing could be done before the previous stage in the development had been completed. You had to write a detailed software spec, which could take forever, and everyone then implemented their part of the system. In the end, everything fit together. 
+In software it used to be similar. In the *waterfall* paradigm, nothing could be done before the previous stage in the development had been finished. You had to write a detailed software spec, which could take forever, and everyone then implemented their part of the system. In the end, everything fit together. 
 
 Because, naturally, your spec had been perfect and you had thought of everything....
 
@@ -46,7 +46,7 @@ The best way to create an advanced system of reasonable complexity is through it
 
 ## Innovation requires iteration
 
-Software was stuck until we got rid of the waterfall model, and started to build complex systems iteratively. Remember that in the past every variable and function was global, and the entire team needed to know how everything interacted? Waterfall was the only way to tame that madness. 
+Software was stuck until we got rid of the waterfall model, and we started to build complex systems iteratively. Remember that in the past every variable and function was global, and the entire team needed to know how everything interacted? Waterfall was the only way to tame that madness. 
 
 How do you iterate on a jet plane using conventional CAD? 
 
@@ -56,13 +56,13 @@ That's why, in engineering, things take forever — and please never change a ru
 
 If you have a complex system, a good approach is usually *divide et impera*, Divide and Conquer. 
 
-What worked for the Romans, works for engineers. You split a plane into subcomponents, and define the *physical* connecting interfaces. Now everyone can work on their part, and, as long as it fits the agreed-upon interface, you are fine. 
+What worked for the Romans, works for engineers. You split a machine into subcomponents, and define the *physical* connecting interfaces. Now everyone can work on their part, and, as long as it fits the agreed-upon interface, you are fine. 
 
 But do this too early, and now your plane looks like a cobbled-together LEGO toy. And it certainly is not globally optimized. So, Divide and Conquer using CAD and physical interfaces is really not that great. To define good physical interfaces, you already have to have a very detailed design specification of the plane. So, you can't really iterate. But still, this is how we do it in CAD. We divide the plane into many subcomponents with well-defined physical interfaces. And we accept that the rigidity of this approach means that we will not get to an optimal design.
 
 And that's it.
 
-Again, in software it used to be similar — sure, you could split your code things into modules, but if every variable and every function needed to used in the right way, and a misstep would affect the stability of the entire code base, if every change to the code triggered rewrites in other places — you were forced into a very rigid way of working. 
+Again, in software it used to be similar — sure, you could split your code things into modules, but if every variable and every function had to be used in the right way, and a misstep would affect the stability of the entire code base, if every change to the code triggered rewrites in other places — you were forced into a very rigid way of working. 
 
 The same rigid way all engineers work today.
 
@@ -83,34 +83,34 @@ With that information, it isn't hard to come up with a class structure for an ai
 ```c#
 public class Airplane
 {
-	Wing      m_oWingLeft   = new();
-	Wing      m_oWingRight  = new();
-	Fuselage  m_oFuselage   = new();
-	Tail      m_oTail       = new(); 
+    Wing      m_oWingLeft   = new();
+    Wing      m_oWingRight  = new();
+    Fuselage  m_oFuselage   = new();
+    Tail      m_oTail       = new(); 
 }
 
 public class Wing
 {
-	Engine m_oEngine = new();
+    Engine m_oEngine = new();
 }
 
 public class Fuselage
 {
-  // We will figure it out
+     // We will figure it out
 }
 
 public class Tail
 {
-  // We will figure it out
+    // We will figure it out
 }
 
 public class Engine
 {
-  // Some complex stuff here
+    // Some complex stuff here
 }
 ```
 
-Note, there are millions of details missing. Well, we do not care. We have just defined that an airplane has two wings, a tail and a fuselage. We have created the logical structure, and we can fill in the blanks later.
+Note, there are millions of details missing. Well, we do not care! We have just defined that an airplane has two wings, a tail and a fuselage. We have created the logical structure, and we can fill in the blanks later.
 
 If you don't know what information you need to be able to pass, you can at least agree on the fact *that information has to pass*. Which means you need to define an interface that you will use later to query for that information. 
 
@@ -125,15 +125,15 @@ Now, we can debate how to specify this, maybe we should just used a `bool` value
 ```c#
 public class Wing
 {
-  public enum ESide {Left, Right};
+    public enum ESide {Left, Right};
   
-  public Wing(ESide eSide)
-  {
-      m_eSide = eSide;	
-  }
+    public Wing(ESide eSide)
+    {
+        m_eSide = eSide;	
+    }
   
-  Engine  m_oEngine = new();
-  ESide   m_eSide;
+    Engine  m_oEngine = new();
+    ESide   m_eSide;
 }
 ```
 
@@ -144,10 +144,10 @@ And that's what we will do in our modified `Airplane` class.
 ```c#
 public class Airplane
 {
-	Wing      m_oWingLeft   = new(Wing.ESide.Left);
-	Wing      m_oWingRight  = new(Wing.ESide.Right);
-	Fuselage  m_oFuselage   = new();
-	Tail      m_oTail       = new(); 
+    Wing      m_oWingLeft   = new(Wing.ESide.Left);
+    Wing      m_oWingRight  = new(Wing.ESide.Right);
+    Fuselage  m_oFuselage   = new();
+    Tail      m_oTail       = new(); 
 }
 ```
 
@@ -178,10 +178,10 @@ But, at some point, you will create a member function that may look like this:
 ```c#
 public class Airplane
 {
-	public Shapes oCreateResultingGeometry()
+    public Shapes oCreateResultingGeometry()
     {
         ....
-  	}
+    }
 }
 ```
 
@@ -191,7 +191,7 @@ Now, there is *a lot* of information that needs to go back and forth. Building a
 
 A Computational Engineering Model is a scientific approach to engineering. Science requires facts to be clearly and publicly stated. The source code of a Computational Engineering Model is such statement. It describes the decision process, the assumptions, the used physical models, and the design logic it its entire detail.
 
-## Building
+## Building an airplane
 
 So, how do we progress from here? Here's what I did with my team back then: We asked groups of two people each to take one component of the plane. One team took on the fuselage, one pair worked on the wings, others the engine, etc. I asked them to discuss what they would need to know, at minimum (information hiding) from the other team. And then I asked them to encapsulate all of that in C# interfaces.
 
@@ -234,8 +234,5 @@ Next Week: **First steps with PicoGK**
 ------
 
 **[PicoGK.org](https://picogk.org)/coding for engineers**
-
-
-
 
 
