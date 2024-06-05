@@ -83,7 +83,7 @@ Voxels vox = new(lat);
 
 Which gives us this result:
 
-![image-20240603203956645](/Users/richard/GitHub/leap71.github.io/coding-for-engineers/assets/8-FirstLattice.png)
+![image-20240603203956645](assets/8-FirstLattice.png)
 
 The first line creates a new (empty) lattice object. In the second line we add a beam to it. To do that, we use the 3D vector objects built into C#, called `Vector3`. The first vector has the coordinate `0,0,0` which is the beginning of the beam, the second vector is 50mm down the X axis.
 
