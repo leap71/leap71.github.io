@@ -18,6 +18,8 @@
 
 [7 — Design an aircraft in an afternoon](7-design-an-aircraft-in-an-afternoon.md)
 
+[8 — First steps in PicoGK](8-first-steps-in-picogk.md)
+
 # Foreword
 
 There are many programming courses out there, including for C#.
@@ -59,3 +61,5 @@ Next: **[Fundamentals](2-fundamentals.md)**
 ------
 
 **[PicoGK.org](https://picogk.org)/coding for engineers**
+
+© 2024 by [Lin Kayser](https://www.linkedin.com/in/linkayser/) — All rights reserved.

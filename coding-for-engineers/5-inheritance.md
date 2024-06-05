@@ -18,6 +18,8 @@
 
 [7 — Design an aircraft in an afternoon](7-design-an-aircraft-in-an-afternoon.md)
 
+[8 — First steps in PicoGK](8-first-steps-in-picogk.md)
+
 # Inheritance
 
 By now, we should be comfortable with the fundamental building blocks we use to create functionality in C#.
@@ -261,3 +263,4 @@ Next: [**Interfaces**](6-interfaces.md)
 
 **[PicoGK.org](https://picogk.org)/coding for engineers**
 
+© 2024 by [Lin Kayser](https://www.linkedin.com/in/linkayser/) — All rights reserved.

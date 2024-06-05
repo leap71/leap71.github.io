@@ -16,6 +16,10 @@
 
 [6 — Interfaces](6-interfaces.md)
 
+[7 — Design an aircraft in an afternoon](7-design-an-aircraft-in-an-afternoon.md)
+
+[8 — First steps in PicoGK](8-first-steps-in-picogk.md)
+
 # Fundamentals
 
 In this chapter we will go on a whirlwind tour from the general concept of a computer to the paradigm of object oriented programming.
@@ -478,3 +482,5 @@ Next: [**Running Code**](3-running-code.md)
 ------
 
 **[PicoGK.org](https://picogk.org)/coding for engineers**
+
+© 2024 by [Lin Kayser](https://www.linkedin.com/in/linkayser/) — All rights reserved.

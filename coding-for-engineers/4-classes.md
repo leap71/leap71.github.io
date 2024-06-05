@@ -18,6 +18,8 @@
 
 [7 — Design an aircraft in an afternoon](7-design-an-aircraft-in-an-afternoon.md)
 
+[8 — First steps in PicoGK](8-first-steps-in-picogk.md)
+
 # Classes
 
 Let's revisit the concept of classes we introduced in the first part of our series.
@@ -342,3 +344,5 @@ Next: [**Inheritance**](5-inheritance.md)
 ---
 
 **[PicoGK.org](https://picogk.org)/coding for engineers**
+
+© 2024 by [Lin Kayser](https://www.linkedin.com/in/linkayser/) — All rights reserved.

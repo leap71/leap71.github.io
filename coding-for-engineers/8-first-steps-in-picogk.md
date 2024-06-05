@@ -1,20 +1,44 @@
-# First steps with PicoGK
+**[PicoGK.org](https://picogk.org)/coding for engineers**
 
-Until now, we have talked about programming in general and have understood some basic concepts about how to structure code.
+![Coding for Engineers](assets/CodingforEngineers.jpg)
 
-In the last chapter, I gave a very general overview, how you would go about setting up a computational model for a physical object.
+[0 — Preamble: My story](README.md)
 
-I have avoided building geometry so far. This is intentional. Because of the way engineers work today, the object's appearance, the CAD "drawing", with all its details, naturally is in the focus. But for a Computational Engineering Model, the logical structure and the flow of information is equally as important and need to be done right. And all the things you learned, about classes, interfaces, constructors, etc. all prepared you for what comes next: Working with PicoGK, the geometry kernel I created in 2023, and which forms the basis for all our work at LEAP 71.
+[1 — Foreword](1-foreword.md)
+
+[2 — Fundamentals](2-fundamentals.md)
+
+[3 — Running Code](3-running-code.md)
+
+[4 — Classes](4-classes.md)
+
+[5 — Inheritance](5-inheritance.md)
+
+[6 — Interfaces](6-interfaces.md)
+
+[7 — Design an aircraft in an afternoon](7-design-an-aircraft-in-an-afternoon.md)
+
+**[8 — First steps in PicoGK](8-first-steps-in-picogk.md)**
+
+# First steps in PicoGK
+
+Until now, we have talked about programming in general and have understood how to fundamentally structure code.
+
+In the last chapter, I gave a very high-level overview, on how you would go about setting up a computational model for a physical object.
+
+But I have avoided building geometry so far. This is intentional. 
+
+Because of the way engineers work today, the object's appearance, the CAD "drawing", with all its details, naturally is in the focus. But for a Computational Engineering Model, the logical structure and the flow of information is equally as important. And all the things you learned, about classes, interfaces, constructors, etc. all prepared you for what comes next: Working with PicoGK, the geometry kernel I created in 2023, and which forms the basis for [all of our work at LEAP 71](https://leap71.com/gallery/).
 
 ![8-examples](assets/8-examples.jpg)
 
-PicoGK stands for Pico (tiny) Geometry Kernel, because it is just that: a shape engine that is [intentionally reduced to the max](https://jlk.ae/2023/12/06/the-power-of-reduced-instruction-sets/). 
+PicoGK stands for **Pico** (tiny) **G**eometry **K**ernel, because it is just that: a shape engine that is [intentionally reduced to the max](https://jlk.ae/2023/12/06/the-power-of-reduced-instruction-sets/). PicoGK is pronounced "peacock", as a nod to our feathery companions roaming the streets Dubai, of our hometown.
 
-PicoGK is different from traditional CAD kernels, because it has to be. CAD uses complex vector math to define *perfect* geometric shapes. The attempt to be perfect, however, is thwarted by the way computers represent math. 
+PicoGK is different from traditional CAD kernels, because it has to be. CAD uses complex vector math in an attempt to define *perfect* geometric shapes. The desire to be perfect, however, is thwarted by the way computers represent math. 
 
 Even though floating point numbers looks like the stuff you learned at school, they are subtly different. [Because of the way computers represent numbers, certain values simply don't exist](https://en.wikipedia.org/wiki/Floating-point_arithmetic#Accuracy_problems). The space of floating point numbers is rough terrain to navigate. As a result, it's incredibly complex to try to do achieve perfection using vectors, without running into numerical instabilities. You pile imperfect math onto imperfect math, while you build a complex shape. Anyone who has used CAD knows the challenges. Sometimes stuff that should work, doesn't. "Cannot perform boolean operation" is one message everyone dreads.
 
-I will not dwell on this, because PicoGK works differently and it approaches the problem from another angle.
+I will not dwell on this, because PicoGK works differently — and it approaches the problem from another angle.
 
 ## Voxels
 
@@ -28,9 +52,9 @@ But since last chapter was all theory, and little code, this chapter will dive r
 
 ## Lattices
 
-You don't want to draw a rocket engine, or really anything voxel by voxel, even though the underlying data format are these tiny 3D pixels. Just like any modern photo editor allows you to draw shapes, that are then transformed into the raster image, you will work with higher-level 3D shapes in PicoGK.
+You don't want to draw a rocket engine (or really anything) voxel by voxel, even though the underlying data format are these tiny 3D pixels. Just like any modern photo editor allows you to draw shapes, that are then transformed into the raster image, you will work with higher-level 3D shapes in PicoGK.
 
-And this is one important aspect to keep in mind — just because we render our shapes into voxels as the underlying data type, it doesn't mean that the computational model, the logic and the mathematical expressions that we feed into the voxel field are trivial. Quite the opposite. Computational models can create objects of awesome complexity, built on complex math and sophisticated logic. 
+And this is one important aspect to keep in mind — just because we render our shapes into voxels as the underlying data type, it doesn't mean that the computational model, the logic and the mathematical expressions that we feed as geometry into the voxel field are trivial. Quite the opposite. Computational models can create objects of awesome complexity, built on complex math and sophisticated logic. 
 
 But by using voxels, we can avoid stacking too much of this logic and math on top of each other, creating fragile interdependencies. By rendering to voxels and then using that result as the basis for our next step, we avoid the numerical instabilities that haunt CAD kernels.
 
@@ -38,9 +62,9 @@ So let's introduce some of these higher level ways of interacting with the voxel
 
 Let's start with lattices. A `Lattice` object in PicoGK can contain spheres or lattice beams. A sphere has a radius in millimeters, a lattice beam has two radii, one at each end, and it can have a flat bottom and top, or a rounded one.
 
-One lattice beam is already quite versatile, as you can use it to draw cylinders, cones, including rounded ones.
+One lattice beam, defined that way, is already quite versatile, as you can use it to draw cylinders, cones, including rounded ones.
 
-Here are a few shapes created using different lattices.
+Here are a few shapes created using different lattice parameters.
 
 ![8-LatticeFamily](/Users/richard/GitHub/leap71.github.io/coding-for-engineers/assets/8-LatticeFamily.png)
 
@@ -61,7 +85,7 @@ Which gives us this result:
 
 ![image-20240603203956645](/Users/richard/GitHub/leap71.github.io/coding-for-engineers/assets/8-FirstLattice.png)
 
-The first line creates a new (empty) lattice object. In the second line we add a lattice beam. To do that, we use the 3D vector objects built into C#, called `Vector3`. The first vector has the coordinate `0,0,0` which is the beginning of the beam, the second vector is 50mm down the X axis.
+The first line creates a new (empty) lattice object. In the second line we add a beam to it. To do that, we use the 3D vector objects built into C#, called `Vector3`. The first vector has the coordinate `0,0,0` which is the beginning of the beam, the second vector is 50mm down the X axis.
 
 The first radius (which is on the right side of the above image), is set to 5mm, the second radius is 20mm. Lastly, we set the rounded cap parameter to true, which gives us the nice domes at the end. 
 
@@ -124,9 +148,9 @@ voxOutside.BoolSubtract(voxInside);
 
 So this should look fairly familiar. But instead of one `Lattice` we create two. One for the outside of the pipe, with a radius of 10mm. Then a second one for the inside volume of the pipe, with a radius of 8mm. 
 
-After voxelizing both, we have two solid `Voxels` objects. In the last step, we subtract the inside from the outside. Now the voxel field `voxOutside` has a void, where the `voxInside` object was.
+After voxelizing both, we have two solid `Voxels` objects. In the last step, we subtract the inside from the outside. Now the voxel field `voxOutside` has an empty space, where the `voxInside` object was. We have a pipe.
 
-Boolean operations are amongst the most powerful functionality in PicoGK. They do exist in vector-based CAD systems, but are notoriously unreliable, because of the extremely complex math involved — so people avoid them. Because of the nature of voxels as a data format, booleans are rock-solid and fast. You can build complex objects through repeated boolean additions, subtractions and intersections, without ever having to worry about the objects getting corrupted or messy.
+Boolean operations are amongst the most powerful functionality in PicoGK. They do exist in vector-based CAD systems, but are notoriously unreliable, because of the extremely complex math involved — so people avoid them. Owing to the nature of voxels as a data format, booleans are rock-solid and fast. You can build complex objects through repeated boolean additions, subtractions and intersections, without ever having to worry about the objects getting corrupted or messy.
 
 ## Running PicoGK
 
@@ -144,15 +168,19 @@ PicoGK.Library.Go(0.5f, Coding4Engineers.LatticeExample.Task);
 
 And that's it.
 
-`Library` is a class contained in the `PicoGK` namespace. 
+Let's dissect the code:
 
-`Go` is a function implemented in the `Library` class, which takes two (or more) parameters.
+- `Library` is a class contained in the `PicoGK` namespace. 
 
-The first parameter is the voxel resolution in millimeters. 
+- `Go` is a function implemented in the `Library` class, which takes two (or more) parameters.
 
-The second parameter is the function which should be executed by the library. 
+- The first parameter is the voxel resolution in millimeters. 
+
+- The second parameter is the function which should be executed by the library. 
 
 In the example above, the function `Task`is implemented in a class named `LatticeExample`, which is contained in the namespace `Coding4Engineers`.
+
+## Catching exceptions
 
 Before we go further, let's add something to our `Program.cs`, that helps us understand if something goes wrong.
 
@@ -240,6 +268,8 @@ This statement adds the result of our hollow pipe to the PicoGK viewer, to make 
 
 And that's fundamentally it, this is one way to create geometry in PicoGK. You should be able to play around with lattices, including complex ones, and do interesting things. 
 
+## Looping with `for` loops
+
 To give you an impression how powerful this is, let's have a bit of fun. Let's draw 100 random connected lattices beams and show them. Like this:
 
 ![image-20240604104804134](assets/8-RandomLattices.png) 
@@ -299,6 +329,8 @@ Now, there is no reason, why the radius of each lattice beam should be constant,
 
 Just one word of caution, don't make the beam radius too large, as rendering very wide lattices can be slow, depending on your voxel resolution. If you need to speed things up, you can do so by making the size of the voxels larger in the `Library.Go` function. The result will not be as smooth, but for double the voxel size, say, going from 0.2 to 0.4, you get about a 6-8 times speed increase, depending on the geometry you create.
 
+## Boolean intersecting
+
 Now, lastly, let's do this:
 
 ![image-20240604111546221](assets/8-LatticeSphere.png)
@@ -346,7 +378,14 @@ Let's sum up what we discussed in this chapter.
 - Boolean operations allow us to add to, subtract from, or intersect with another voxel field.
 - Since voxel boolean operations are perfectly robust and fast, there is no disadvantage to using them extensively
 
+------
 
+Next Week: **Offsets, implicits, and other fun things**
 
+[Jump into the discussion here](https://github.com/leap71/PicoGK/discussions/categories/coding-for-computational-engineers)
 
+------
 
+**[PicoGK.org](https://picogk.org)/coding for engineers**
+
+© 2024 by [Lin Kayser](https://www.linkedin.com/in/linkayser/) — All rights reserved.

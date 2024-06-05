@@ -18,6 +18,8 @@
 
 [7 — Design an aircraft in an afternoon](7-design-an-aircraft-in-an-afternoon.md)
 
+[8 — First steps in PicoGK](8-first-steps-in-picogk.md)
+
 ## Preamble: My Story
 
 I learned coding in 1980, when I was 8 years old. Coding, programming, back then was simple. You just turned on the computer, and before the CRT screen of your TV set had warmed up enough to actually show anything, you could already type your first command. 
@@ -87,3 +89,5 @@ Next: **[Foreword](1-foreword.md)**
 ------
 
 **[PicoGK.org](https://picogk.org)/coding for engineers**
+
+© 2024 by [Lin Kayser](https://www.linkedin.com/in/linkayser/) — All rights reserved.

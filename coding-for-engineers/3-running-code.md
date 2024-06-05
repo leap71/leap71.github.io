@@ -18,6 +18,8 @@
 
 [7 — Design an aircraft in an afternoon](7-design-an-aircraft-in-an-afternoon.md)
 
+[8 — First steps in PicoGK](8-first-steps-in-picogk.md)
+
 # Running code
 
 The first computers were very bare bones — but they worked on the same principles as they do today. Computers run instructions (implemented in the hardware of the [Central Processing Unit](https://en.wikipedia.org/wiki/Central_processing_unit), CPU) on binary input data, (loaded from [Random Access Memory](https://en.wikipedia.org/wiki/Random-access_memory), RAM), to generate output data.
@@ -123,3 +125,5 @@ Next: [**Classes**](4-classes.md)
 ------
 
 **[PicoGK.org](https://picogk.org)/coding for engineers**
+
+© 2024 by [Lin Kayser](https://www.linkedin.com/in/linkayser/) — All rights reserved.

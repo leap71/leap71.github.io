@@ -18,6 +18,8 @@
 
 [**7 — Design an aircraft in an afternoon**](7-design-an-aircraft-in-an-afternoon.md)
 
+[8 — First steps in PicoGK](8-first-steps-in-picogk.md)
+
 # Design an aircraft in an afternoon
 
 Back in 2021, at my last company, [Hyperganic](https://jlk.ae/2022/05/11/we-just-built-the-worlds-largest-3d-printed-aerospike-rocket-engine/), I asked the team in my Singapore office to gather around.
@@ -229,7 +231,7 @@ Done with theory, let's see some visual output next week.
 
 ------
 
-Next Week: **First steps with PicoGK**
+Next: [**First steps in PicoGK**](8-first-steps-in-picogk.md)
 
 [Jump into the discussion here](https://github.com/leap71/PicoGK/discussions/categories/coding-for-computational-engineers)
 
@@ -237,4 +239,4 @@ Next Week: **First steps with PicoGK**
 
 **[PicoGK.org](https://picogk.org)/coding for engineers**
 
-
+© 2024 by [Lin Kayser](https://www.linkedin.com/in/linkayser/) — All rights reserved.

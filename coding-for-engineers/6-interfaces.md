@@ -18,6 +18,8 @@
 
 [7 — Design an aircraft in an afternoon](7-design-an-aircraft-in-an-afternoon.md)
 
+[8 — First steps in PicoGK](8-first-steps-in-picogk.md)
+
 # Interfaces
 
 We have covered a lot of ground by now. Time for a recap.
@@ -201,3 +203,4 @@ Next: [**Design an aircraft in an afternoon**](7-design-an-aircraft-in-an-aftern
 
 **[PicoGK.org](https://picogk.org)/coding for engineers**
 
+© 2024 by [Lin Kayser](https://www.linkedin.com/in/linkayser/) — All rights reserved.
