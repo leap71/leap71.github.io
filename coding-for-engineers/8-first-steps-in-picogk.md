@@ -66,7 +66,7 @@ One lattice beam, defined that way, is already quite versatile, as you can use i
 
 Here are a few shapes created using different lattice parameters.
 
-![8-LatticeFamily](/Users/richard/GitHub/leap71.github.io/coding-for-engineers/assets/8-LatticeFamily.png)
+![8-LatticeFamily](assets/8-LatticeFamily.png)
 
 Let's see how this looks like in code:
 
