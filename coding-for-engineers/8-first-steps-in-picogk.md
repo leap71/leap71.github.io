@@ -20,6 +20,8 @@
 
 **[8 — First steps in PicoGK](8-first-steps-in-picogk.md)**
 
+[9 — Let's build a computational fixture maker (Part 1)](9-computational-fixture-maker.md)
+
 # First steps in PicoGK
 
 Until now, we have talked about programming in general and have understood how to fundamentally structure code.
@@ -380,7 +382,7 @@ Let's sum up what we discussed in this chapter.
 
 ------
 
-Next Week: **Offsets, implicits, and other fun things**
+Next Week: [**Let's build a computational fixture maker**](9-computational-fixture-maker.md)
 
 [Jump into the discussion here](https://github.com/leap71/PicoGK/discussions/categories/coding-for-computational-engineers)
 

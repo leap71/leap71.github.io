@@ -20,6 +20,8 @@
 
 [8 — First steps in PicoGK](8-first-steps-in-picogk.md)
 
+[9 — Let's build a computational fixture maker (Part 1)](9-computational-fixture-maker.md)
+
 # Running code
 
 The first computers were very bare bones — but they worked on the same principles as they do today. Computers run instructions (implemented in the hardware of the [Central Processing Unit](https://en.wikipedia.org/wiki/Central_processing_unit), CPU) on binary input data, (loaded from [Random Access Memory](https://en.wikipedia.org/wiki/Random-access_memory), RAM), to generate output data.

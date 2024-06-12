@@ -20,6 +20,8 @@
 
 [8 — First steps in PicoGK](8-first-steps-in-picogk.md)
 
+[9 — Let's build a computational fixture maker (Part 1)](9-computational-fixture-maker.md)
+
 # Inheritance
 
 By now, we should be comfortable with the fundamental building blocks we use to create functionality in C#.

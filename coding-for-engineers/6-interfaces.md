@@ -20,6 +20,8 @@
 
 [8 — First steps in PicoGK](8-first-steps-in-picogk.md)
 
+[9 — Let's build a computational fixture maker (Part 1)](9-computational-fixture-maker.md)
+
 # Interfaces
 
 We have covered a lot of ground by now. Time for a recap.
