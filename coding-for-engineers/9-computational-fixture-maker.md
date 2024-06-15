@@ -621,11 +621,11 @@ Let's look at the steps for this App we are creating.
 So, there is still a bit of stuff to do. 
 
 - First of all, there is no way to mount the object using the flange, except to clamp it. We need to add holes, that correspond to the build plate.
-- Secondly, depending on the geometry object, the fixture may enclose the object in such a way that it is 'stuck inside'. We will have to fix that. Think about how you would do it, here's a visual that shows the problem:
+- Secondly, depending on the geometry, the fixture may enclose the object in such a way that it is 'stuck inside'. We will have to fix that. Think about how you would do it, here's a visual that shows the problem:
 
 ![image-20240612205423664](assets/9-stuck.png)
 
-- Thirdly, the fixture may have tiny details that produde from it, if there are small holes in the object. It's important to fix an object based on holes, but some of these might be tiny, resulting in very long producing columns that may not be stable.	
+- Thirdly, the fixture may have tiny details that protrude from it, if there are small holes in the object. It's important to fix an object based on holes, but some of these might be tiny, resulting in very long columns that may not be stable.	
 
 Fortunately, all of this is easily done. 
 
