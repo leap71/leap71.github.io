@@ -107,7 +107,7 @@ What are we trying to build? What's our output?
 
 Don't say a `Mesh` or a `Voxels` object, even though this is not entirely wrong.
 
-Isn't what we are actually trying to build a `Fixture`?
+Isn't what we are actually trying to build a ... `Fixture`?
 
 We forgot the hero in our movie! 
 
@@ -131,8 +131,6 @@ And of course we have to know nothing about how this is all implemented, we can 
 
 This is an important lesson for us. And there is a very generalized rule that you can derive from it:
 
-> [!TIP]
->
 > Whenever you are tempted to encapsulate a *process* in a class, you are probably doing something wrong.
 
 In other words, if you are building a class that is named after a *process* (here *making* a fixture), it's almost certain there is a problem in your approach. We didn't create an `AirplaneMaker` in one of the past chapters, we want an `Airplane`.
