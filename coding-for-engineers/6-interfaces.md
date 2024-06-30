@@ -2,27 +2,7 @@
 
 ![Coding for Engineers](assets/CodingforEngineers.jpg)
 
-[0 — Preamble: My story](README.md)
-
-[1 — Foreword](1-foreword.md)
-
-[2 — Fundamentals](2-fundamentals.md)
-
-[3 — Running Code](3-running-code.md)
-
-[4 — Classes](4-classes.md)
-
-[5 — Inheritance](5-inheritance.md)
-
-[**6 — Interfaces**](6-interfaces.md)
-
-[7 — Design an aircraft in an afternoon](7-design-an-aircraft-in-an-afternoon.md)
-
-[8 — First steps in PicoGK](8-first-steps-in-picogk.md)
-
-[9 — Let's build a computational fixture maker (Part 1)](9-computational-fixture-maker.md)
-
-[10 — Let's build a computational fixture maker (Part 2)](10-computational-fixture-maker-2.md)
+**[Table of contents](TOC.md)**
 
 # Interfaces
 
@@ -202,6 +182,8 @@ And with this, we are done with the basics. Next we will build an aircraft.
 Next: [**Design an aircraft in an afternoon**](7-design-an-aircraft-in-an-afternoon.md)
 
 [Jump into the discussion here](https://github.com/leap71/PicoGK/discussions/categories/coding-for-computational-engineers)
+
+[Table of contents](TOC.md)
 
 ---
 

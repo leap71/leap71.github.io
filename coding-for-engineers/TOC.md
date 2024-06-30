@@ -18,13 +18,11 @@
 |    9    | [Let's build a computational fixture maker (Part 1)](9-computational-fixture-maker.md) | Putting our knowledge to a test, using PicoGK to automate the design of fixtures |
 |   10    | [Let's build a computational fixture maker (Part 2)](10-computational-fixture-maker-2.md) | Rethinking our approach to generating fixtures, abstracting progress reporting |
 
-## More information
-
-|                        |                                                              |                                                              |
-| ---------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Source code repository | https://github.com/LinKayser/Coding4Engineers                | This repository contains all the example source code of the book. |
-| PicoGK on GitHub       | https://github.com/leap71                                    | The main LEAP 71 GitHub — contains PicoGK and many examples. |
-| Discussion Forum       | https://github.com/leap71/PicoGK/discussions/categories/coding-for-computational-engineers | Discuss the book project here.                               |
+| More information                                             |                                                              |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| **[Source code repository](https://github.com/LinKayser/Coding4Engineers)** | This repository contains all the example source code of the book. |
+| **[PicoGK on GitHub](https://github.com/leap71)**            | The main LEAP 71 GitHub — contains PicoGK and many examples. |
+| **[Discussion Forum](https://github.com/leap71/PicoGK/discussions/categories/coding-for-computational-engineers)** | Discuss the book project here.                               |
 
 ------
 
