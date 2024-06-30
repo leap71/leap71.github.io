@@ -22,6 +22,8 @@
 
 **[9 — Let's build a computational fixture maker (Part 1)](9-computational-fixture-maker.md)**
 
+[10 — Let's build a computational fixture maker (Part 2)](9-computational-fixture-maker-2.md)
+
 # Let's build a computational fixture maker (Part 1)
 
 In this chapter, we will learn about a few more geometry representations that you can use in PicoGK. 
@@ -635,7 +637,7 @@ If you followed the implementation in detail, you should have a running App. As 
 
 ------
 
-Next Week: **Let's build a computational fixture maker (Part 2)**
+Next: [**Let's build a computational fixture maker (Part 2)**](10-computational-fixture-maker-2.md)
 
 [Jump into the discussion here](https://github.com/leap71/PicoGK/discussions/categories/coding-for-computational-engineers)
 
@@ -644,3 +646,4 @@ Next Week: **Let's build a computational fixture maker (Part 2)**
 **[PicoGK.org](https://picogk.org)/coding for engineers**
 
 © 2024 by [Lin Kayser](https://www.linkedin.com/in/linkayser/) — All rights reserved.
+

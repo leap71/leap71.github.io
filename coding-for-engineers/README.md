@@ -22,6 +22,8 @@
 
 [9 — Let's build a computational fixture maker (Part 1)](9-computational-fixture-maker.md)
 
+[10 — Let's build a computational fixture maker (Part 2)](9-computational-fixture-maker-2.md)
+
 ## Preamble: My Story
 
 I learned coding in 1980, when I was 8 years old. Coding, programming, back then was simple. You just turned on the computer, and before the CRT screen of your TV set had warmed up enough to actually show anything, you could already type your first command. 

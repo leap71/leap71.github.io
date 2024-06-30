@@ -22,6 +22,8 @@
 
 [9 — Let's build a computational fixture maker (Part 1)](9-computational-fixture-maker.md)
 
+[10 — Let's build a computational fixture maker (Part 2)](9-computational-fixture-maker-2.md)
+
 # Design an aircraft in an afternoon
 
 Back in 2021, at my last company, [Hyperganic](https://jlk.ae/2022/05/11/we-just-built-the-worlds-largest-3d-printed-aerospike-rocket-engine/), I asked the team in my Singapore office to gather around.

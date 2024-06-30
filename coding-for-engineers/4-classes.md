@@ -22,6 +22,8 @@
 
 [9 — Let's build a computational fixture maker (Part 1)](9-computational-fixture-maker.md)
 
+[10 — Let's build a computational fixture maker (Part 2)](9-computational-fixture-maker-2.md)
+
 # Classes
 
 Let's revisit the concept of classes we introduced in the first part of our series.
