@@ -22,7 +22,7 @@
 
 [9 — Let's build a computational fixture maker (Part 1)](9-computational-fixture-maker.md)
 
-**[10 — Let's build a computational fixture maker (Part 2)](9-computational-fixture-maker-2.md)**
+**[10 — Let's build a computational fixture maker (Part 2)](10-computational-fixture-maker-2.md)**
 
 # Let's build a computational fixture maker (Part 2)
 
