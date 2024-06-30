@@ -176,15 +176,14 @@ That looks simple enough! We have a `FixtureMaker` class. It has a constructor w
 
 But we can run our App nevertheless!
 
-So, all we have to do in our `App.Go()` function is the following:
+So, all we have to do in our `App.Run()` function is the following:
 
 ```c#
 BasePlate      oBase   = new();
 FixtureObject  oObject = new();
 
 FixtureMaker oMaker = new(oBase, oObject);
-
-PicoGK.Library.Go(1, oMaker.Run);
+oMaker.Run();
 ```
 
 Easy, right?
@@ -480,12 +479,12 @@ public void Run()
 }
 ```
 
-Let's execute PicoGK with the following `App.Go()` code.
+Let's execute PicoGK with the following `App.Run()` code.
 
 ```c#
 public class App
 {
-    public static void Go()
+    public static void Run()
     {
         BasePlate      oBase   = new();
 

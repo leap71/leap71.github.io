@@ -220,7 +220,7 @@ I modified all the variable names to reflect our changes (parameters vs. member 
 Now, we can modify or `App.Run` function to reflect our changes.
 
 ```c#
-public static void Go()
+public static void Run()
 {
     // previous stuff unchanged
 
