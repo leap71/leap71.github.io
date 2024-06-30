@@ -140,10 +140,10 @@ So, with that knowledge, let's complete our class definition and start using it.
 
 ## Class definition
 
-Let's pick a namespace to use for our project, let's call it `CSForEngineers` and paste in our previous class definition.
+Let's pick a namespace to use for our project, let's call it `Coding4Engineers` and paste in our previous class definition.
 
 ```c#
-namespace CSForEngineers
+namespace Coding4Engineers
 {
     public class TeslaRoadster
     {
@@ -198,7 +198,7 @@ Let's do this:
 Go to your Program.cs and create an instance of a class, which results in an object:
 
 ```c#
-CSForEngineers.TeslaRoadster oLinsCar;
+Coding4Engineers.TeslaRoadster oLinsCar;
 oLinsCar = new CSForEngineers.TeslaRoadster();
 ```
 
@@ -211,7 +211,7 @@ Now, before we continue, let's first simplify things a little. Let's add `using 
 We can simplify our code now to:
 
 ```c#
-using CSForEngineers;
+using Coding4Engineers;
 
 TeslaRoadster oLinsCar;
 oLinsCar = new TeslaRoadster();
@@ -242,7 +242,7 @@ Remember what we said about what happens when a new object is created? The const
 Let's see what happens when we output their contents.
 
 ```c#
-using CSForEngineers;
+using Coding4Engineers;
 
 TeslaRoadster oLinsCar = new();
 Console.WriteLine(oLinsCar.strName());
@@ -262,7 +262,7 @@ public TeslaRoadster( string  strName      = "Poor anonymous car",
 So let's test this out, by passing the first parameter to the constructor:
 
 ```c#
-using CSForEngineers;
+using Coding4Engineers;
 
 TeslaRoadster oLinsCar = new("Lins's red Tesla");
 Console.WriteLine(oLinsCar.strName());
@@ -275,7 +275,7 @@ And in fact, the `m_strName` variable of our object is assigned accordingly.
 Now, let's check the charge level and see if we can drive:
 
 ```c#
-using CSForEngineers;
+using Coding4Engineers;
 
 TeslaRoadster oLinsCar = new("Lin's red Tesla");
 Console.WriteLine(oLinsCar.strName());
@@ -287,7 +287,7 @@ Remember everything is an object in C#? `nBatteryLevelPercent` is an unsigned in
 The charge level is `0` — that's not good. We should charge it before we drive!
 
 ```c#
-using CSForEngineers;
+using Coding4Engineers;
 
 TeslaRoadster oLinsCar = new("Lin's red Tesla");
 Console.WriteLine(oLinsCar.strName());
@@ -303,7 +303,7 @@ We can create more cars for more people, and have a bit of fun with variables.
 This simple example illustrates how these objects are all of the same `class`, but they each have a life of their own, just like my car may be the same make and model as your car, but clearly we each have our own separate physical object in our garages.
 
 ```c#
-using CSForEngineers;
+using Coding4Engineers;
 
 TeslaRoadster oFredsCar = new("Fred's Tesla");
 Console.WriteLine(oFredsCar.strName());
@@ -336,6 +336,30 @@ It is often useful to create different interfaces to objects for different purpo
 Unless you need the complexity, you can treat, and implement, the object as simply as you can.
 
 We will explore this concept in the next chapter on inheritance, and later with interfaces.
+
+## Source Code and one more thing
+
+From now on, we will build executable source code that builds on top of previous chapters' source code. [So I created an accompanying GitHub repository](https://github.com/LinKayser/Coding4Engineers), where the code is available, organized by chapter.
+
+To avoid collisions between different versions of the same code, evolving over several chapters, I added a nested namespace with each chapter number. So, for our example above, the namespace looks like this:
+
+```c#
+namespace Coding4Engineers
+{
+    namespace Chapter04
+    {
+        public class TeslaRoadster
+        {
+            ....
+```
+
+So, our `using` directive needs to be:
+
+```c#
+using Coding4Engineers.Chapter04;
+```
+
+We will use that convention from now on, to avoid messing up things we wrote in previous chapters. But of course, this is only relevant to the book project. Nested namespaces are, however, a powerful way to organize large projects into sub namespaces. 
 
 ----
 

@@ -42,16 +42,16 @@ Let's create a new file and call it `FixtureMaker.cs`.
 
 Inside, we put our usual namespaces, `CodingForEngineers`, etc. I will not describe this in detail here. From the past chapters, you should know how it works. At the end of this chapter, you can see the final implementation — but I encourage you to build from scratch and follow the instructions. You will learn more that way.
 
-Inside our `CodingForEngineers` namespace, I am adding a new one, and call it `FixtureFun`.
+Inside our `CodingForEngineers` namespace, I am adding a new one, and call it `Fixtures`.
 
 Now lets start by creating an App with a static `Go` function, that we can call.
 
 ```c#
-namespace FixtureFun
+namespace Fixtures
 {
     public class App
     {
-        public static void Go()
+        public static void Run()
         {
             // Do stuff here
         }
@@ -64,7 +64,7 @@ You can now modify your `Program.cs` to call the function from PicoGK.
 ```c#
 try
 {
-    PicoGK.Library.Go(.5f, Coding4Engineers.FixtureFun.App.Go);
+    PicoGK.Library.Go(.5f, Coding4Engineers.Fixtures.App.Run);
 }
 
 catch (Exception e)
@@ -620,7 +620,7 @@ Let's look at the steps for this App we are creating.
 
 So, there is still a bit of stuff to do. 
 
-- First of all, there is no way to mount the object using the flange, except to clamp it. We need to add holes, that correspond to the build plate.
+- First of all, there is no way to mount the object using the flange, except to clamp it. We need to add mounting holes, that correspond to the build plate.
 - Secondly, depending on the geometry, the fixture may enclose the object in such a way that it is 'stuck inside'. We will have to fix that. Think about how you would do it, here's a visual that shows the problem:
 
 ![image-20240612205423664](assets/9-stuck.png)
@@ -631,7 +631,7 @@ Fortunately, all of this is easily done.
 
 Feel free to make an attempt at a solution. Or wait until next week's chapter.
 
-If you followed the implementation in detail, you should have a running App. [If not, here is the source code file.](code/9-Coding4Engineers_FixtureMaker.cs)
+If you followed the implementation in detail, you should have a running App. As always, [you can find working source code here](https://github.com/LinKayser/Coding4Engineers).
 
 ------
 

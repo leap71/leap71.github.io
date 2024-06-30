@@ -129,7 +129,7 @@ And when I don't need to deal with anything specific to a `TeslaRoadster`, I can
 Let's say, I have a taxi company, and I have an inventory of cars. I could store them in variables of type `Car`, even though clearly, each could be a different model. But for the purpose of counting them, or even renting them out, it could be sufficient if I treat them all the same way, and interact with them using the functionality common to cars.
 
 ```c#
-using CSForEngineers;
+using Coding4Engineers;
 
 List<Car> aoMyCars = new(); // Create a new list of cars
 aoMyCars.Add(new TeslaRoadster("Black Tesla Roadster"));
@@ -229,7 +229,14 @@ public abstract class Car
 
 Note that we also deleted the empty `{}` because `abstract` functions cannot have an implementation in C#.
 
-Now every class derived from `Car` must implement `PrepareForDriving`, otherwise the compiler will complain.
+Now every class derived from `Car` must implement `PrepareForDriving`, otherwise the compiler will complain. So we add the function to the class, using the keyword `override` to indicate it is the implementation of the abstract function in the base class.
+
+```c#
+public override void PrepareForDriving()
+{
+    Charge();
+}
+```
 
 ## Summary 
 

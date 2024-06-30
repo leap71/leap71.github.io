@@ -224,27 +224,30 @@ using System.Numerics;
 
 namespace Coding4Engineers
 {
-    class LatticeExample
+    namespace Chapter08
     {
-        public static void Task()
+        class App
         {
-            Lattice latOutside = new();
-            latOutside.AddBeam( new Vector3(0,0,0),
-                                new Vector3(50,0,0),
-                                10, 10, false);
+            public static void Run()
+            {
+                Lattice latOutside = new();
+                latOutside.AddBeam( new Vector3(0,0,0),
+                                    new Vector3(50,0,0),
+                                    10, 10, false);
 
-            Voxels voxOutside = new(latOutside);
+                Voxels voxOutside = new(latOutside);
 
-            Lattice latInside = new();
-            latInside.AddBeam(  new Vector3(0,0,0),
-                                new Vector3(50,0,0),
-                                8, 8, false);
+                Lattice latInside = new();
+                latInside.AddBeam(  new Vector3(0,0,0),
+                                    new Vector3(50,0,0),
+                                    8, 8, false);
 
-            Voxels voxInside = new(latInside);
+                Voxels voxInside = new(latInside);
 
-            voxOutside.BoolSubtract(voxInside);
+                voxOutside.BoolSubtract(voxInside);
 
-            Library.oViewer().Add(voxOutside);
+                Library.oViewer().Add(voxOutside);
+            }
         }
     }
 }
@@ -254,9 +257,9 @@ Let's start with the second line: `using System.Numerics`.
 
 `System` is the main namespace for the C# runtime. The sub namespace `Numerics` adds many numerical classes, such as `Vector3`, which we use.
 
-We define our own `namespace Coding4Engineers`. 
+We define our own `namespace Coding4Engineers` (and inside we add another namespace for this chapter of the book, which we, again, are just doing to avoid collisions with later chapters in the same project).
 
-In it, we implement a class called `LatticeExample`. Our class really has no data members and will never be instantiated using `new`. The only reason it exists is to provide a function named `Task`, in which we do all of our work.
+In it, we implement a class called `App`. Our class really has no data members and will never be instantiated using `new`. The only reason it exists is to provide a function named `Run`, in which we do all of our work.
 
 We mark this function as `static`, as it is a function that can be called without creating an instance of the class. We will dive into this in more detail some other time.
 
@@ -279,7 +282,7 @@ To give you an impression how powerful this is, let's have a bit of fun. Let's d
 Let's look at the code:
 
 ```c#
-public static void Task()
+public static void Run()
 {
     Lattice lat         = new();     
     Vector3 vecPrevious = new(0,0,0);
