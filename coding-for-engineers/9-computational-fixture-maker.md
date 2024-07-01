@@ -260,7 +260,7 @@ public class FixtureObject
 
 Let's also do some parameter validation, since the `fObjectBottomMM` parameter definitely needs to be larger than zero.
 
-We will use an `Exception` to indicate an error state. If you remember from the previous chapters, an `Exception` can be caught, when it's thrown, which allows you to do error handling. Once you throw an `Exception`, none of the code after it is executed, and the program execution ends up in the closes `catch` block. The most outward `catch` block is in our `Program.cs`. So if no other blocks are added, any exception `throw`, ends up there (and prints its message). 
+We will use an `Exception` to indicate an error state. If you remember from the previous chapters, an `Exception` can be caught, when it's thrown, which allows you to do error handling. Once you throw an `Exception`, none of the code after it is executed, and the program execution ends up in the closest `catch` block. The most outward `catch` block is in our `Program.cs`. So if no other blocks are added, any exception you `throw`, ends up there (and prints its message). 
 
 ```c#
 public class FixtureObject
@@ -517,7 +517,7 @@ public void Run()
 }
 ```
 
-So, we use the `SetGroupMaterial` function to add a transparent red color for viewer group 1, and a green, non-transparent coloer for group 0. When we add the object, we use the group id to indicate the color. Here is the result:
+So, we use the `SetGroupMaterial` function to add a transparent red color for viewer group 1, and a green, non-transparent color for group 0. When we add the object, we use the group id to indicate the color. Here is the result:
 
 ![image-20240611222850936](assets/9-intermediateresult.png)
 
@@ -551,7 +551,7 @@ public void Run()
 
 ![image-20240611230942155](assets/9-cutoff.png)
 
-This doesn't look to bad for a fixture. Now, let's add a flange to mount it.
+This doesn't look too bad for a fixture. Now, let's add a flange to mount it.
 
 We will offset the fixture again, by the flange width, and then cut bottom and top off to get a flat flange:
 
@@ -583,16 +583,16 @@ Not bad for a few lines of code.
 
 I think this is enough for this chapter. 
 
-Next week we will refine the algorithm further and add the mounting holes for mounting the fixture to the base plate.
+Next week we will refine the algorithm further and address a few issues with the code structure.
 
 ## Recap
 
 Let's look at the steps for this App we are creating.
 
 - First we created an `App` class that holds the `Go` function of our App, which we pass to PicoGK
-- We defined the inputs as bare bones classes, and later fleshed out some of the details 
+- We defined the inputs as bare bones classes, and later fleshed out some of the details
 - We implemented our `FixtureMaker.Run()` function and implemented a couple of steps:
-  - We used the `Offset` function to create an object that was 'fatter' by the ficture wall thickness
+  - We used the `Offset` function to create an object that was 'fatter' by the fixture wall thickness
   - Then we used the `ProjectZSlice` function to build a solid base for the object
   - We cut the fixture to size and added another wider offsetted part that will be our mounting flange
   - We booleaned flange and fixture together, and subtracted the object, so it can be held

@@ -8,7 +8,7 @@
 
 Now, that was a lot of stuff in one chapter. And we are not done yet.
 
-Let's review quickly what we did. We created a `FixtureMaker` which allows us to build a fixture for a random object, which we can, for example, load from an STL mesh.
+Let's review quickly what we did. We created a `FixtureMaker` which allows us to build a fixture for a random object, for example, loaded from an STL mesh.
 
 We implemented the geometry creation logic, which required us to learn about positioning meshes, rendering them into `Voxels`, offsetting, and booleaning the results. 
 
