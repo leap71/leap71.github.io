@@ -460,7 +460,7 @@ Let's look at the rest of the challenges from the previous chapter next.
 
 ------
 
-Next Week: **Let's build a computational fixture maker (Part 3)**
+Next Week: [**Let's build a computational fixture maker (Part 3)**](11-computational-fixture-maker-3.md)
 
 [Jump into the discussion here](https://github.com/leap71/PicoGK/discussions/categories/coding-for-computational-engineers)
 
