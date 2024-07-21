@@ -69,16 +69,16 @@ First, since  `Coding4Engineers.Fixtures.Fixture.FixtureObject` seems like a lot
 
 Now, the `Fixtures` namespace seems kind of redundant. Why don't we rename our `App` object `FixtureMakerApp`, and kill the `Fixtures` namespace.
 
-Now, we have a clean hierarchy of namespaces and classes:
+As a result, we have a clean hierarchy of namespaces and classes:
 
-- CodingForEngineers
+- `CodingForEngineers`
   - `FixtureMakerApp`
   - `ProgressReporter`
   - `Fixture`
     - `Object`
     - `BasePlate`
 
-Why didn't we move the `ProgressReporter` inside the `Fixture` class? Because it seems like a general mechanism that we may want to reuse later. If that' the case, we should move it to its on .CS file at some point. But not today.
+Why didn't we move the `ProgressReporter` inside the `Fixture` class? Because it seems like a general mechanism that we may want to reuse later. If that' the case, we should move it to its own `.cs` file at some point. But not today.
 
 We have to make a few changes to the `FixtureMakerApp.Run()` function to make sure it reflects all the new names:
 
@@ -119,7 +119,7 @@ As you have discovered, if you followed the book closely, it's a winding road to
 
 And it's always like that. You put down the lines, only to discover a while later, that there is a more elegant way to express your logic. You make the changes. — And then you rewrite it again, when you gain more insights a week, a month, or a year later.
 
-This is part of the journey, and this so-called *refactoring* will occupy quite a bit of your time. It's important to spend the effort. When you discover things in your code, that don't make sense anymore, go ahead and refactor. Refactoring is part of the job. Old code is never sacrosanct, in fact you should keept it alive by rewriting it. 
+This is part of the journey, and this so-called *refactoring* will occupy quite a bit of your time. It's important to spend the effort. When you discover things in your code, that don't make sense anymore — go ahead and refactor. Refactoring is part of the job. Old code is never sacrosanct, in fact you should keept it alive by rewriting it. 
 
 Many decades-old code bases have, what is called "technological debt". Someone should have rewritten and rethought it long ago — but nobody ever found the time. So it's just left there to rot, workarounds are built around this stale code, and monsters are lurking in the dark. Technological debt is why progress in established applications grinds to a halt — and why nobody will ever fix the positioning of images in Microsoft Word.
 
@@ -135,11 +135,11 @@ Now, we could spend a few hours now, thinking through all the potential base pla
 
 Yes, we could do that, and sometimes it's the right approach. 
 
-But more often, it isn't. We know that there will be complex ways to attach a fixture to a base plate. But instead of trying to think through all eventualities now, let's implement a concrete example now, and see how it goes.
+But more often, it isn't. We know that there will be complex ways to attach a fixture to a base plate. But instead of trying to think through all eventualities now, let's implement a concrete example, and see how it goes.
 
 We know we will modify the approach later. When we refactor the code.
 
-Why not spend time to think it through? The reason is simple: It usually results in overengineering. And more often than not, you will end up with a lot of code that is never used, and potentially introduces errors. As a good rule of thumb: Always implement what you need today, not what someone might need in the future.
+Why not spend time to think it through? The reason is simple: It usually results in overengineering. And more often than not, you will end up with a lot of code that is never used, and potentially introduces errors. As a good rule of thumb: Always implement what you need today, not what someone might need in the future. Don't overthink.
 
 So, let's just assume a `BasePlate` just has a size and evenly spaced holes with a certain diameter. 
 
@@ -148,7 +148,7 @@ So the constructor of our `BasePlate` will look something like this:
 ```c#
 public class BasePlate
 {
-    public BasePlate(	Vector2 vecSizeMM,
+    public BasePlate(	Vector vecSizeMM,
                     	float fHoleSpacingMM,
                     	float fHoleDiameterMM)
     {
@@ -168,7 +168,7 @@ What shall we do with all the info? Let's look at the workflow for generating ou
 
 Since the flange needs to be modified to be attached to the base plate, we should start interacting with the `BasePlate` object, once the flange is built.
 
-I think the first thing we should check is if the flange actually fits onto the base plate. So, let's add a function to the `BasePlate` class to find out. What should we pass as input? The dimensions of the bounding box of the flange? That could be one option. But the more general way is to pass the geometry of the flange itself. If our base plate is irregularly shaped, for example if it is round or rectangular, we can gauge more intelligently, whether this fits.
+I think the first thing we need to check is if the flange actually fits onto the base plate. So, let's add a function to the `BasePlate` class to find out. What should we pass as input? The dimensions of the bounding box of the flange? That could be one option. But the more general way is to pass the geometry of the flange itself. If our base plate is irregularly shaped, for example if it is round or rectangular, we can gauge more intelligently, whether this fits.
 
 So let's just pass the `Voxels` of the flange, and deal with the logic inside. Information hiding at work.
 
@@ -241,13 +241,13 @@ Why did we split the `bDoesFit` and `voxCreateMountableFlange` functions into tw
 
 But maybe we would like to actually do something outside the `BasePlate` if the flange doesn't fit (like selecting a different base plate, or maybe creating a smaller flange). 
 
-Again, we are trying to keep our options open, without overengineering things.
+Again, we are trying to keep our options open, without overengineering.
 
-So, now, how do we drill holes into the flange to mount it? 
+So, now, how do we cut holes into the flange to mount it? 
 
 We use a drill.
 
-The easiest way to cut holes is to generate a `Lattice` which has beams for all the holes, and then use it with a `BoolSubtract` operation on the flange.
+The easiest way is to generate a `Lattice` which has beams for all the holes, and then use it with a `BoolSubtract` operation on the flange.
 
 ```c#
 
@@ -270,7 +270,7 @@ return voxMountableFlange;
 
 Doesn't look so hard, does it?
 
-![](assets/11-drilled-base.png)Imagine having to design this in the traditional way, with CAD sketches, vector math, etc. It would look like a university math exam to do it in a generalized way. But because we use voxels and booleans in Computational Engineering, things get really simple. 
+![](assets/11-drilled-base.png)Imagine having to design this in the traditional way, with CAD sketches, vector math, etc. It would look like a university math exam. But because we use voxels and booleans in Computational Engineering, things get really simple. 
 
 What if we are designing a mounting flange that has recessed holes for screw heads, etc. No problem, just the drill bit gets a bit more complex.
 
