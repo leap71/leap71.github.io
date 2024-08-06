@@ -148,9 +148,9 @@ So the constructor of our `BasePlate` will look something like this:
 ```c#
 public class BasePlate
 {
-    public BasePlate(	Vector vecSizeMM,
-                    	float fHoleSpacingMM,
-                    	float fHoleDiameterMM)
+    public BasePlate(	Vector2 vecSizeMM,
+                    	float   fHoleSpacingMM,
+                    	float   fHoleDiameterMM)
     {
         ...
     }
