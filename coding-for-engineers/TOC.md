@@ -18,6 +18,9 @@
 |    9    | [Let's build a computational fixture maker (Part 1)](9-computational-fixture-maker.md) | Putting our knowledge to a test, using PicoGK to automate the design of fixtures |
 |   10    | [Let's build a computational fixture maker (Part 2)](10-computational-fixture-maker-2.md) | Rethinking our approach to generating fixtures, abstracting progress reporting |
 |   11    | [Let's build a computational fixture maker (Part 3)](11-computational-fixture-maker-3.md) | Nesting classes, drilling holes.                             |
+|   12    | [Let's build a computational fixture maker (Part 4)](11-computational-fixture-maker-4.md) | New elegant voxel math, wrapping up the fixture maker        |
+
+
 
 | More information                                             |                                                              |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |

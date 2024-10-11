@@ -286,7 +286,7 @@ As a last impression, here is a fixture for the rocket engine we test fired last
 
 ------
 
-Next Week: **Let's build a computational fixture maker (Part 4)**
+Next: [**Let's build a computational fixture maker (Part 4)**](12-computational-fixture-maker-4.md)
 
 [Jump into the discussion here](https://github.com/leap71/PicoGK/discussions/categories/coding-for-computational-engineers)
 
