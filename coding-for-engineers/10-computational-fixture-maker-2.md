@@ -77,7 +77,7 @@ Much better. Now, at least, we never end up with an invalid state.
 
 But it's still two steps.
 
-Whenever you build something like that, requiring an instruction manual to operate it properly, you very likely fell into the old way of writing code, which relied on you knowing exactly how the code worked internally. 
+Whenever you build something like that, requiring an instruction manual to operate it properly, you very likely fell into the old way of writing code, which relied on the user knowing exactly how the code worked internally. 
 
 If we don't use our `FixtureMaker` as expected, it could be left in a weird state, where we have a `FixtureMaker`, but it hasn't run yet, so it doesn't have a result yet — how do we know that? Should we add a lot of `if then else`...? What should happen if we call `Run()` several times? What if I need more information about the fixture we just created, rather than just the resulting `Voxels`.
 
