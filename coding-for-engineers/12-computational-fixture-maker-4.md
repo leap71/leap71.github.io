@@ -6,9 +6,9 @@
 
 # Let's build a computational fixture maker (Part 4)
 
-Let's wrap up our fixture maker this week by looking at a feature I recently introduced into PicoGK 1.7.5.
+Let's wrap up our fixture maker this week by looking at a feature I recently [introduced into PicoGK 1.7.5](https://github.com/leap71/PicoGK/releases/tag/PicoGK-v1.7.5).
 
-When you work with `Voxels`, you constantly work with boolean functions, Add, Subtract, Intersect.
+When you work with `Voxels`, you constantly deal with boolean functions, Add, Subtract, Intersect.
 
 So, when you add two `Voxels` objects together, you write:
 
@@ -269,6 +269,8 @@ And with that, we have completed our first (quite simple) Computational Engineer
 We automated an engineering process, creating a fixture, which is conventionally quite labor-intensive. There are, obviously, many improvements you could make this Computational Engineering Model. There's a lot to learn from engineers who have done this manually for a long time. Experienced "fixture masters" will look at the output and will find many things that that they would do differently. We have to listen and, over time, encode their learnings into a more robust model. And then listen again, and improve. Eventually you build something that can handle almost anything you throw at it. 
 
 Iterative improvement is at the core of Computational Engineering. 
+
+As usual, the [code for this chapter is on GitHub](https://github.com/LinKayser/Coding4Engineers).
 
 ------
 
