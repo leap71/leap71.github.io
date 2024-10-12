@@ -139,7 +139,7 @@ Imagine how this would look like using the "old" notation. The new notation is s
 Another example with the `&` operator (intersection) - note, again, the use of brackets to clarify the order of operations.
 
 ```c#
-return (voxEngine + voxBasePlate) % voxPrinterVolume;
+return (voxEngine + voxBasePlate) & voxPrinterVolume;
 ```
 
 This adds the two voxel fields in the brackets first, and then intersects it with the printer bounds, resulting in only the voxels that fit into the printer.
