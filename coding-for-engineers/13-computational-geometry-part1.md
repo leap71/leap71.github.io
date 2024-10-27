@@ -99,8 +99,8 @@ voxOutside.Offset(2);
 
 Voxels voxPipe = (voxOutside - voxInside);
 
-Mesh 		mshBounds = Utils.mshCreateCube(oBox);
-Voxels	voxBounds = new Voxels(mshBounds);
+Mesh    mshBounds = Utils.mshCreateCube(oBox);
+Voxels  voxBounds = new Voxels(mshBounds);
                         
 voxPipe.Intersect(voxBounds);
 ```
@@ -125,7 +125,7 @@ One of the things you constantly have to do when building computational geometry
 
 The easiest way to encode coordinate transformations is to use matrix math. Now, you can read up on matrix math on your own, if you are not familiar with it. But you can also skip it, simply because it's so well-encapsulated in the C# library code, that you are actually not too exposed to the math itself.
 
-In a nutshell, a 4x4 matrix allows us very elegantly to encode anything we ever want to do with your coordinates (and more). You can rotate things, you can move stuff around, your can scale things, etc.
+In a nutshell, a 4x4 matrix allows us very elegantly to encode anything we ever want to do with your coordinates (and more). You can rotate things, you can move stuff around, you can scale things, etc.
 
 The standard C# library contains a multitude of matrix functions that are compatible with the `Vector3` type we use everywhere.
 
@@ -137,7 +137,7 @@ Matrix4x4 matMoved = Matrix4x4.CreateTranslation(new Vector3(50,0,0));
 
 As a result, the reference frame encoded in `matrMoved` is offset by 50mm in X, compared to our world coordinates.
 
-We can test out what happens with our Vectors, my applying the matrix transformation to them.
+We can test out what happens with our vectors, my applying the matrix transformation to them.
 
 ```C#
 Matrix4x4 matMoved = Matrix4x4.CreateTranslation(new Vector3(50,0,0));
@@ -194,7 +194,7 @@ Quaternion quatZ = Quaternion.CreateFromAxisAngle(Vector3.UnitZ, float.Pi / 2);
 
 As we know,`Vector3.UnitZ` is equivalent to `new Vector(0,0,1)`.  
 
-The second parameter gives us the angle in *radians*. So, 180º equals to `Pi`, 90º equals to `Pi/2`, and 360º equals to `2*Pi`. Consequently, the resulting `quaternion` object encapsulates a rotation of 90º around the Z axis.
+The second parameter gives us the angle in *radians*. So, 180º equals to `Pi`, 90º equals to `Pi/2`, and 360º equals to `2*Pi`. Consequently, the resulting `Quaternion` object encapsulates a rotation of 90º around the Z axis.
 
 We can now create a matrix from it, and apply our transformations.
 
