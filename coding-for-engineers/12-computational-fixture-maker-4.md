@@ -274,7 +274,7 @@ As usual, the [code for this chapter is on GitHub](https://github.com/LinKayser/
 
 ------
 
-Next: **Working with physical units**
+Next: **Computational geometry (Part 1)**
 
 [Jump into the discussion here](https://github.com/leap71/PicoGK/discussions/categories/coding-for-computational-engineers)
 
