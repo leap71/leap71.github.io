@@ -131,7 +131,7 @@ The standard C# library contains a multitude of matrix functions that are compat
 
 Let's look at how we can create a reference frame that is offset from our standard origin by 50mm in X. In math-speak, moving the origin is called a *translation*.
 
-```C#
+```c#
 Matrix4x4 matMoved = Matrix4x4.CreateTranslation(new Vector3(50,0,0));
 ```
 
@@ -139,7 +139,7 @@ As a result, the reference frame encoded in `matrMoved` is offset by 50mm in X, 
 
 We can test out what happens with our vectors, my applying the matrix transformation to them.
 
-```C#
+```c#
 Matrix4x4 matMoved = Matrix4x4.CreateTranslation(new Vector3(50,0,0));
 
 Vector3 vecOrigin = Vector3.Zero;
@@ -165,7 +165,7 @@ So both vectors have been moved by 50mm in X, because the reference coordinate s
 
 Because it allows us to do things like this:
 
-```C#
+```c#
 Plane plane = new Plane(Vector3.UnitX, 0);
 Matrix4x4 matPlane = Matrix4x4.CreateReflection(plane);
 
@@ -188,7 +188,7 @@ But an even more interesting option is to build it from a `Quaternion` object. Q
 
 Say, you want to rotate something around the Z axis, you simple create a `Quaternion` object like this:
 
-```C#
+```c#
 Quaternion quatZ = Quaternion.CreateFromAxisAngle(Vector3.UnitZ, float.Pi / 2);
 ```
 
@@ -198,7 +198,7 @@ The second parameter gives us the angle in *radians*. So, 180º equals to `Pi`, 
 
 We can now create a matrix from it, and apply our transformations.
 
-```C#
+```c#
 Quaternion quatZ    = Quaternion.CreateFromAxisAngle(Vector3.UnitZ, float.Pi / 2);
 Matrix4x4 matQuatZ  = Matrix4x4.CreateFromQuaternion(quatZ);
 
