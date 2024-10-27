@@ -91,7 +91,7 @@ I then create `voxPipe` by subtracting `voxInside` from `voxOutside` and interse
 
 If the last couple of lines are not clear, here are they in written in more verbatim form:
 
-```
+```c#
 Voxels voxInside    = new Voxels(lat);
 Voxels voxOutside   = voxInside;
 
