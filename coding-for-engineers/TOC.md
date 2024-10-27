@@ -19,6 +19,7 @@
 |   10    | [Let's build a computational fixture maker (Part 2)](10-computational-fixture-maker-2.md) | Rethinking our approach to generating fixtures, abstracting progress reporting |
 |   11    | [Let's build a computational fixture maker (Part 3)](11-computational-fixture-maker-3.md) | Nesting classes, drilling holes.                             |
 |   12    | [Let's build a computational fixture maker (Part 4)](12-computational-fixture-maker-4.md) | New elegant voxel math, wrapping up the fixture maker        |
+|   13    | [Computational geometry (Part 1)](13-computational-geometry-part1.md) | Creating pipes from lattices, and diving into reference frames and matrix math |
 
 
 
