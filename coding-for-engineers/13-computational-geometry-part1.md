@@ -252,7 +252,7 @@ As usual, the [code for this chapter is on GitHub](https://github.com/LinKayser/
 
 ------
 
-Next: **Computational geometry (Part 2)**
+Next: [**Computational geometry (Part 2)**](14-computational-geometry-part2.md)
 
 [Jump into the discussion here](https://github.com/leap71/PicoGK/discussions/categories/coding-for-computational-engineers)
 
