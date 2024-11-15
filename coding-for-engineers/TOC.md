@@ -21,6 +21,7 @@
 |   12    | [Let's build a computational fixture maker (Part 4)](12-computational-fixture-maker-4.md) | New elegant voxel math, wrapping up the fixture maker        |
 |   13    | [Computational geometry (Part 1)](13-computational-geometry-part1.md) | Creating pipes from lattices, and diving into reference frames and matrix math |
 |   14    | [Computational geometry (Part 2)](14-computational-geometry-part2.md) | Building a simple pressure vessel, painting with lattices, creating a 3D volume from an image |
+|   15    | [Computational geometry (Part 3)](15-computational-geometry-part3.md) | Building meshes, understanding face orientation, using arrays, setter and getter functions, matrix transformations with vertices |
 
 
 
