@@ -23,13 +23,13 @@ int n1 = msh.nAddVertex(new Vector3(0,5,0));
 int n2 = msh.nAddVertex(new Vector3(10,0,0);
 ```
 
-So now, we have stored the 3 vertices in the `Mesh` object, and in return, we received the index to that vertex, that we can use to build and actual mesh.
+So now, we have stored the 3 vertices in the `Mesh` object, and in return, we received the index to that vertex, that we can use to build an actual mesh.
 
 ```c#
 msh.AddTriangle(n0,n1,n2);
 ```
 
-You can see, how this can be used to build more complex geometric shapes. By encapsulating the creation of the shapes, you can use create interesting objects, without worrying about the details. But it's important to understand the fundamentals, so let's spend a bit of time on this.
+You can see, how this can be used to build more complex geometric shapes. By encapsulating the creation of the shapes, you can use to create interesting objects, without worrying about the details. But it's important to understand the fundamentals, so let's spend a bit of time on this.
 
 In many cases, you will not work with a triangle directly, you will work with *quads*. Quads are simply rectangle-like shapes, that have four vertices instead of 3. But in the end, a quad always ends up being represented by two triangles, that share one edge, formed by two vertices.
 
@@ -51,7 +51,7 @@ Vector3[] avec =
 
 In case you are wondering about the syntax, this is a very efficient way of creating an array of objects.
 
-An array lets you access each element in the variable by and index, specified in `[]`. The index always starts with `0`, so `avec[0]` points to the first element in the array. `avec[nNumberOfElements - 1]` points to the last one. 
+An array lets you access each element in the variable by an index, specified in `[]`. The index always starts with `0`, so `avec[0]` points to the first element in the array. `avec[nNumberOfElements - 1]` points to the last one. 
 
 Now let's add the vertices and our first quad.
 
@@ -65,11 +65,11 @@ We could have added the vertices one-by-one, but there is a handy function that 
 
  ![](assets/15-quad.png)
 
-So, now we have our first quad on screen, and we can start to imagine building a cube from that.
+So, now we have our first quad on screen, and we can start to imagine building a box from that.
 
-But first, we have to understand something about meshes. They have an inside and an outside. You can see this clearly in the PicoGK viewer, when you rotate the quad, so you look from below. The quad disappears! Because you are not supposed to look at the inside of a mesh.
+But first, we have to understand something about meshes. They have an inside and an outside. You can see this clearly in the PicoGK viewer, when you rotate the quad, so you look from below, the quad disappears! Because you are not supposed to look at the inside of a mesh.
 
-But how do we define what is the outside or the inside of a triangle or quad? The so-called right hand rule determines the direction of the surface normal, and therefore the direction of the face of the mesh. A much way to look at this is: You have to always connect the vertices in a counter-clockwise way, when looking at the outside of a face.
+But how do we define what is the outside or the inside of a triangle or quad? The so-called right hand rule determines the direction of the surface normal, and therefore the direction of the face of the mesh. An easier way to look at this is: You have to always connect the vertices in a counter-clockwise way, when looking at the outside of a face.
 
  ![](assets/15-ccw.png)
 
@@ -87,7 +87,7 @@ msh.AddQuad(anV[3], anV[2], anV[1], anV[0]);
 
 So, now we know everything we need to actually build a cube. As you may have guessed, the orientation of our face is now exactly right, because the bottom of our cube should be facing, well, downwards. By the way, the `AddQuad` function has a nice `bFlip` parameter you can use to flip the order around. This is sometimes easier than having to reorder vertices manually. You can then add all sides in the same way, but flip around the ones on the opposite side.
 
-So let's add the missing vertices for our elongated cube, a total of eight.
+So let's add the missing vertices for our box, a total of eight.
 
 ```c#
 Vector3[] avec = 
@@ -125,7 +125,7 @@ msh.AddQuad(anV[4], anV[7], anV[3], anV[0]);
 msh.AddQuad(anV[2], anV[6], anV[5], anV[1]);
 ```
 
-This can be a bit tricky to figure out, but if you label all vertices with their index numbers, it is relatively easy to understand which corner connects with which to make up a face.
+This can be a bit tricky to figure out, but if you label all corners of the box with their index numbers, it is relatively easy to understand which one connects with which to make up a face.
 
 Congratulations, you created a cube from a `Mesh` object by hand. 
 
@@ -150,7 +150,7 @@ msh.AddQuad(anV[4], anV[7], anV[3], anV[0]);
 msh.AddQuad(anV[2], anV[6], anV[5], anV[1]);
 ```
 
-Now, we have to figure out the center point of the quad and add a new vertex for that. We also raise that vertex a bit in Z, so that it becomes a pyramid.
+Then we have to figure out the center point of the quad and add a new vertex for that. We also raise that vertex a bit in Z, so that it becomes a pyramid.
 
 ```c#
 Vector3 vecMidPoint = new
@@ -174,7 +174,7 @@ msh.nAddTriangle(anV[6], anV[7], nMidVertex);
 msh.nAddTriangle(anV[7], anV[4], nMidVertex);
 ```
 
-So, you see that, while we started with a simple cube, by subdividing the faces, we can actually end up doing some interesting things.
+So, you see that, while we started with a simple cube, by subdividing the faces, we can actually end up creating some interesting things.
 
 But first, let's step back a bit, and stop coding everything in this bare-bones way. Let's go back to classes and object oriented programming to move to the next level.
 
@@ -196,7 +196,7 @@ public class BaseBox
 
 Now, we probably don't just want to create these boxes at the origin of our coordinate system, so it makes sense to also give it a way to be moved and rotated, etc.
 
-Let's do that by using matrix approach that we introduced in the last chapters.
+Let's do that by using the matrix approach we introduced in the last chapters.
 
 ```c#
 BaseBox(	Vector3 vecSize,
@@ -224,7 +224,7 @@ public mshConstruct()
 }
 ```
 
-Now, here is a way to make the access to often-used variables of an object, such as the matrix, a little bit more accessible. 
+Now, here is a way to make the access to often-used variables of an object, such as the matrix, more accessible. 
 
 You can implement `get`/`set` functions, which expose the member variable as a *property*. It looks like this:
 
@@ -318,7 +318,7 @@ Because our `BaseBox` has a size of 2 units, we have to do a bit of math:
 oBox.matTransform = Matrix4x4.CreateScale(new Vector3(10, 10,15) / 2);
 ```
 
-Note that we divide the size vector by 2, to make sure we scale the object properly. And we are back to our oblong cuboid.
+Note that we divide the size vector by 2, to make sure we scale the object properly. And we are back to our oblong box.
 
 Now, this is maybe a bit much to do all the time you want a box with certain dimensions. So why don't we add another constructor, which initializes the matrix to a size we specify:
 
