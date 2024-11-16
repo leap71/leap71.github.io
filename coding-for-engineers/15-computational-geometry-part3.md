@@ -29,7 +29,7 @@ So now, we have stored the 3 vertices in the `Mesh` object, and in return, we re
 msh.AddTriangle(n0,n1,n2);
 ```
 
-You can see, how this can be used to build more complex geometric shapes. By encapsulating the creation of the shapes, you can use to create interesting objects, without worrying about the details. But it's important to understand the fundamentals, so let's spend a bit of time on this.
+You can see, how this can be used to build more complex geometric shapes. By encapsulating the creation of the shapes, you can create interesting objects, without worrying about the details. But it's important to understand the fundamentals, so let's spend a bit of time on this.
 
 In many cases, you will not work with a triangle directly, you will work with *quads*. Quads are simply rectangle-like shapes, that have four vertices instead of 3. But in the end, a quad always ends up being represented by two triangles, that share one edge, formed by two vertices.
 
@@ -215,8 +215,8 @@ public BaseBox()
     m_matTransform = Matrix4x4.Identity;
 }
 
-public Matrix4x4 matTransform() 			{return m_matTransform}
-public void SetTransform(Matrix4x4 matNew)	{m_matTransform = matNew}
+public Matrix4x4 matTransform()             {return m_matTransform}
+public void SetTransform(Matrix4x4 matNew)  {m_matTransform = matNew}
 
 public mshConstruct()
 {
