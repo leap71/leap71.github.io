@@ -36,7 +36,7 @@ So let's go with the following function signature:
 
 ```c#
 public static Vector3[,] avecSubdivideQuad(     int nSubDivX,
-                            	                  int nSubDivY,
+                                                int nSubDivY,
                                                 Vector3 vecA, 
                                                 Vector3 vecB, 
                                                 Vector3 vecC, 
