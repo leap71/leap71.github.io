@@ -16,13 +16,15 @@ However, here's also a word of warning: If you try to build every feature of you
 
 When building computational geometry, it is best to keep things as simple as possible. The complexity arises from combining basic techniques and shapes with powerful operations, such as voxel booleans and offsetting.
 
-But there is really not much that you can do wrong by modulating a surface of an object. So let's do this.
+But there is really not much that you can do wrong by modulating the surface of an object. So let's do this.
 
 ## Subdividing a mesh
 
 Let's imagine, we wanted to emboss a logo onto the surface of a cube. How would we go about this?
 
-The simplest way would to to subdivide the surface of the cube, so that we have enough vertices to represent the logo in its current resolution. And then we offset each vertex, perpendicular to the surface, based on the height of the logo at each logo pixels.
+![](assets/16-Logo.png)
+
+The simplest way would be to subdivide the surface of the cube, so that we have enough vertices to represent the logo in its current resolution. And then we offset each vertex, perpendicular to the surface, based on the height of the logo at each logo pixels.
 
 Subdividing a surface is therefore as simple as subdividing a quad.
 
@@ -212,8 +214,8 @@ And lastly, in case you are bored by our Gauss curve, there is nothing that prev
 We extended our mesh toolkit significantly in this chapter, looking into subdivision and modulating of vertices. We did this by
 
 - Interpolating vertex positions inside a quad
-- Moving these vertices perpendicular to the surface to create a modulated surface
-- Reassembling these vertices back into quads, to insert them into a `Mesh`.
+- Moving these vertices along the surface normal to create a modulated shape
+- Reassembling these vertices back into quads, to insert them back into a `Mesh`.
 - We also touched on the subject of multidimensional array variables, and passing objects by reference, to influence the content of a variable outside our function.
 
 In the next chapter we will look into a more holistic way to deal with surface modulations, and revisit some of the code we have written with our object oriented programming hat on.
