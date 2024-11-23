@@ -420,7 +420,7 @@ As usual, the [code for this chapter is on GitHub](https://github.com/LinKayser/
 
 ------
 
-Next: **Computational geometry (Part 4)**
+Next: [**Computational geometry (Part 4)**](16-computational-geometry-part4.md)
 
 [Jump into the discussion here](https://github.com/leap71/PicoGK/discussions/categories/coding-for-computational-engineers)
 
