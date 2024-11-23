@@ -10,28 +10,30 @@ We now know how to build simple mesh-based geometry.
 
 But most of the objects we will want to create, are more complex than simple cubes and pyramids.
 
-We will dive into mesh subdivision in this chapter, to help you build more complex meshes.
+We will dive into mesh subdivision in this chapter, to help you build more elaborate meshes.
 
-However, here's also a word of warning: If you try to build every feature of your device into one mesh, just like you would do it in parametric CAD, would introduce the same issues that plague these decades-old systems: It is very hard to cover all edge cases, when dealing with parametric surfaces. In CAD, you frequently run into issues where the geometry kernel cannot unambiguously resolve the shape you are trying to design, leading to error messages and manual fumbling ("Cannot perform boolean operation").
+However, here's also a word of warning: If you try to build every feature of your object into one mesh, just like you would do it in parametric CAD, you will introduce the same issues that plague these decades-old systems: It is very hard to cover all edge cases, when dealing with parametric surfaces. In CAD, you frequently run into issues where the geometry kernel cannot unambiguously resolve the shape you are trying to design, leading to error messages and manual fumbling ("Cannot perform boolean operation").
 
-When building computational geometry, it is best to keep things as simple as possible. The complexity comes from combining basic techniques and shapes with powerful operations, such as voxel booleans and offsetting.
+When building computational geometry, it is best to keep things as simple as possible. The complexity arises from combining basic techniques and shapes with powerful operations, such as voxel booleans and offsetting.
+
+But there is really not much that you can do wrong by modulating a surface of an object. So let's do this.
 
 ## Subdividing a mesh
 
 Let's imagine, we wanted to emboss a logo onto the surface of a cube. How would we go about this?
 
-The simplest way would to to subdivide the surface of the cube, so that we have enough vertices to represent the logo in its current resolution. And then we simply offset each vertex, perpendicular to the surface, based on the height of the logo at each logo pixels.
+The simplest way would to to subdivide the surface of the cube, so that we have enough vertices to represent the logo in its current resolution. And then we offset each vertex, perpendicular to the surface, based on the height of the logo at each logo pixels.
 
 Subdividing a surface is therefore as simple as subdividing a quad.
 
-What should be the result of our subdivision process? We could return a `Mesh,` with the subdivided quads. But maybe an easier way is, if we first store the intermediate result in a grid of coordinates. For this, we can simply use a two-dimensional array.  
+What should be the result of our subdivision process? We could return a `Mesh,` with the subdivided quads. But maybe an easier way is, if we first store the intermediate result in a grid of coordinates. For this, we use a two-dimensional array.  
 
-To create a 1D array, we use the following syntax: `Vector3 [] avec = new Vector3[100]` which creates an array with 100 elements. To create a two-dimensional one, we can use the following syntax: `Vector3 [,] avec = new Vector3[100,500]`, which creates an array with 100 in the first dimension and the 500, the second dimension.
+If you remember, to create a 1D array, we use the following syntax: `Vector3 [] avec = new Vector3[100]` which results in an array with 100 elements. To create a two-dimensional one, we can use the following syntax: `Vector3 [,] avec = new Vector3[100,500]`, which creates an array with 100 in the first dimension and the 500, the second dimension.
 
 So let's go with the following function signature:
 
 ```c#
-public static Vector3[,] aavecSubdivideQuad(    int nSubDivX,
+public static Vector3[,] avecSubdivideQuad(     int nSubDivX,
                             	                  int nSubDivY,
                                                 Vector3 vecA, 
                                                 Vector3 vecB, 
@@ -49,7 +51,7 @@ So, we define our quad with the four corners, and we specify how many times it s
 Now it is simply a question of interpolating along the two edges which are spanned up by the four corners.
 
 ```c#
-public static Vector3[,] aavecSubdivideQuad(    int nSubDivX,
+public static Vector3[,] avecSubdivideQuad(     int nSubDivX,
                                                 int nSubDivY,
                                                 Vector3 vecA, 
                                                 Vector3 vecB, 
@@ -82,7 +84,7 @@ public static Vector3[,] aavecSubdivideQuad(    int nSubDivX,
 
 First we calculate a normalized interpolation factor, which goes 0 to 1, with 1 being the last subdivision.
 
-Then determine our position along the top edge and the bottom edge, using the `tX` interpolation factor (keep in mind, that a quad doesn't have to be a square, or even a rectangle, so we cannot assume the X position of the two to be correlated, that's why we calculate them independently). `Lerp`, by the way, is just a linear interpolation function.
+Then we determine our position along the top edge and the bottom edge, using the `tX` interpolation factor (keep in mind, that a quad doesn't have to be a square, or even a rectangle, so we cannot assume the X position of the two to be correlated, that's why we calculate them independently). `Lerp`, by the way, is just a linear interpolation function.
 
 After we know the position along the top and bottom edges, we now need to find our weighted position perpendicular to the two edges. We do that using the last `Lerp` using the `tY` as weight.
 
@@ -94,7 +96,9 @@ So now, we have our vertex positions of the subdivided quad, we can do something
 
 ![](assets/15-interpolated-smooth.png)
 
-Let's go back to our planar surface, though, as that's the norm for our shapes. To demonstrate the modulation we add a simple Gauss distribution.
+But we leave this for another day.
+
+Let's go back to our planar surface as that's the norm for our shapes. To demonstrate the modulation we add a simple Gauss distribution.
 
 ```c#
 public static float fGaussDistribution2D(   float x, 
@@ -112,7 +116,7 @@ Now we just go over our vertex array, and apply the Gauss function to the vertic
 
 ![](assets/16-gauss-vertices.png)
 
-If we do this blindly, we will end up with the above result. But there is a problem, I want to point out immediately. If you look closely, the vertices right at the edge of our Quad will also be modulated. This would create gaps at the seams of our meshes, at is definitely not what we want. We want our meshes to be *watertight*.
+If we do this blindly, we will end up with the above result. But there is a problem, I want to point out immediately. If you look closely, the vertices right at the edge of our quad will also be modulated. This could create gaps at the seams of our meshes,  and is definitely not what we want. We want our meshes to be *watertight*.
 
 ![](assets/16-edge-gap.png)
 
