@@ -84,7 +84,7 @@ public static Vector3[,] avecSubdivideQuad(     int nSubDivX,
 }
 ```
 
-First we calculate a normalized interpolation factor, which goes 0 to 1, with 1 being the last subdivision.
+First we calculate a normalized interpolation factor, which goes 0 to 1, with 1 being the last position.
 
 Then we determine our position along the top edge and the bottom edge, using the `tX` interpolation factor (keep in mind, that a quad doesn't have to be a square, or even a rectangle, so we cannot assume the X position of the two to be correlated, that's why we calculate them independently). `Lerp`, by the way, is just a linear interpolation function.
 
@@ -98,7 +98,7 @@ So now, we have our vertex positions of the subdivided quad, we can do something
 
 ![](assets/15-interpolated-smooth.png)
 
-But we leave this for another day.
+But we leave that for another day.
 
 Let's go back to our planar surface as that's the norm for our shapes. To demonstrate the modulation we add a simple Gauss distribution.
 
