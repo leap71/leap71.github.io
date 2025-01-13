@@ -8,7 +8,7 @@
 
 In this chapter we will go on a whirlwind tour from the general concept of a computer to the paradigm of object oriented programming.
 
-We will cover a lot of ground, but after reading this chapter carefully, you will have a solid foundation of modern software principles, that we will built upon in the following chapters.
+We will cover a lot of ground, but after reading this chapter carefully, you will have a solid foundation of modern software principles, that we will build upon in the following chapters.
 
 So, what is a computer anyway?
 
