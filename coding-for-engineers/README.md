@@ -44,7 +44,7 @@ When my co-founder Michael and I had to decide on a programming language for Hyp
 
 When Josefine and I decided on the foundation for [PicoGK](https://leap71.com/PicoGK/), C# was again the front runner. We looked into Python, because of its popularity — but its lack of multithreading, it's terrible performance, and the many issues in terms of being too tolerant, made us quickly discard it.
 
-Why is being "tolerant" in programming a bad idea? A programming language should make you express your intent clearly and unambiguously. This is why it is a formal language with logical constructs. If something isn't clear, it should't work. That's the beauty of C#, it is actually very strict (stricter than C++), and this forces you to write good code.
+Why is being "tolerant" in programming a bad idea? A programming language should make you express your intent clearly and unambiguously. This is why it is a formal language with logical constructs. If something isn't clear, it shouldn't work. That's the beauty of C#, it is actually very strict (stricter than C++), and this forces you to write good code.
 
 Do we still need to write code in an age of ChatGPT?
 

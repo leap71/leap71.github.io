@@ -190,7 +190,7 @@ if (bSomethingWentWrong)
 /// and in this case, you will not get to this part of the code
 ```
 
-When you throw an exception, the code you are executing is interupted immediately, and you end up in the `catch` block. The `catch` block, receives the exception object, and can do something, for example report an error, etc.
+When you throw an exception, the code you are executing is interrupted immediately, and you end up in the `catch` block. The `catch` block, receives the exception object, and can do something, for example report an error, etc.
 
 I don't want to go deeper into this, as using exceptions requires more explanation. For now, let it suffice: Whenever the code executed in a `try` block throws an `Exception`, we will end up in the `catch` block, which will, in our case, simply write the explanation of what happens to the `Console`.
 

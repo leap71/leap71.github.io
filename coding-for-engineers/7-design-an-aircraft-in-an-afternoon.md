@@ -102,11 +102,11 @@ If you don't know what information you need to be able to pass, you can at least
 
 If you don't know how a function will work, you can always put a stub in there, a placeholder function. If you don't yet have all the physical formulas that make up the thermal model of your engine, then just return some dummy data, and deal with it later.
 
-If you are unsure about the exact details, you can stil agree on the general structure of your class hierarchy, using the questions we defined in the last chapter (is a..., has a..., behaves like a ...)
+If you are unsure about the exact details, you can still agree on the general structure of your class hierarchy, using the questions we defined in the last chapter (is a..., has a..., behaves like a ...)
 
 For example, it's probably a reasonable assumption (for now!), that the two wings are fundamentally the same, but one is mirrored compared to the other.
 
-Now, we can debate how to specify this, maybe we should just used a `bool` value, saying it's mirrored. But that's geometric thinking. The wing should probably know, whether it's on the left or right side. So let's use an `enum`. An enum is a value that is restricted to certain options. In our case, the enum variable of the wing will have two options `Left` and `Right`;
+Now, we can debate how to specify this, maybe we should have just used a `bool` value, saying it's mirrored. But that's geometric thinking. The wing should probably know, whether it's on the left or right side. So let's use an `enum`. An enum is a value that is restricted to certain options. In our case, the enum variable of the wing will have two options `Left` and `Right`;
 
 ```c#
 public class Wing
@@ -171,7 +171,7 @@ public class Airplane
 }
 ```
 
-This function will interact with all of the components of the aircraft to design the physical shape. How will it look like? Well, that depends on the interaction of all the parts. These "parts", are not physical parts: they are logical components. They can communicate. The `Fuselage` and the `Wing` can collaborate to find the perfect aerodynamic shape (and maybe for one coherent whole, ignoring the fact that right now we treat them as separate logical parts), while still making sure the right number of passengers fit into the specified number of seats. The `Engine` can communicate its structural needs to the `Wing`, making sure it finds an optimum attachment point and and mechanical interface to support all the loads. Once it's done that, it outputs the right geometry.
+This function will interact with all of the components of the aircraft to design the physical shape. How will it look like? Well, that depends on the interaction of all the parts. These "parts", are not physical parts: they are logical components. They can communicate. The `Fuselage` and the `Wing` can collaborate to find the perfect aerodynamic shape (and maybe for one coherent whole, ignoring the fact that right now we treat them as separate logical parts), while still making sure the right number of passengers fit into the specified number of seats. The `Engine` can communicate its structural needs to the `Wing`, making sure it finds an optimum attachment point and mechanical interface to support all the loads. Once it's done that, it outputs the right geometry.
 
 Now, there is *a lot* of information that needs to go back and forth. Building a complete Computational Model for an entire aircraft is a massive undertaking. But it's not fundamentally more massive than designing a new aircraft through conventional means. If you create a computational model, however, every decision you made, every reason why a shape looks like the one it does, every aspect of your design, is captured in source code. You can run parameter sweeps, you can "debug", you can verify, you can falsify the hypotheses you postulated during the design. And you can reuse it, dramatically cutting down the development time of the next iteration of your plane.
 
@@ -181,7 +181,7 @@ A Computational Engineering Model is a scientific approach to engineering. Scien
 
 So, how do we progress from here? Here's what I did with my team back then: We asked groups of two people each to take one component of the plane. One team took on the fuselage, one pair worked on the wings, others the engine, etc. I asked them to discuss what they would need to know, at minimum (information hiding) from the other teams. And then I asked them to encapsulate all of that in C# interfaces.
 
-We used placeholder geometry as stand-ins for the components. The wings were just flat recangles, the fuselage a tube, the engines smaller tubes. Using the information passed through the interfaces, we could start generating these placeholders in the general sizes and places. We discovered information which was missing, and added it to the relevant interfaces. The team working on the wings implemented the [NACA](https://en.wikipedia.org/wiki/NACA_airfoil#:~:text=The%20NACA%20four%2Ddigit%20wing,as%20percent%20of%20the%20chord.) profiles, and tried to figure out optimum shapes from the specifications, etc.
+We used placeholder geometry as stand-ins for the components. The wings were just flat rectangles, the fuselage a tube, the engines smaller tubes. Using the information passed through the interfaces, we could start generating these placeholders in the general sizes and places. We discovered information which was missing, and added it to the relevant interfaces. The team working on the wings implemented the [NACA](https://en.wikipedia.org/wiki/NACA_airfoil#:~:text=The%20NACA%20four%2Ddigit%20wing,as%20percent%20of%20the%20chord.) profiles, and tried to figure out optimum shapes from the specifications, etc.
 
 Increasingly, we started to see funny looking aircraft coming out of different parameter sets. Very simple children's toy versions of aircraft, but all generated by the same, increasingly sophisticated algorithm.
 
@@ -203,7 +203,7 @@ But I hope I made clear why we learned the things in the previous chapters, and 
 
 In conventional engineering workflows, the reasoning, the thought process, the physical formulas, all these *are external to* the daily work of the engineer. The engineer's main labor is to visually create the object in CAD.
 
-Computational engineers don't draw, they write down the logic, the physics, the heuristic models, etc. in code. They try to make the computational model consistent, something that is often suprisingly difficult to do. The flow of information, the abstract components, are more important than the shape of a part. Because the computational model is built on the entirety of the information, the resulting geometry can follow much more flexibly, than in objects that are built piecemeal from individual parts. A computational model has a general overview of the entire object.
+Computational engineers don't draw, they write down the logic, the physics, the heuristic models, etc. in code. They try to make the computational model consistent, something that is often surprisingly difficult to do. The flow of information, the abstract components, are more important than the shape of a part. Because the computational model is built on the entirety of the information, the resulting geometry can follow much more flexibly, than in objects that are built piecemeal from individual parts. A computational model has a general overview of the entire object.
 
 - In Computational Engineering Models, we think logical and scientific first, and geometric second
 - It's fine to put placeholder objects, functional "stubs", empty interfaces in place and fill in the details later

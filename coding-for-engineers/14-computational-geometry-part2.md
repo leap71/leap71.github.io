@@ -86,7 +86,7 @@ Here is the result combined with the original fluid volume.
 
 ![](assets/14-combined.png)
 
-Of coutse, In a physically correct manifold, you likely will want to preserve the sum of cross-sectional area, using a larger diameter for the single pipe after the convergence. We will do this at a later point in the book.
+Of course, In a physically correct manifold, you likely will want to preserve the sum of cross-sectional area, using a larger diameter for the single pipe after the convergence. We will do this at a later point in the book.
 
 ## Painting in space
 

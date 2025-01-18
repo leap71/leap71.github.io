@@ -8,38 +8,38 @@
 
 We now know how to build simple mesh-based geometry.
 
-But most of the objects we will want to create, are more complex than simple cubes and pyramids.
+But most of the objects we will want to create are more complex than simple cubes and pyramids.
 
-We will dive into mesh subdivision in this chapter, to help you build more elaborate meshes.
+We will dive into mesh subdivision in this chapter to help you build more elaborate meshes.
 
-However, here's also a word of warning: If you try to build every feature of your object into one mesh, just like you would do it in parametric CAD, you will introduce the same issues that plague these decades-old systems: It is very hard to cover all edge cases, when dealing with parametric surfaces. In CAD, you frequently run into issues where the geometry kernel cannot unambiguously resolve the shape you are trying to design, leading to error messages and manual fumbling ("Cannot perform boolean operation").
+However, here’s a word of warning: If you try to build every feature of your object into a single mesh, just as you would in parametric CAD, you will encounter the same issues that plague these decades-old systems: covering all edge cases when dealing with parametric surfaces is very difficult. In CAD, you frequently run into issues where the geometry kernel cannot unambiguously resolve the shape you are trying to design, leading to error messages and manual fumbling ("Cannot perform boolean operation").
 
 When building computational geometry, it is best to keep things as simple as possible. The complexity arises from combining basic techniques and shapes with powerful operations, such as voxel booleans and offsetting.
 
-But there is really not much that you can do wrong by modulating the surface of an object. So let's do this.
+But you can't really go wrong by modulating the surface of an object. So let's do this.
 
 ## Subdividing a mesh
 
-Let's imagine, we wanted to emboss a logo onto the surface of a cube. How would we go about this?
+Let's imagine we wanted to emboss a logo onto the surface of a cube. How would we go about this?
 
 ![](assets/16-Logo.png)
 
-The simplest way would be to subdivide the surface of the cube, so that we have enough vertices to represent the logo in its current resolution. And then we offset each vertex, perpendicular to the surface, based on the height of the logo at each logo pixels.
+The simplest way would be to subdivide the surface of the cube so that we have enough vertices to represent the logo in its current resolution. Then, we offset each vertex perpendicular to the surface based on the height of the logo at each pixel.
 
-Subdividing a surface is therefore as simple as subdividing a quad.
+Thus, subdividing a surface is as simple as subdividing a quad.
 
-What should be the result of our subdivision process? We could return a `Mesh,` with the subdivided quads. But maybe an easier way is, if we first store the intermediate result in a grid of coordinates. For this, we use a two-dimensional array.  
+What should be the result of our subdivision process? We could return a `Mesh` with the subdivided quads. But maybe an easier way is to first store the intermediate result in a grid of coordinates. For this, we use a two-dimensional array.
 
-If you remember, to create a 1D array, we use the following syntax: `Vector3 [] avec = new Vector3[100]` which results in an array with 100 elements. To create a two-dimensional one, we can use the following syntax: `Vector3 [,] avec = new Vector3[100,500]`, which creates an array with 100 in the first dimension and the 500, the second dimension.
+If you remember, to create a 1D array, we use the following syntax: `Vector3 [] avec = new Vector3[100]`, which results in an array with 100 elements. To create a two-dimensional one, we can use the following syntax: `Vector3 [,] avec = new Vector3[100,500]`, which creates an array with 100 in the first dimension and 500 in the second dimension.
 
 So let's go with the following function signature:
 
 ```c#
 public static Vector3[,] avecSubdivideQuad(     int nSubDivX,
                                                 int nSubDivY,
-                                                Vector3 vecA, 
-                                                Vector3 vecB, 
-                                                Vector3 vecC, 
+                                                Vector3 vecA,
+                                                Vector3 vecB,
+                                                Vector3 vecC,
                                                 Vector3 vecD)
 {
   Vector3 [,] avecResult = new Vector3 [nSubDivX,nSubDivY];
@@ -48,16 +48,16 @@ public static Vector3[,] avecSubdivideQuad(     int nSubDivX,
 }
 ```
 
-So, we define our quad with the four corners, and we specify how many times it should be subdivided.
+So, we define our quad with the four corners and specify how many times it should be subdivided.
 
-Now it is simply a question of interpolating along the two edges which are spanned up by the four corners.
+Now it is simply a question of interpolating along the two edges spanned by the four corners.
 
 ```c#
 public static Vector3[,] avecSubdivideQuad(     int nSubDivX,
                                                 int nSubDivY,
-                                                Vector3 vecA, 
-                                                Vector3 vecB, 
-                                                Vector3 vecC, 
+                                                Vector3 vecA,
+                                                Vector3 vecB,
+                                                Vector3 vecC,
                                                 Vector3 vecD)
 {
     Vector3 [,] avecResult = new Vector3 [nSubDivX,nSubDivY];
@@ -67,7 +67,7 @@ public static Vector3[,] avecSubdivideQuad(     int nSubDivX,
         for (int j = 0; j < nSubDivY; j++)
         {
             // Calculate normalized interpolation factors
-            float rTX = (float)i / (nSubDivX - 1); // Horizontal interpolation (0 to 1)
+            float fTX = (float)i / (nSubDivX - 1); // Horizontal interpolation (0 to 1)
             float fTY = (float)j / (nSubDivY - 1); // Vertical interpolation (0 to 1)
 
             // Perform bilinear interpolation
@@ -84,21 +84,21 @@ public static Vector3[,] avecSubdivideQuad(     int nSubDivX,
 }
 ```
 
-First we calculate a normalized interpolation factor, which goes 0 to 1, with 1 being the last position.
+First, we calculate a normalized interpolation factor, which goes from 0 to 1, with 1 being the last position.
 
-Then we determine our position along the top edge and the bottom edge, using the `tX` interpolation factor (keep in mind, that a quad doesn't have to be a square, or even a rectangle, so we cannot assume the X position of the two to be correlated, that's why we calculate them independently). `Lerp`, by the way, is just a linear interpolation function.
+Then, we determine our position along the top edge and the bottom edge using the `fTX` interpolation factor. Keep in mind that a quad doesn't have to be a square or even a rectangle, so we cannot assume the X position of the two to be correlated, which is why we calculate them independently. `Lerp`, by the way, is just a linear interpolation function.
 
-After we know the position along the top and bottom edges, we now need to find our weighted position perpendicular to the two edges. We do that using the last `Lerp` using the `tY` as weight.
+After we know the position along the top and bottom edges, we now need to find our weighted position perpendicular to the two edges. We do that using the last `Lerp`, applying `fTY` as the weight.
 
 ![](assets/16-subdivided.png)
 
 # Modulating a grid
 
-So now, we have our vertex positions of the subdivided quad, we can do something with it. Before we move onto actively modulating the vertices, I'd like to point out another interesting aspect of subdividing a quad. Usually quads are planar, but there is nothing that prevents you from inserting corners into the subdivision algorithm, that do not span up a planar surface. And the interpolation result gives you a nice curved grid. This is quite useful for many applications, because it allows you to smoothen a mesh.
+Now that we have our vertex positions of the subdivided quad, we can do something with them. Before we move on to actively modulating the vertices, I’d like to point out another interesting aspect of subdividing a quad. Usually, quads are planar, but there is nothing preventing you from inserting corners into the subdivision algorithm that do not span a planar surface. The interpolation result gives you a nicely curved grid. This is quite useful for many applications because it allows you to smooth a mesh.
 
 ![](assets/15-interpolated-smooth.png)
 
-But we leave that for another day.
+But we will leave that for another day.
 
 Let's go back to our planar surface as that's the norm for our shapes. To demonstrate the modulation we add a simple Gauss distribution.
 

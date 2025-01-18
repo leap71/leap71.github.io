@@ -20,7 +20,7 @@ In the world of object oriented programming, we can store an `Airplane` and a `C
 
 This concept of always moving to the simplest object and variable type necessary for functionality guides our thinking and, in practice, drastically simplifies our code.
 
-The concept of *polymorphism* allows us to override the behavior of certain functions, when they are not appropriate for the derived class. So the function `PhysicalObject.PerformMaintenance()` can do entirely different things for a `Car` or an `Airplane`. But the outside interface, the name of the function and it's signature, stays the same, and can be called when just dealing with a variable of type `PhysicalObject` generally.
+The concept of *polymorphism* allows us to override the behavior of certain functions, when they are not appropriate for the derived class. So the function `PhysicalObject.PerformMaintenance()` can do entirely different things for a `Car` or an `Airplane`. But the outside interface, the name of the function and its signature, stays the same, and can be called when just dealing with a variable of type `PhysicalObject` generally.
 
 If not for the concept of polymorphism, our code would have to constantly check what type of object we are dealing with, and call special functions for cars, airplanes and ships. Polymorphism does away with that and allows us to specify functions in the base class, that are *overridden* in the derived class.
 
@@ -30,7 +30,7 @@ And lastly, abstract functions and classes allow us to force the author of a chi
 
 Sometimes we get a bit confused by all this, so let's discuss a way to think about classes.
 
-Let's start with all the variables in a class, the *member variables*. Member variables are storage containers for data which belongs to an object. Slighly confusingly, there is no "data" in C# — only objects. So each member variable actually also contains an object. 
+Let's start with all the variables in a class, the *member variables*. Member variables are storage containers for data which belongs to an object. Slightly confusingly, there is no "data" in C# — only objects. So each member variable actually also contains an object. 
 
 If you have a variable `float m_fVehicleMass`, then the variable contains a floating point number object with represents the mass of a vehicle. While we think of this as "data", because it's a number, it is still an object, and exposes functions on its own. 
 
@@ -171,7 +171,7 @@ So, now we are done with most of the dry stuff. If you made it this far, you are
 
 Let's summarize:
 
-- We can use *inheritance* and *polymorphism* to build up a family tree of classes. When we do this, we think of our class as *being a class of the interited type*, in other words, an `Aircraft` *is a* `MovingObject`, and a `Car` is also a `MovingObject`.
+- We can use *inheritance* and *polymorphism* to build up a family tree of classes. When we do this, we think of our class as *being a class of the inherited type*, in other words, an `Aircraft` *is a* `MovingObject`, and a `Car` is also a `MovingObject`.
 - When we add member variables to an class, we think of them as our object *having a* certain property. So, our `Aircraft` might *have* two `JetEngine` objects. It's important to remind ourselves not to confuse this with inheritance. We do not inherit our class from a `JetEngine`, just to gain access to propulsion, instead the `JetEngine` is contained in the class as member variable. It's easier to not get confused, when there is more than one, like in the case of having two engines. So when in doubt, just think of whether your object could, for example, have *two* steering wheels. While this may not make sense technically, it immediately clears up that a steering wheel *is a part of your object*, and not a base class.
 - To bundle certain common functionality, without building complex interdependent abstract base classes, we can use *interfaces*. Interfaces conveniently package a certain set of functions, which have to be present in the class implementation. Afterwards, we can access our class through the interface. This is similar to abstract functions, but more flexible. 
 

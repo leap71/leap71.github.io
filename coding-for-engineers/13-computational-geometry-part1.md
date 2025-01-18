@@ -12,7 +12,7 @@ But designing the objects we want to build *obviously* involves the creation of 
 
 PicoGK gives you three fundamental geometry types to work with: `Voxels`, `Mesh`, and `Lattice`.
 
-We have alread worked with all of these over the past chapters. But we only skimmed the surface. 
+We have already worked with all of these over the past chapters. But we only skimmed the surface. 
 
 In the next chapters, I show the power of lattices for creating engineering geometry.
 

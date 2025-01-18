@@ -22,7 +22,7 @@ The disadvantage is, that your translated code is now specific to a processor an
 
 In order to get around the problem, people have introduced hybrid architectures. Microsoft's C# compiler translates your application into a [simple code that looks like machine-language](https://en.wikipedia.org/wiki/Bytecode), but is actually cross-platform. Because it is so similar to the instructions that will eventually run on your machine, and because the C# runtime [just-in-time compiles](https://en.wikipedia.org/wiki/Just-in-time_compilation) it to your target machine, when you launch the app, the speed is close to native code.
 
-Native code is still faster, and that's why the [PicoGK Runtime](https://github.com/leap71/PicoGKRuntime), which is written in C++, is compiled for different archictures, and you need to [run the right installer to get PicoGK working on your system](https://github.com/leap71/PicoGK/releases).
+Native code is still faster, and that's why the [PicoGK Runtime](https://github.com/leap71/PicoGKRuntime), which is written in C++, is compiled for different architectures, and you need to [run the right installer to get PicoGK working on your system](https://github.com/leap71/PicoGK/releases).
 
 The C# part of PicoGK is completely cross platform, and we try to implement as much as possible on that side, and only leave very performance-critical parts of the library to the compiled C++ code.
 

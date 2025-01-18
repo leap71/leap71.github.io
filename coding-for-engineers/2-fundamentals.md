@@ -138,7 +138,7 @@ Now, let's look at this briefly. Why is there all this weird stuff, like `m_f` e
 
 This is just convention, and maybe I am a bit old-fashioned about this. In my personal programming style, which I have used for 40 years and which has resulted in some very solid code, I have always prefixed the variable and function names with a type. In this case `f` tells me at a glance, that I am dealing with a `float` value here, and `str` tells me this is a string. The prefix `m_` tells me (just me, the computer doesn't care), that this is a member variable that belongs to my class. 
 
-You will see a lot of code out there that doesn't follow this style (you can name variables however you want). In my experience I found it extremly hard to read someone else's code, unless they followed these kinds of conventions. Is the variable I am seeing a number, is it a list of things, is it a complex object? I (and all my teams) have been doing this forever, and it has always made things much easier. So there you go.
+You will see a lot of code out there that doesn't follow this style (you can name variables however you want). In my experience I found it extremely hard to read someone else's code, unless they followed these kinds of conventions. Is the variable I am seeing a number, is it a list of things, is it a complex object? I (and all my teams) have been doing this forever, and it has always made things much easier. So there you go.
 
 OK, now let's go back to our example. We have a class now, which describes a certain type of car. It has associated data, but it doesn't do anything. We may have to add functionality. Let's give our car a way to charge itself.
 
@@ -175,9 +175,9 @@ Is the name just empty, or the battery level 0? Other programming languages woul
 
 Not C#.
 
-In C# everything needs to be defined. You cannot have an uninitialized variable. There are two ways to do this, one very straighforward one, and one that brings us to the next step of our learning process.
+In C# everything needs to be defined. You cannot have an uninitialized variable. There are two ways to do this, one very straightforward one, and one that brings us to the next step of our learning process.
 
-Let's do the straighforward one first (leaving out the `Charge` function for brevity).
+Let's do the straightforward one first (leaving out the `Charge` function for brevity).
 
 ```c#
 class TeslaRoadster
@@ -355,7 +355,7 @@ class TeslaRoadster
 }
 ```
 
-Imagine we wanted to count, how often our car was charged, as the battery cells degrade with each cycle. If we made all these properties directly writable from the outside, the user of the object would have to have an insider's knowledge about how our object works internally. Information hiding forces us to expose the mimimal interface to the outside world, shielding the implementation details from ignorant interference. The only way to change the charge level is to go through a defined interface, using the `Charge` method. The person who implemented the class knows what needs to be done to ensure our car is in a valid state. 
+Imagine we wanted to count, how often our car was charged, as the battery cells degrade with each cycle. If we made all these properties directly writable from the outside, the user of the object would have to have an insider's knowledge about how our object works internally. Information hiding forces us to expose the minimal interface to the outside world, shielding the implementation details from ignorant interference. The only way to change the charge level is to go through a defined interface, using the `Charge` method. The person who implemented the class knows what needs to be done to ensure our car is in a valid state. 
 
 So, let's have a look at how we deliberately expose our class to the outside world.
 

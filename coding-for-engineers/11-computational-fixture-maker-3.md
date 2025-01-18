@@ -119,7 +119,7 @@ As you have discovered, if you followed the book closely, it's a winding road to
 
 And it's always like that. You put down the lines, only to discover a while later, that there is a more elegant way to express your logic. You make the changes. — And then you rewrite it again, when you gain more insights a week, a month, or a year later.
 
-This is part of the journey, and this so-called *refactoring* will occupy quite a bit of your time. It's important to spend the effort. When you discover things in your code, that don't make sense anymore — go ahead and refactor. Refactoring is part of the job. Old code is never sacrosanct, in fact you should keept it alive by rewriting it. 
+This is part of the journey, and this so-called *refactoring* will occupy quite a bit of your time. It's important to spend the effort. When you discover things in your code, that don't make sense anymore — go ahead and refactor. Refactoring is part of the job. Old code is never sacrosanct, in fact you should kept it alive by rewriting it. 
 
 Many decades-old code bases have, what is called "technological debt". Someone should have rewritten and rethought it long ago — but nobody ever found the time. So it's just left there to rot, workarounds are built around this stale code, and monsters are lurking in the dark. Technological debt is why progress in established applications grinds to a halt — and why nobody will ever fix the positioning of images in Microsoft Word.
 
@@ -189,7 +189,7 @@ The next thing we have to do is add the mounting holes to the flange. Should we 
 
 The `BasePlate` might implement a complex algorithm, searching for the perfect mounting point. It may be a smart base plate, that switches to a different mounting mechanism, depending on the shape and dimensions of the object. There's a lot of room for imagination.
 
-Again, we are not implementing all of this, or even try to think of all the eventualities. But we we can make the decision to build a simple interface for the interaction of the two objects, that makes as little assumptions as possible, about how the objects may look like or work.
+Again, we are not implementing all of this, or even try to think of all the eventualities. But we can make the decision to build a simple interface for the interaction of the two objects, that makes as little assumptions as possible, about how the objects may look like or work.
 
 ```c#
 public class BasePlate
@@ -235,7 +235,7 @@ voxFlange = oPlate.voxCreateMountableFlange(voxFlange);
 m_voxFixture.BoolAdd(voxFlange);            
 ```
 
-So, all we do now is, check if the flange fits onto the base plate, and then create the modfied version, which we then add to the fixture as before.
+So, all we do now is, check if the flange fits onto the base plate, and then create the modified version, which we then add to the fixture as before.
 
 Why did we split the `bDoesFit` and `voxCreateMountableFlange` functions into two? Couldn't this all be done in one? Yes, absolutely. 
 

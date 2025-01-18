@@ -12,7 +12,7 @@ But instead of playing around with random lattices, let's build something useful
 
 We recently had to machine a rocket engine and noticed that it would have been really helpful to have some 3D printed fixtures to hold that irregularly shaped object in place.
 
-Building a fixture is not a trival task. What if we could automate it for many cases?
+Building a fixture is not a trivial task. What if we could automate it for many cases?
 
 So, let's try this.
 
@@ -241,7 +241,7 @@ public class FixtureObject
 
 Did you notice that nothing else had to change? We are still passing a `BasePlate` and `FixtureObject` to our `FixtureMaker` constructor. At this point in time, the `FixtureMaker` doesn't have to know that we added something. 
 
-Now, we don't really know where the `Mesh` we passed is oriented in space. So, it's a good idea to position it in the middle and make sure it sits at a specifed height above the build plate. Let's also define that the build plate's top is at Z zero.
+Now, we don't really know where the `Mesh` we passed is oriented in space. So, it's a good idea to position it in the middle and make sure it sits at a specified height above the build plate. Let's also define that the build plate's top is at Z zero.
 
 So, let's add a parameter to our `FixtureObject` that defines the distance above the build plate in millimeters.
 

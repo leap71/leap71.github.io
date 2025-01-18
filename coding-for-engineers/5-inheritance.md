@@ -34,7 +34,7 @@ In object-oriented programming, we use *Inheritance* to build up a hierarchy of 
 
 To illustrate, let's go back to our car example.
 
-Some of the things, like the name of our car, are not unique to the `TeslaRoadster` class. They could be moved to a general `Car` class. And basically everyhing in our current `TeslaRoadster` class, maybe with the exception of the implementation of a specific battery degradation formula, could be moved to an `ElectricCar` that is derived from the more general `Car`. If we wanted to implement different types of cars, this would avoid a lot of repetition of code, and make it incredibly easy to create new classes. All we would have to do is implement the functionality that is special to the new descendant of the base class.
+Some of the things, like the name of our car, are not unique to the `TeslaRoadster` class. They could be moved to a general `Car` class. And basically everything in our current `TeslaRoadster` class, maybe with the exception of the implementation of a specific battery degradation formula, could be moved to an `ElectricCar` that is derived from the more general `Car`. If we wanted to implement different types of cars, this would avoid a lot of repetition of code, and make it incredibly easy to create new classes. All we would have to do is implement the functionality that is special to the new descendant of the base class.
 
 Let's try this.
 
@@ -238,7 +238,7 @@ We can say, every motor has `fTorque()`function that returns the current torque 
 
 One important thing to always remember is, regardless of what variable you store an object in, when you call a virtual function, the function in the *derived class* is called, not the one that corresponds to the variable's type, which may be a *base type*.
 
-- Classes can be derived from other classes to form a class hiearchy
+- Classes can be derived from other classes to form a class hierarchy
 - Virtual functions can be overridden in derived classes, changing the functionality
 - Abstract functions *must* be overridden in derived classes, as there is no implementation in the base class
 - A base class that defines an `abstract` function must be marked as `abstract`, as it cannot be instantiated (because its behavior would be undefined, since one or more functions are not implemented)
