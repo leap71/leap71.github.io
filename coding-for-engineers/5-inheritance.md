@@ -10,7 +10,7 @@ By now, we should be comfortable with the fundamental building blocks we use to 
 
 We have to identify the logical elements that make up our App. This is often simpler for engineering applications, as we are dealing with actual physical objects. In more abstract logical problems, you can sometimes get lost trying to figure out what constitutes a `class`.
 
-At this point, I want to emphasize one important way to thinking which is essential for proper object-oriented programming:
+At this point, I want to emphasize one important way of thinking which is essential for proper object-oriented programming:
 
 Traditionally you would look at an operation that needs to be performed on some data, and treat the data as a passive entity. In a way, you think "I need to move the car to this position, so I will write a function to move the car from A to B, and pass the car as a parameter." 
 

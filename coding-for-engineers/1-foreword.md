@@ -14,7 +14,7 @@ People have asked me many times which course I would recommend, and I really hav
 
 They seem to be either too simplistic, not really teaching how to architect good software. They get lost in `"Hello World"`, the syntax of `for` loops, and don't really teach you the foundations of object-oriented programming. On the other hand, there is a lot of stuff out there, which makes it all sound very complex. And none of it focuses on coding for engineering, because, well, [Computational Engineering](https://leap71.com/computationalengineering/) wasn't a thing until recently.
 
-I thought a lot about how to proceed with this project. Even though I am releasing this online, I chose the format of a book. A book, has a narrative, and is usually supposed to be read in sequence, and this is the case here. It's not a manual, where you just look for a quick solution. This book follows a storyline. In each chapter, I will start simple, introducing concepts that may sound trivial at times. 
+I thought a lot about how to proceed with this project. Even though I am releasing this online, I chose the format of a book. A book has a narrative, and is usually supposed to be read in sequence, and this is the case here. It's not a manual, where you just look for a quick solution. This book follows a storyline. In each chapter, I will start simple, introducing concepts that may sound trivial at times. 
 
 But I will get into topics quickly, that others would label as quite advanced.
 

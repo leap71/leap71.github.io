@@ -14,7 +14,7 @@ When you add a `Voxels` object to the PicoGK viewer, the voxels will be converte
 
 It's time to understand why this way of building geometry is, often, perfect for Computational Geometry.
 
-Triangle meshes are made up of vertices. Each of these vertices represents a point in space. Because we often re-use vertices, as most of them are shared in a mesh, it's a good idea to store the vertices separately from the actual triangles. You add vertices to a mesh, and then use the index to that vertex, to actually build your triangle. Let's see how that looks like in PicoGK.
+Triangle meshes are made up of vertices. Each of these vertices represents a point in space. Because we often re-use vertices, as most of them are shared in a mesh, it's a good idea to store the vertices separately from the actual triangles. You add vertices to a mesh, and then use the index to that vertex, to actually build your triangle. Let's see how that looks in PicoGK.
 
 ```c#
 Mesh msh = new();

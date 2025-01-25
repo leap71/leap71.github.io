@@ -20,7 +20,7 @@ vox1.BoolAdd(vox2);
 
 And now `vox1` contains the contents of both voxel fields combined, in a way, it kind of contains the *sum* of both fields.
 
-Logically, it doesn't seem that different to the way math works. Wouldn't it be nice to be essentially able to express voxel operations in a similar way you write math?
+Logically, it doesn't seem that different from the way math works. Wouldn't it be nice to be essentially able to express voxel operations in a similar way you write math?
 
 When I wrote PicoGK last year, I considered this, but ultimately decided against it. 
 

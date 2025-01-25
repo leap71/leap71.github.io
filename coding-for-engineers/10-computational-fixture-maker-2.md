@@ -18,7 +18,7 @@ We have a few things left, including correcting some issues with our objects get
 
 But, before we continue, let's step back and look at our work for a second. 
 
-Is this an elegant structure? Does it satisfy the principles which underly object oriented programming, including information hiding, and minimal exposure of the "internals"?
+Is this an elegant structure? Does it satisfy the principles which underlie object oriented programming, including information hiding and minimal exposure of the "internals"?
 
 It's not too bad, actually.
 

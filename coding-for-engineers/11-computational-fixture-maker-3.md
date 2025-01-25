@@ -20,7 +20,7 @@ And lastly, we have the `Fixture`, which is the actual hero in our story.
 
 It's all pretty nicely structured, but, as you can guess, there is still something that's bothering me.
 
-Let's make one last structural change, a minor one this time, to introduce to you the concept of nested classes.
+Let's make one last structural change, a minor one this time, to introduce you to the concept of nested classes.
 
 ## Cleaning up our namespace with nested classes
 

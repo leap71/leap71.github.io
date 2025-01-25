@@ -8,13 +8,13 @@
 
 We have covered a lot of ground by now. Time for a recap.
 
-We started with the general concepts of computing, instructions and data. The introductions of object oriented programming married both together.
+We started with the general concepts of computing, instructions and data. The introduction of object oriented programming married both together.
 
 Classes encapsulate the data and operations we want to perform. When we create an instance of a class, using `new()`, we have an object. We think of an object of a certain type as an opaque black box and use *information hiding* to expose only the *minimum* properties and operations necessary to get the job done. If we exposed all the internals, chances are we would introduce unwanted interdependencies and side effects. That's why we hide as much as possible.
 
 As a consequence, our objects, defined as C# classes, expose a well-defined, minimum footprint to the world.
 
-Inheritance allows us to build a hierarchy of objects, through common ancestors. Each derived class inherits existing functionality and data, but introduces new traits. An `Airplane` shares much with a `Car`, but has many things that are specific to flying through the air. Even more generally, we can often treat it as a `Machine` or `Physicalobject`, and not deal with specifics. Therefore it makes sense to build a common family tree that contains cars, planes, ships, and other things in a logical hierarchy of base classes.
+Inheritance allows us to build a hierarchy of objects, through common ancestors. Each derived class inherits existing functionality and data, but introduces new traits. An `Airplane` shares much with a `Car`, but has many things that are specific to flying through the air. Even more generally, we can often treat it as a `Machine` or `Physicalobject`, and not deal with specifics. Therefore, it makes sense to build a common family tree that contains cars, planes, ships, and other things in a logical hierarchy of base classes.
 
 In the world of object oriented programming, we can store an `Airplane` and a `Car` in the same variable of type `PhysicalObject`, as long as both classes are derived from that common base class. So, we can simplify the parts of our code which do not have to deal with the specifics of airplanes and cars, and just look at them more generally.
 

@@ -26,7 +26,7 @@ Inside, we put our usual namespaces, `CodingForEngineers`, etc. I will not descr
 
 Inside our `CodingForEngineers` namespace, I am adding a new one, and call it `Fixtures`.
 
-Now lets start by creating an App with a static `Go` function, that we can call.
+Now let's start by creating an App with a static `Go` function, that we can call.
 
 ```c#
 namespace Fixtures

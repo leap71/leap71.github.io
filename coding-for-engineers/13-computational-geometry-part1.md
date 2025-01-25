@@ -14,9 +14,9 @@ PicoGK gives you three fundamental geometry types to work with: `Voxels`, `Mesh`
 
 We have already worked with all of these over the past chapters. But we only skimmed the surface. 
 
-In the next chapters, I show the power of lattices for creating engineering geometry.
+In the next chapters, I will show the power of lattices for creating engineering geometry.
 
-If we recall quickly, a `Lattice` contains one or more beams. In the simplest form, a lattice beam can just be sphere. Or it can be a beam that has rounded, or non-rounded caps, the same diameter at both ends, or different ones.
+If we recall quickly, a `Lattice` contains one or more beams. In the simplest form, a lattice beam can just be a sphere. Or it can be a beam that has rounded, or non-rounded caps, the same diameter at both ends, or different ones.
 
 Lattices are useful to build primitive objects such as cones, spheres, or cylinders. But combined with the powerful capabilities of voxel offsetting, lattices can be used to do a lot more.
 

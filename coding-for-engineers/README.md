@@ -14,7 +14,7 @@ Unfortunately, I had neither a TV nor a computer.
 
 So I taught myself coding from a German computer magazine I bought at a newspaper stand. And I coded on a notebook — a paper notebook. It was so cool. When I was 10, I finally [got a programmable calculator, a TI-66](https://ja.wikipedia.org/wiki/TI-66#/media/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB:TI-66.jpg). With it, I could start coding for real (really just steps of math, plus some control statements). [Inspired by my uncle's spacecraft ambitions](https://jlk.ae/2018/09/01/fly-rocket-fly-telling-the-story-of-uncle-lutz-attempt-to-conquer-space/), one of the first "apps" I wrote calculated the trajectory of a multi-stage rocket, using Tsiolkovsky’s foundational equations (the math is actually not hard).
 
-Finally, in 1985, I convinced my dad to buy a computer instead of a new typewriter. He spent what was then an enormous amount of money, especially for a struggling artist like he was, on a [state-of-the-art Amstrad CPC 664](https://en.wikipedia.org/wiki/Amstrad_CPC) personal computer (with whopping 64KB of memory).  
+Finally, in 1985, I convinced my dad to buy a computer instead of a new typewriter. He spent what was then an enormous amount of money, especially for a struggling artist like he was, on a [state-of-the-art Amstrad CPC 664](https://en.wikipedia.org/wiki/Amstrad_CPC) personal computer (with a whopping 64KB of memory).  
 
 Then he got really angry with me: The computer couldn't do anything out-of-the-box. He spent all that money and now had less than a typewriter!
 
