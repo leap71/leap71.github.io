@@ -224,7 +224,7 @@ As usual, the [code for this chapter is on GitHub](https://github.com/LinKayser/
 
 ------
 
-Next: **Computational geometry (Part 5)**
+Next: [**Computational geometry (Part 5)**](17-computational-geometry-part5.md)
 
 [Jump into the discussion here](https://github.com/leap71/PicoGK/discussions/categories/coding-for-computational-engineers)
 
@@ -234,4 +234,4 @@ Next: **Computational geometry (Part 5)**
 
 **[PicoGK.org](https://picogk.org)/coding for engineers**
 
-© 2024 by [Lin Kayser](https://www.linkedin.com/in/linkayser/) — All rights reserved.
+© 2024-2025 by [Lin Kayser](https://www.linkedin.com/in/linkayser/) — All rights reserved.

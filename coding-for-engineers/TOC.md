@@ -23,6 +23,7 @@
 |   14    | [Computational geometry (Part 2)](14-computational-geometry-part2.md) | Building a simple pressure vessel, painting with lattices, creating a 3D volume from an image |
 |   15    | [Computational geometry (Part 3)](15-computational-geometry-part3.md) | Building meshes, understanding face orientation, using arrays, setter and getter functions, matrix transformations with vertices |
 |   16    | [Computational geometry (Part 4)](16-computational-geometry-part4.md) | Subdividing meshes, modulating vertices, two-dimensional arrays |
+|   17    | [Computational geometry (Part 5)](17-computational-geometry-part5.md) | The limitations of floating point. Creating a box that can be modulated, and which stays watertight. |
 
 
 
@@ -36,4 +37,4 @@
 
 **[PicoGK.org](https://picogk.org)/coding for engineers**
 
-© 2024 by [Lin Kayser](https://www.linkedin.com/in/linkayser/) — All rights reserved.
+© 2024-2025 by [Lin Kayser](https://www.linkedin.com/in/linkayser/) — All rights reserved.

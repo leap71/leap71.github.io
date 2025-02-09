@@ -470,4 +470,4 @@ Next Week: [**Let's build a computational fixture maker (Part 3)**](11-computati
 
 **[PicoGK.org](https://picogk.org)/coding for engineers**
 
-© 2024 by [Lin Kayser](https://www.linkedin.com/in/linkayser/) — All rights reserved.
+© 2024-2025 by [Lin Kayser](https://www.linkedin.com/in/linkayser/) — All rights reserved.

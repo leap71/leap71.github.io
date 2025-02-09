@@ -189,4 +189,4 @@ Next: [**Design an aircraft in an afternoon**](7-design-an-aircraft-in-an-aftern
 
 **[PicoGK.org](https://picogk.org)/coding for engineers**
 
-© 2024 by [Lin Kayser](https://www.linkedin.com/in/linkayser/) — All rights reserved.
+© 2024-2025 by [Lin Kayser](https://www.linkedin.com/in/linkayser/) — All rights reserved.

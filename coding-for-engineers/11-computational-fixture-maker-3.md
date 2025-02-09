@@ -296,4 +296,4 @@ Next: [**Let's build a computational fixture maker (Part 4)**](12-computational-
 
 **[PicoGK.org](https://picogk.org)/coding for engineers**
 
-© 2024 by [Lin Kayser](https://www.linkedin.com/in/linkayser/) — All rights reserved.
+© 2024-2025 by [Lin Kayser](https://www.linkedin.com/in/linkayser/) — All rights reserved.
