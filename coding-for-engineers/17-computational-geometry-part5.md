@@ -22,7 +22,7 @@ There is one more thing that adds to the challenge of using vector geometry:
 
 While math on a computer *looks like math*, it isn't precise. In computer floating-point math, the precision of the binary storage of a number is limited. And this leaves large gaps in the number space. *Many numbers simply do not exist!* They are approximated by the next available number, and that can cause additional issues in complex calculations.
 
-If real math says, you should arrive at the same number when running two different formulas, computer math doesn't necessarily follow. The way you calculate something, the actual steps performed, has an influence on which exact floating point number you end up with. And that —you guessed it — can cause issues for our geometry, for example for watertightness. When rotating a vector by an angle, for example, you may get slightly different results when doing it from one or the other direction.
+If real math says, you should arrive at the same number when running two different formulas, computer math doesn't necessarily follow. The way you calculate something, the actual steps performed, has an influence on which exact floating point number you end up with. And that —you guessed it — can cause issues for our geometry, for example, for watertightness. When rotating a vector by an angle, for example, you may get slightly different results when doing it from one or the other direction.
 
 Say, you want to do what we did with one face in the last chapter, but with a cube. If you assumed that "perfect math" would ensure watertight edges, you might be surprised that small gaps can open up at the edges, even if your calculations are perfect, simply because of the quirkiness of floating point calculations.
 
@@ -123,7 +123,7 @@ public class Grid
 }
 ```
 
-So, we can now create a `Face` from four coordinates. We can pass that`Face` into a `Grid` object, supplying subdivision numbers. Note, that I called the coordinate not `X` or `Y`, but `U`and`V`. Since I want to distinguish them from the `X,Y,Z` coordinates that may be stored inside the vertices. It is common to refer to the surface coordinates of an object as `U/V`. So `U/V` make up the two-dimensional coordinates while traveling across a surface of a `Face`.
+So, we can now create a `Face` from four coordinates. We can pass that `Face` into a `Grid` object, supplying subdivision numbers. Note, that I called the coordinate not `X` or `Y`, but `U` and `V`. Since I want to distinguish them from the `X,Y,Z` coordinates that may be stored inside the vertices. It is common to refer to the surface coordinates of an object as `U/V`. So `U/V` make up the two-dimensional coordinates while traveling across a surface of a `Face`.
 
 As a result of the process, we end up with a two-dimensional array inside the `Grid` object, which represents all interpolated vertex coordinates.
 
@@ -351,7 +351,7 @@ The best way to do something like this is — simplify. Look at one face, the fr
 
 ![](assets/17-DisconnectedEdges.png)
 
-In this visualization, I added color indicators which show, which edge we are looking at, top is blue, bottom is black, left is red, and right is green (sky is blue, ground is dark, and left and right correspond to backboard, starboard naviational lights on a ship, if you'd like to understand the logic of the colors).
+In this visualization, I added color indicators which show, which edge we are looking at, top is blue, bottom is black, left is red, and right is green (sky is blue, ground is dark, and left and right correspond to backboard, starboard navigational lights on a ship, if you'd like to understand the logic of the colors).
 
 So, if we replace the vertex indexes in the front face's right edge with right face's left edge, they will reference the same vertex indexes — now they truly share an edge.
 
