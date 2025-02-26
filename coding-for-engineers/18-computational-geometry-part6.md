@@ -179,7 +179,7 @@ public BaseCylinder(    LocalFrame frm,
                         INormalizedContour2d oEdgeTop,
                         float fHeight)
 {
-    m_frm				= frm;  
+    m_frm       = frm;  
     m_oEdgeBtm  = oEdgeBottom;
     m_oEdgeTop  = oEdgeTop;
     m_fHeight   = fHeight;
@@ -414,7 +414,7 @@ I think you can glimpse the power of an object-oriented approach to base geometr
 
 Over time, you will gain the experience to make the right calls.
 
- ## Summary
+## Summary
 
 With this chapter, we are wrapping up, for now, our excursions into the world of mesh generation. 
 
