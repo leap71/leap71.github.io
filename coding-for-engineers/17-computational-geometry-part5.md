@@ -610,13 +610,13 @@ It also demonstrates, how you can create relatively complex objects from simple 
 
 ## Summary
 
-This was a lot of geometry and a lot of code. Basically all of it dealt with just ensuring our mesh stayed valid when we apply transformations to it. In the next chapter, we will work through our code again, identify what we actually need to keep, and then add one more useful transformation to give you an impression how powerful the modification of a base shape is.
+This was a lot of geometry and a lot of code. Basically all of it dealt with just ensuring our mesh stayed valid when we apply transformations to it. In the next chapter, we will wrap up our work on meshes for now, by showing how you can use object oriented techniques to build a cylinder on steroids.
 
 As usual, the [code for this chapter is on GitHub](https://github.com/LinKayser/Coding4Engineers). For better readability, the code is split into multiple `.cs` files. 
 
 ------
 
-Next: **Computational geometry (Part 6)**
+Next: [**Computational geometry (Part 6)**](18-computational-geometry-part6.md)
 
 [Jump into the discussion here](https://github.com/leap71/PicoGK/discussions/categories/coding-for-computational-engineers)
 
