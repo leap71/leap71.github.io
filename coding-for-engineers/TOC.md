@@ -25,6 +25,7 @@
 |   16    | [Computational geometry (Part 4)](16-computational-geometry-part4.md) | Subdividing meshes, modulating vertices, two-dimensional arrays |
 |   17    | [Computational geometry (Part 5)](17-computational-geometry-part5.md) | The limitations of floating point. Creating a box that can be modulated, and which stays watertight. |
 |   18    | [Computational geometry (Part 6)](18-computational-geometry-part6.md) | Wrapping up meshes by creating a generalized cylinder class. |
+|   19    | [Computational geometry (Part 7)](19-computational-geometry-part7.md) | Implicit geometry, and when to use it.                       |
 
 
 
