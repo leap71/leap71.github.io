@@ -274,7 +274,7 @@ As usual, the [code for this chapter is on GitHub](https://github.com/LinKayser/
 
 ------
 
-Next: **A few useful shortcuts in coding that you should know**
+Next: [**A few more things you should know about C#**](20-A-few-more-things.md)
 
 [Jump into the discussion here](https://github.com/leap71/PicoGK/discussions/categories/coding-for-computational-engineers)
 

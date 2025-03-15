@@ -26,6 +26,7 @@
 |   17    | [Computational geometry (Part 5)](17-computational-geometry-part5.md) | The limitations of floating point. Creating a box that can be modulated, and which stays watertight. |
 |   18    | [Computational geometry (Part 6)](18-computational-geometry-part6.md) | Wrapping up meshes by creating a generalized cylinder class. |
 |   19    | [Computational geometry (Part 7)](19-computational-geometry-part7.md) | Implicit geometry, and when to use it.                       |
+|   20    | [A few more things you should know about C#](20-A-few-more-things.md) | Conditional operators, nullable values, expression-body syntax |
 
 
 
