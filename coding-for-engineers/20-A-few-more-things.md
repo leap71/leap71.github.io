@@ -345,7 +345,7 @@ public SomeClass(Vector3? vecOrg=null)
 }
 ```
 
-This expression assigns `vecO` if it is not `null`. If it is `null` the value after the `??` is used.
+This expression assigns `vecOrg` if it is not `null`. If it is `null` the value after the `??` is used.
 
 This is way cleaner, and you don't have to worry about the differences in the two types, the conversion happens behind the scenes.
 
@@ -494,7 +494,7 @@ As always, the [code for this chapter is on GitHub](https://github.com/LinKayser
 
 ------
 
-Next: **A few useful shortcuts in coding that you should know**
+Next: [**Let's talk about properties**](21-properties.md)
 
 [Jump into the discussion here](https://github.com/leap71/PicoGK/discussions/categories/coding-for-computational-engineers)
 
