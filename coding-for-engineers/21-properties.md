@@ -171,7 +171,7 @@ public Vector3 vecOrigin
 }
 ```
 
-As you can see, the function parameter value magically appears out of thin air and, unsurprisingly, represents the value that’s passed.
+As you can see, the function parameter `value` magically appears out of thin air and, unsurprisingly, represents the value that’s passed.
 
 How do you actually use properties? That's the nice thing: you can use them like variables:
 
@@ -209,13 +209,13 @@ As we all know, this function will take at least 13.8 billion years to complete,
 
 Properties suggest that they are trivial to set and retrieve. 
 
-One example in the built-in C# functionality is the `Count()` property of containers. As you know, there are arrays, which are containers for other objects, for example:
+One example in the built-in C# functionality is the `Count()` property of containers. As you know, there are arrays, which are containers for values (or objects) — for example:
 
 ```c#
 float [] af = new float[100];
 ```
 
-Creates an array container which can hold 100 floating point values.
+creates an array container which can hold 100 floating point values.
 
 And the array object conveniently exposes a property, called `Length`, which tells you how many `float` objects it can hold.
 
@@ -233,11 +233,11 @@ Console.WriteLine(ai.Count());
 
 This code creates a linked list of integers. A linked list allows you to insert values at any position you want. It dynamically grows and shrinks, as you add and remove items.
 
-The `Count()` function allows you to find out how many objects are currently stored in the `LinkedList`, which, for this container, requires a transversal of all items in the list, which can be non-trivial.
+The `Count()` function allows you to find out how many objects are currently stored in the `LinkedList`, which, for this container, requires a transversal of all stored items, which can be non-trivial.
 
-So `Count()`, as a consequence, is *not* implemented as a property. The invocation of `Count()` reminds you of the fact that there is a cost to running the code.
+So `Count()`, as a consequence, is *not* implemented as a property. The invocation of `Count()` reminds you of the fact that there is a cost to running the function.
 
-To illustrate this practically, consider this code:
+To illustrate this practically, consider this:
 
 ```c#
 for (int n=0; n<ai.Count(); n++)
@@ -256,7 +256,7 @@ for (int n=0; n<nListCount; n++)
 }
 ```
 
-Now you call `Count()` exactly once, store the result in a variable, and compare against it.
+Now you call `Count()` exactly once, store the result in a variable, and compare against it, saving the compute time for counting objects.
 
 But for the array, since it's a property, which indicates it's a trivial accessor function, it's completely fine to do this:
 
@@ -275,9 +275,9 @@ Lastly, I want to cover a shortcut, which I am personally not fond of — but yo
 public Vector3 vecOrigin {get;set;} = Vector3.Zero;
 ```
 
-This creates, more or less a public variable called `vecOrigin`, which is accessed through automatically-created getter/setter functions. If you see something like that, you very likely encounter a class, that was not thought out properly, in terms of external interface. Fundamentally, you have a variable that is readable/writeable from outside and inside through functions that do nothing but set or get the value. There may be reasons to do this (for example certain API requirements), but then, these reasons are often the same as the rare reasons for public variables.
+This creates, more or less, a public variable called `vecOrigin`, which is accessed through automatically-created getter/setter functions. If you see something like that, you very likely encountered a class, that was not thought out properly, in terms of external interface. Fundamentally, you have a variable that is readable/writeable from outside and inside through functions that do nothing but set or get the value. There may be reasons to do this (for example certain API requirements), but then, these reasons are often the same as the rare reasons for public variables.
 
-These rare cases are simple container objects, such as the `Vector3` we use for the origin. But then, a public variable for X,Y,Z is fine, so, why would you use `get`/`set`?
+These rare cases are simple container objects, such as the `Vector3` we used before. But then, a public variable for X,Y,Z is fine, so, why would you use `get`/`set`?
 
 Whenever you are tempted to use this feature, ask yourself, what am I actually doing?
 
@@ -287,21 +287,21 @@ Next week we will talk about exactly these cases, we will talk about `struct` vs
 
 This was a long-winded way of saying: Properties are a great way to expose access to trivial members of your class.
 
-Properties simplify the syntax of access, and they communicate the fact that it is inexpensive — think of the `Length` vs. `Count()` example.
+Properties simplify the syntax of access, and they communicate the fact that that access is inexpensive — think of the `Length` vs. `Count()` example.
 
 Should you use them? I personally did not use them originally but have since grown quite fond of them, because of the fact that they allow me to differentiate between costly and trivial functions. 
 
-I still make it a habit of marking computationally very expensive functions by naming them `CalculateBoundingBox()` vs. `GetBoundingBox()`, or `FindNearestPointOnSurface()` vs `GetNearestPointOnSurface`. *Calculate* or *Find* evoke a sense of "this might take a while", so the user of these functions will be aware that they should consider caching strategies, if frequent access is needed.  
+I still make it a habit of marking computationally very expensive functions by naming them `CalculateBoundingBox()` vs. `GetBoundingBox()`, or `FindNearestPointOnSurface()` vs. `GetNearestPointOnSurface`. *Calculate* or *Find* evoke a sense of "oh, this might take a while", so the user of these functions will be aware that they should consider caching strategies, if frequent access is needed.  
 
-But if the access is cheap, a property called `oBoundingBox` makes it very clear: it's fine to use frequently with no penalty.
+But if access is cheap, a property called `oBoundingBox` makes it very clear: it's fine to use frequently with no penalty.
 
-In the background, what actually happens is exactly the same: a function is called that does something 
+In the background, what actually happens is exactly the same: a function is called that does something. 
 
 So it's really about what people call *syntactic sugar*:
 
-`oObject.fHeight = 10f;` simply looks a bit more elegant than `oObject.SetHeight(10f)` .
+`oObject.fHeight = 10f;` just looks a bit more elegant than `oObject.SetHeight(10f)` .
 
-Just make sure that you never ever hide complex computation behind a property.
+Make, however, sure that you never ever hide complex computation behind a property.
 
 As always, the [code for this chapter is on GitHub](https://github.com/LinKayser/Coding4Engineers) (again quite basic this time).
 
