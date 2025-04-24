@@ -28,6 +28,7 @@
 |   19    | [Computational geometry (Part 7)](19-computational-geometry-part7.md) | Implicit geometry, and when to use it.                       |
 |   20    | [A few more things you should know about C#](20-A-few-more-things.md) | Conditional operators, nullable values, expression-body syntax |
 |   21    | [Let's talk about properties](21-properties.md)              | Properties in C#, when and when not to use them              |
+|   22    | [Structs, classes, and the secret life of references](22-values-references.md) | Value types and reference types, and their (sometimes surprising) differences |
 
 
 

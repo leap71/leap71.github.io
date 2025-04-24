@@ -307,7 +307,7 @@ As always, the [code for this chapter is on GitHub](https://github.com/LinKayser
 
 ------
 
-Next: **Structs, classes, values, and references**
+Next: [**Structs, classes, and the secret life of references**](22-values-references.md)
 
 [Jump into the discussion here](https://github.com/leap71/PicoGK/discussions/categories/coding-for-computational-engineers)
 
