@@ -189,10 +189,7 @@ public struct MyValue
     public float fValue
     {
         get => m_fValue;
-        set
-        {
-            m_fValue = value;
-        }
+        set => m_fValue = value;
     }
 
     float m_fValue;
