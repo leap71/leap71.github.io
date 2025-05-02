@@ -24,6 +24,11 @@
 |   15    | [Computational geometry (Part 3)](15-computational-geometry-part3.md) | Building meshes, understanding face orientation, using arrays, setter and getter functions, matrix transformations with vertices |
 |   16    | [Computational geometry (Part 4)](16-computational-geometry-part4.md) | Subdividing meshes, modulating vertices, two-dimensional arrays |
 |   17    | [Computational geometry (Part 5)](17-computational-geometry-part5.md) | The limitations of floating point. Creating a box that can be modulated, and which stays watertight. |
+|   18    | [Computational geometry (Part 6)](18-computational-geometry-part6.md) | Wrapping up meshes by creating a generalized cylinder class. |
+|   19    | [Computational geometry (Part 7)](19-computational-geometry-part7.md) | Implicit geometry, and when to use it.                       |
+|   20    | [A few more things you should know about C#](20-A-few-more-things.md) | Conditional operators, nullable values, expression-body syntax |
+|   21    | [Let's talk about properties](21-properties.md)              | Properties in C#, when and when not to use them              |
+|   22    | [Structs, classes, and the secret life of references](22-values-references.md) | Value types and reference types, and their (sometimes surprising) differences |
 
 
 
