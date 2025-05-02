@@ -181,14 +181,14 @@ Go to your Program.cs and create an instance of a class, which results in an obj
 
 ```c#
 Coding4Engineers.TeslaRoadster oLinsCar;
-oLinsCar = new CSForEngineers.TeslaRoadster();
+oLinsCar = new Coding4Engineers.TeslaRoadster();
 ```
 
-OK, what have we done here? We have declared a new variable of type `CSForEngineers.TeslaRoadster` and called the variable `oLinsCar`. So now we have a variable: a placeholder for a certain type of data.
+OK, what have we done here? We have declared a new variable of type `Coding4Engineers.TeslaRoadster` and called the variable `oLinsCar`. So now we have a variable: a placeholder for a certain type of data.
 
 Then we created a new object of the type `TeslaRoadster` and assigned it to the `oLinsCar` variable.
 
-Now, before we continue, let's first simplify things a little. Let's add `using CSForEngineers` to the top of `Program.cs` as we will be spending all of our time in this namespace.
+Now, before we continue, let's first simplify things a little. Let's add `using Coding4Engineers` to the top of `Program.cs` as we will be spending all of our time in this namespace.
 
 We can simplify our code now to:
 
