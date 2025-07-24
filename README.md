@@ -20,7 +20,7 @@ We believe Computational Engineering will dramatically change the way we design 
 
 |                                        | PicoGK Resources                                             |
 | -------------------------------------- | ------------------------------------------------------------ |
-| ![LEAP71_icon](images/LEAP71_icon.png) | PicoGK is written and maintained by LEAP 71. To get started, head over to our documentation page. |
+| ![LEAP71_icon](images/LEAP71_icon.png) | PicoGK is written and maintained by LEAP 71. [To get started, head over to our documentation page.](https://picogk.org/doc) |
 | ![PicoGK_sm](images/PicoGK_sm.png)     | Besides PicoGK, our foundational geometry kernel, we have open sourced many examples and supporting code modules which showcase the power of Computational Engineering. [Check out the LEAP 71 Github to explore the repositories.](https://github.com/leap71) |
 | ![aerospike](images/aerospike.jpg)     | To get an impression of what our computational models are capable of, [visit the LEAP 71 gallery](https://leap71.com/gallery/) and [follow us on Instagram](https://www.instagram.com/leap.71/) for your daily dose of inspiration. |
 | ![jlk](images/jlk.jpg)                 | The [personal website of the founders of LEAP 71](https://jlk.ae/), Josefine Lissner and Lin Kayser, has background articles, podcasts and other material which explain the roots of this new paradigm. |
