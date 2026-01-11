@@ -8,7 +8,7 @@ The following sections will guide you through the following steps
 
 - Install a C# programming environment: Visual Studio Code
 - Download the PicoGK_Examples project from GitHub
-- Run it an modify it to see PicoGK in action
+- Run it and modify it to see PicoGK in action
 
 ## Prerequisites 
 
