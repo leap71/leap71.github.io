@@ -94,7 +94,7 @@ In a way, coming from the engineering side, they are similar to connector types 
 
 In software, interfaces are exactly that: A contract with the user of your class, that certain functionality is available.
 
-How do interact with a class that derives from an interface? It's very similar to the way we interact with base classes.
+How do I interact with a class that derives from an interface? It's very similar to the way we interact with base classes.
 
 ```c#
 public interface IPoweredObject
@@ -159,7 +159,7 @@ But then we assigned each object to a variable of type `IPoweredObject`. By conv
 
 `xObject1` and `xObject2` only know the object as a `IPoweredObject`. As a result, you can only call the functions implemented in that interface. You are interacting with the `ElectricCar` and the `Toaster` in exactly the same way, even though they are vastly different things. But if all you need is the exposed interface, that's fantastic, because, again, the less you know about the object you are interacting with, the less likely are you to build fragile interdependencies.
 
-If all we want is make sure all the things around us are powered off, we will use the `IPoweredObject` interface to call the `TurnOff()` function and let the object itself figure out, what that means, because it knows best.
+If all we want is to make sure all the things around us are powered off, we will use the `IPoweredObject` interface to call the `TurnOff()` function and let the object itself figure out, what that means, because it knows best.
 
 Interfaces are great to abstract the interaction with objects in a lightweight manner. While there is overlap with class inheritance, especially abstract base classes, the fact that you can slap an interface onto any object, regardless of where it is coming from, makes it a very powerful tool.
 
@@ -172,7 +172,7 @@ So, now we are done with most of the dry stuff. If you made it this far, you are
 Let's summarize:
 
 - We can use *inheritance* and *polymorphism* to build up a family tree of classes. When we do this, we think of our class as *being a class of the inherited type*, in other words, an `Aircraft` *is a* `MovingObject`, and a `Car` is also a `MovingObject`.
-- When we add member variables to an class, we think of them as our object *having a* certain property. So, our `Aircraft` might *have* two `JetEngine` objects. It's important to remind ourselves not to confuse this with inheritance. We do not inherit our class from a `JetEngine`, just to gain access to propulsion, instead the `JetEngine` is contained in the class as member variable. It's easier to not get confused, when there is more than one, like in the case of having two engines. So when in doubt, just think of whether your object could, for example, have *two* steering wheels. While this may not make sense technically, it immediately clears up that a steering wheel *is a part of your object*, and not a base class.
+- When we add member variables to a class, we think of them as our object *having a* certain property. So, our `Aircraft` might *have* two `JetEngine` objects. It's important to remind ourselves not to confuse this with inheritance. We do not inherit our class from a `JetEngine`, just to gain access to propulsion, instead the `JetEngine` is contained in the class as member variable. It's easier to not get confused, when there is more than one, like in the case of having two engines. So when in doubt, just think of whether your object could, for example, have *two* steering wheels. While this may not make sense technically, it immediately clears up that a steering wheel *is a part of your object*, and not a base class.
 - To bundle certain common functionality, without building complex interdependent abstract base classes, we can use *interfaces*. Interfaces conveniently package a certain set of functions, which have to be present in the class implementation. Afterwards, we can access our class through the interface. This is similar to abstract functions, but more flexible. 
 
 And with this, we are done with the basics. Next we will build an aircraft.
