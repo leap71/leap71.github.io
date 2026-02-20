@@ -73,7 +73,7 @@ public class Ellipse : INormalizedContour2d
         m_fB = b;
     }
 
-    public void PtAtT(in float t, out Vector2 vecPt, out Vector2 vecNormal)
+    public void PtAtT(in float t, out Vector2 vecPt)
     {
         float fAngle = t * 2f * float.Pi;
         vecPt = new Vector2( m_fA * float.Cos(fAngle), 
