@@ -47,9 +47,13 @@ If you guessed *nothing*, you’re right (OK, I gave away the result in the func
 
 But why?
 
-Because, as expected, the function received a *copy* of the variable’s value — not a reference to the original. Inside the function, you’re simply assigning the value `5` to this new local copy, which has no effect on the original variable outside the function.
+Because, as expected, the function received the variable’s value — not a reference to the original variable. The function has no knowledge of the existence of the variable on the outside. It is as if the following code had been called:
 
-In fact, the whole function doesn’t make much sense, because no one will ever see that we assigned that value.
+```c#
+DontChangeVariable(10);
+```
+
+In fact, the whole function doesn’t make much sense, because no one will ever see that we assigned that value to a local variable.
 
 But could we actually affect the original variable? Yes — by passing it *by reference* instead of *by value*.
 
@@ -87,7 +91,7 @@ The second way is to pass *by reference*, which passes the memory location of th
 
 Good to know, you might say — but that seems like an exotic feature, something that should rarely be used. Why even bother explaining it?
 
-Because *pass by value* only applies to value types.
+Because *pass by value* only applies to *value types*.
 
 Objects defined as classes are always passed *by reference*.
 
