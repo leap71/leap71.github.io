@@ -261,4 +261,4 @@ Next: **Let's build a wing**
 
 **[PicoGK.org](https://picogk.org)/coding for engineers**
 
-© 2024-2025 by [Lin Kayser](https://www.linkedin.com/in/linkayser/) — All rights reserved.
+© 2024-2026 by [Lin Kayser](https://www.linkedin.com/in/linkayser/) — All rights reserved.
