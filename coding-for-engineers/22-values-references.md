@@ -251,7 +251,7 @@ As always, the [code for this chapter is on GitHub](https://github.com/LinKayser
 
 ------
 
-Next: **Let's build a wing**
+Next: **[Let's build a wing (Part 1)](23-wing-part1.md)**
 
 [Jump into the discussion here](https://github.com/leap71/PicoGK/discussions/categories/coding-for-computational-engineers)
 

@@ -29,6 +29,7 @@
 |   20    | [A few more things you should know about C#](20-A-few-more-things.md) | Conditional operators, nullable values, expression-body syntax |
 |   21    | [Let's talk about properties](21-properties.md)              | Properties in C#, when and when not to use them              |
 |   22    | [Structs, classes, and the secret life of references](22-values-references.md) | Value types and reference types, and their (sometimes surprising) differences |
+|   23    | [Let's build a wing (Part 1)](23-wing-part1.md)              | How to build a basic wing, based on NACA 4 contours          |
 
 
 
@@ -42,4 +43,4 @@
 
 **[PicoGK.org](https://picogk.org)/coding for engineers**
 
-© 2024-2025 by [Lin Kayser](https://www.linkedin.com/in/linkayser/) — All rights reserved.
+© 2024-2026 by [Lin Kayser](https://www.linkedin.com/in/linkayser/) — All rights reserved.
