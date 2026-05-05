@@ -59,7 +59,7 @@ Well, I guess we can do that.
 ```c#
 public class Face
 {
-    public Face(	Vector3 vecA,
+    public Face(  Vector3 vecA,
                   Vector3 vecB,
                   Vector3 vecC,
                   Vector3 vecD)
