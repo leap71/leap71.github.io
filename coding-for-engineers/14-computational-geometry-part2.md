@@ -39,7 +39,7 @@ voxVessel.Offset(2);
 voxVessel -= voxFluidVolume;
 ```
 
-![Screenshot 2024-10-31 at 20.29.19](assets/14-VesselFinal.png)
+![](assets/14-VesselFinal.png)
 
 Now, this is still a simple object, and designing it "outside-in", like you would likely do in CAD, is maybe not a real issue. But you are beginning to glimpse the power of the approach. Let's take this a bit further. 
 

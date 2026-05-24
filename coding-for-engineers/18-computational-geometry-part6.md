@@ -10,7 +10,7 @@ Over the last chapters, we learned a lot about building meshes. In this chapter,
 
 ## A generalized cylinder class
 
-Let's think about a cylinder. A cylinder consists of two circles, which form the bottom and the top, and a connected surface that forms the mantle.![Screenshot 2025-02-26 at 16.16.56](assets/18-TwoCircles.png)
+Let's think about a cylinder. A cylinder consists of two circles, which form the bottom and the top, and a connected surface that forms the mantle.![](assets/18-TwoCircles.png)
 
 The two circles form the two edges, along which we will generate vertices that we can use to build the mantle surface from quads. Now an interesting question we can ask ourselves is: Could we abstract the shape that forms the contour of the edge, so it doesn't have to be a circle? What if we could simply say, the two edges could be made up of any closed contour?
 
