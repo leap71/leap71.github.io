@@ -248,7 +248,7 @@ As always, the [code for this chapter is on GitHub](https://github.com/LinKayser
 
 ------
 
-Next: **Let's build a wing (Part 2)**
+Next: [**Thinking beyond Cartesian coordinates**](24-coordinates.md)
 
 [Jump into the discussion here](https://github.com/leap71/PicoGK/discussions/categories/coding-for-computational-engineers)
 

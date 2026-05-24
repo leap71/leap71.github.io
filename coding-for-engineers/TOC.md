@@ -30,6 +30,7 @@
 |   21    | [Let's talk about properties](21-properties.md)              | Properties in C#, when and when not to use them              |
 |   22    | [Structs, classes, and the secret life of references](22-values-references.md) | Value types and reference types, and their (sometimes surprising) differences |
 |   23    | [Let's build a wing (Part 1)](23-wing-part1.md)              | How to build a basic wing, based on NACA 4 contours          |
+|   24    | [Thinking beyond Cartesian coordinates](24-coordinates.md)   | Polar, Cylindrical, and Spherical coordinates, and why radians rules |
 
 
 
