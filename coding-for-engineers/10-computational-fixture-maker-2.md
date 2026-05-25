@@ -136,7 +136,7 @@ public class Fixture
         // todo
     }
     
-    public voxAsVoxels()
+    public Voxels voxAsVoxels()
     {
         return m_voxFixture;
     }
