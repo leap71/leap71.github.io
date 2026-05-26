@@ -138,7 +138,7 @@ Polymorphism is the *ability of a derived class to override the functionality of
 
 Bear with me on that one.
 
-Let's imagine we want to provide a common way expose functionality for all objects of a certain base type. But the actual *implementation* may differ. We could have a function `PrepareForDriving`, which in a gasoline car would call the `Refuel` and the `CheckForOilChange` function, but in an electric car, it would only call `Charge`. 
+Let's imagine we want to provide a common way to expose functionality for all objects of a certain base type. But the actual *implementation* may differ. We could have a function `PrepareForDriving`, which in a gasoline car would call the `Refuel` and the `CheckForOilChange` function, but in an electric car, it would only call `Charge`. 
 
 How can we get there?
 
