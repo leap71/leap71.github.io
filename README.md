@@ -31,7 +31,7 @@ We believe Computational Engineering will dramatically change the way we design 
 
 ------
 
-*© 2023-2025 by LEAP 71 — All Rights Reserved*
+*© 2023-2026 by LEAP 71 — All Rights Reserved*
 
 *Images used with permission of LEAP 71*
 
