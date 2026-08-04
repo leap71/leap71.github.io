@@ -447,13 +447,11 @@ In this chapter you:
 - learned to think about angles as distances along a unit circle
 - started placing geometry intuitively in non-Cartesian coordinate systems
 
-In the next chapter, we will combine these coordinate systems with `Frame3d` objects and start putting them to practical use before we continue to build our wing.
-
 As always, the [code for this chapter is on GitHub](https://github.com/LinKayser/Coding4Engineers) 
 
 ------
 
-Next: **Juggling coordinates in unusual ways**
+Next: **Strong typing — An angle is not just a `float`**
 
 [Jump into the discussion here](https://github.com/leap71/PicoGK/discussions/categories/coding-for-computational-engineers)
 
