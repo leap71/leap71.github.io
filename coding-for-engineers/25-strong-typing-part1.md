@@ -36,7 +36,7 @@ I will use this example to introduce a multi-chapter series on strong typing and
 
 Because if using a generic `float` to represent an angle is questionable, using one to represent distances, pressures, durations, energies, and other physical quantities is even less defensible.
 
-All code in LEAP 71’s Computational Engineering Models is based on strongly typed physical quantities. There is an excellent C# library called *UnitsNet*, which implements more units and quantities than you are ever likely to need. It also provides an `Angle` type, but it treats angles like physical quantities with units and introduces exactly the overhead and “wordiness” that we cannot have for a type we use constantly.
+All code in LEAP 71’s Computational Engineering Models is based on strongly typed physical quantities. There is an excellent C# library called *UnitsNet*, which implements more units and quantities than you are ever likely to need. It also provides an `Angle` type, but it treats angles like physical quantities with units and introduces exactly the overhead and “wordiness” that we cannot have for a type we use constantly.
 
 An angle is unusual. It is a dimensionless number, but clearly not semantically interchangeable with any other dimensionless number. A value representing an angle behaves differently, supports different operations, and carries information that the compiler should help us preserve.
 
@@ -369,9 +369,7 @@ PicoGK’s complete `Rad` implementation provides considerably more functionalit
 
 Its string representation displays the angle in degrees, which is particularly convenient when logging values or inspecting them during debugging.
 
-You can examine the full implementation here:
-
-https://github.com/leap71/PicoGK/blob/main/Numerics/Angles.cs
+You can examine the full implementation here: [https://github.com/leap71/PicoGK/blob/main/Numerics/Angles.cs](https://github.com/leap71/PicoGK/blob/main/Numerics/Angles.cs)
 
 With all of this out of the way, we can now return to the Chapter 24 source code and see what must be adapted to use the updated coordinate types.
 
